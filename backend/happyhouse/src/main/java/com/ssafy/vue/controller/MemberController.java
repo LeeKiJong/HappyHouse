@@ -47,15 +47,14 @@ public class MemberController {
 			@RequestBody @ApiParam(value = "회원가입 시 필요한 회원정보(memberDto).", required = true) MemberDto memberDto) {
 		logger.debug("회원가입 정보 : {}", memberDto.toString());
 
-//		try {
-//			if (memberService.join(memberDto)) {
-//				return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
-//			}
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
-		return null;
+		try {
+			if (memberService.join(memberDto)) {
+				return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
 
 	
