@@ -1,6 +1,5 @@
 package com.ssafy.vue.dto;
 
-import java.sql.Blob;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -16,18 +15,17 @@ public class MemberDto {
 	private String userpwd;
 	@ApiModelProperty(value = "회원 이메일")
 	private String email;
+	private String filename;
 	@ApiModelProperty(value = "회원 가입일")
 	private String joindate;
-	private Blob file;
 
-	
 
-	public Blob getFile() {
-		return file;
+	public String getFilename() {
+		return filename;
 	}
 
-	public void setFile(Blob file) {
-		this.file = file;
+	public void setFilename(String filename) {
+		this.filename = filename;
 	}
 
 	public String getUserid() {
@@ -73,8 +71,10 @@ public class MemberDto {
 	@Override
 	public String toString() {
 		return "MemberDto [userid=" + userid + ", username=" + username + ", userpwd=" + userpwd + ", email=" + email
-				+ ", joindate=" + joindate + ", file=" + file + "]";
+				+ ", filename=" + filename + ", joindate=" + joindate + "]";
 	}
+
+	
 
 	
 

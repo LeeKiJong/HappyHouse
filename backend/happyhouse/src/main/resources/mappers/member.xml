@@ -5,7 +5,7 @@
 <mapper namespace="com.ssafy.vue.mapper.MemberMapper">
 
 	<insert id="join" parameterType="memberDto">
-		insert into ssafy_member values(#{userid}, #{username}, #{userpwd}, #{email}, #{file}, now())
+		insert into ssafy_member values(#{userid}, #{username}, #{userpwd}, #{email}, #{filename}, now())
 	</insert>
 	
 	<select id="login" parameterType="memberDto" resultType="memberDto">
@@ -30,7 +30,7 @@
 	
 	
 	<select id="userInfo" parameterType="String" resultType="memberDto">
-		select username, userid, email, joindate
+		select username, userid, email, filename, joindate
 		from ssafy_member
 		where userid = #{userid}
 	</select>
