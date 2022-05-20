@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.vue.mapper.HouseMapMapper">
+
+	<select id="getSido" resultType="sidoGugunCodeDto">
+		select left(sidoCode,2) sidoCode, sidoName
+		from sidocode
+		order by sidoCode
+	</select>
+	
+	<select id="getGugunInSido" parameterType="string" resultType="sidoGugunCodeDto">
+		select left(gugunCode,5) gugunCode, gugunName
+		from guguncode
+		where left(gugunCode,2) = #{sido}
+		order by gugunCode
+	</select>
+	
+	<select id="getDongInGugun" parameterType="string" resultType="houseInfoDto">
+		select distinct dong, dongCode
+		from houseinfo
+		where sigunguCode = #{gugun}
+		order by dong
+	</select>
+	
+	<select id="getAptInGugun" parameterType="string" resultType="houseInfoDto">
+		select * from houseinfo where #{gugun} = sigunguCode
+	</select>
+	
+	<select id="getAptInDong" parameterType="string" resultType="houseInfoDto">
+		select * from houseinfo where #{dong} = dongCode
+	</select>
+	<select id="getAptInName_gugun" parameterType="string" resultType="houseInfoDto">
+		select * from houseinfo where sigunguCode=#{gugun} and apartmentName like #{aptName};
+	</select>
+	<select id="getAptInName_dong" parameterType="string" resultType="houseInfoDto">
+		select * from houseinfo where dongCode = #{dong} and apartmentName like #{aptName};
+	</select>
+	
+	<select id="getAptDetail" parameterType="string" resultType="houseDealDto">
+		select * from housedeal where #{aptCode} = aptCode
+	</select>
+	
+</mapper>
