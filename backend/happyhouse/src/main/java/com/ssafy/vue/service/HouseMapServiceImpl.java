@@ -1,5 +1,6 @@
 package com.ssafy.vue.service;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.ssafy.vue.dto.HouseDealDto;
 import com.ssafy.vue.dto.HouseInfoDto;
+import com.ssafy.vue.dto.MapInfoDto;
 import com.ssafy.vue.dto.SidoGugunCodeDto;
 import com.ssafy.vue.mapper.HouseMapMapper;
 
@@ -41,6 +43,11 @@ public class HouseMapServiceImpl implements HouseMapService {
 		return houseMapMapper.getAptInDong(dong);
 	}
 	@Override
+	public List<HouseInfoDto> getAptInMap(MapInfoDto mapInfoDto) throws Exception {
+		return houseMapMapper.getAptInMap(mapInfoDto);
+	}
+	
+	@Override
 	public List<HouseInfoDto> getAptInName(String aptName, String gugun, String dong) throws Exception {
 		if(dong.equals("")) {
 			return houseMapMapper.getAptInName_gugun("%"+aptName+"%", gugun);
@@ -53,5 +60,7 @@ public class HouseMapServiceImpl implements HouseMapService {
 	public List<HouseDealDto> getAptDetail(String aptCode) throws Exception {
 		return houseMapMapper.getAptDetail(aptCode);
 	}
+
+	
 
 }

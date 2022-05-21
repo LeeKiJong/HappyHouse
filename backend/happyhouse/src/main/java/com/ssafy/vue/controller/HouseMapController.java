@@ -1,6 +1,7 @@
 package com.ssafy.vue.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,14 +9,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ssafy.vue.dto.HouseDealDto;
 import com.ssafy.vue.dto.HouseInfoDto;
+import com.ssafy.vue.dto.MapInfoDto;
+import com.ssafy.vue.dto.MemberDto;
 import com.ssafy.vue.dto.SidoGugunCodeDto;
 import com.ssafy.vue.service.HouseMapService;
+
+import io.swagger.annotations.ApiParam;
 
 @RestController
 @RequestMapping("/map")
@@ -66,6 +73,12 @@ public class HouseMapController {
 		logger.debug("name : {}", haHouseMapService.getAptInName(aptName, gugun, dong));
 		return new ResponseEntity<List<HouseInfoDto>>(haHouseMapService.getAptInName(aptName, gugun, dong), HttpStatus.OK);
 
+	}
+	@PostMapping("/apt/map")
+	public ResponseEntity<List<HouseInfoDto>> apt_mapInfo(@RequestBody MapInfoDto mapInfoDto) throws Exception {
+		logger.debug(mapInfoDto.toString());
+		logger.debug("apt : {}", haHouseMapService.getAptInMap(mapInfoDto));
+		return new ResponseEntity<List<HouseInfoDto>>(haHouseMapService.getAptInMap(mapInfoDto), HttpStatus.OK);
 	}
 	@GetMapping("/apt/deal")
 	public ResponseEntity<List<HouseDealDto>> apt_detail(@RequestParam("aptCode") String aptCode) throws Exception {

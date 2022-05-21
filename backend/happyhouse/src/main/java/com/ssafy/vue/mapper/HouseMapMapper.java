@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.ssafy.vue.dto.HouseDealDto;
 import com.ssafy.vue.dto.HouseInfoDto;
+import com.ssafy.vue.dto.MapInfoDto;
 import com.ssafy.vue.dto.SidoGugunCodeDto;
 
 public interface HouseMapMapper {
@@ -16,6 +17,7 @@ public interface HouseMapMapper {
 	List<HouseInfoDto> getAptInDong(String dong) throws SQLException;
 	List<HouseInfoDto> getAptInName_gugun(String aptName, String gugun) throws SQLException;
 	List<HouseInfoDto> getAptInName_dong(String aptName, String dong) throws SQLException;
+	List<HouseInfoDto> getAptInMap(MapInfoDto mapInfoDto) throws SQLException;
 	List<HouseDealDto> getAptDetail(String aptCode) throws SQLException;
 	
 }
