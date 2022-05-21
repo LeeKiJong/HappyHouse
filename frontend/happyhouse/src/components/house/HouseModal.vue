@@ -27,7 +27,7 @@
               </option>
             </select>
             &nbsp;&nbsp;
-            <select id="dong" class="form-select w-25">
+            <select id="dong" class="form-select w-25" @change="bindDong">
               <option disabled selected>동</option>
               <option v-for="dong in dongs" :value="dong.value" :key="dong">
                 {{ dong.text }}
@@ -36,7 +36,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-info" @click="confirm()">
+          <button type="button" class="btn btn-info" @click="searchAptDong()">
             검색
           </button>
           <button
@@ -68,47 +68,68 @@ export default {
     ...mapState(houseStore, ["sidos", "guguns", "dongs", "houses"]),
   },
   created() {
+    this.sidoList();
+  },
+  unmounted() {
     this.CLEAR_SIDO_LIST();
-    this.getSido();
+    this.CLEAR_GUGUN_LIST();
+    this.CLEAR_DONG_LIST();
   },
   methods: {
     ...mapActions(houseStore, [
       "getSido",
       "getGugun",
       "getDong",
-      "getHouseList_gugun",
-      "getHouseList_dong",
-      "getHouseList_aptName",
+      "getHouseListByGugun",
+      "getHouseListByDong",
+      "getHouseListByAptName",
     ]),
     ...mapMutations(houseStore, [
       "CLEAR_SIDO_LIST",
       "CLEAR_GUGUN_LIST",
       "CLEAR_DONG_LIST",
     ]),
-    gugunList() {
-      this.sidoCode = document.querySelector("#sido").value();
-      console.log(this.sidoCode);
+    /**
+     * 시/도 리스트 가져오기
+     */
+    sidoList() {
+      this.CLEAR_SIDO_LIST();
       this.CLEAR_GUGUN_LIST();
-      this.gugunCode = null;
+      this.CLEAR_DONG_LIST();
+      this.getSido();
+    },
+    /**
+     * 구/군 리스트 가져오기
+     */
+    gugunList() {
+      this.sidoCode = document.querySelector("#sido").value;
+      this.CLEAR_GUGUN_LIST();
+      this.CLEAR_DONG_LIST();
       if (this.sidoCode) this.getGugun(this.sidoCode);
     },
+    /**
+     *  동 리스트 가져오기
+     */
     dongList() {
-      this.gugunCode = document.querySelector("#sido").value();
-      console.log(this.gugunCode);
+      this.gugunCode = document.querySelector("#gugun").value;
       this.CLEAR_DONG_LIST();
-      this.dongCode = null;
       if (this.gugunCode) this.getDong(this.gugunCode);
     },
-    searchApt_gugun() {
-      if (this.gugunCode) this.getHouseList_gugun(this.gugunCode);
+    /**
+     * 구/군 정보로 아파트 리스트 가져오기
+     */
+    searchAptGugun() {
+      if (this.gugunCode) this.getHouseListByGugun(this.gugunCode);
     },
-    searchApt_dong() {
-      console.log("searchApt_dong" + this.dongCode);
-      if (this.dongCode) this.getHouseList_dong(this.dongCode);
+    /**
+     * 동 정보로 아파트 리스트 가져오기
+     */
+    searchAptDong() {
+      this.dongCode = document.querySelector("#dong").value;
+      if (this.dongCode) this.getHouseListByDong(this.dongCode);
     },
     sendKeyword() {
-      console.log("aptName" + this.aptName);
-      if (this.aptName) this.getHouseList_aptName(this.aptName);
+      if (this.aptName) this.getHouseListByAptName(this.aptName);
     },
   },
 };
