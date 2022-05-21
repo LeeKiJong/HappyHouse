@@ -39,8 +39,8 @@
 	</select>
 	<select id="getAptInMap" parameterType="mapInfoDto" resultType="houseInfoDto">
 	<![CDATA[
-		select * from houseinfo where (lng>#{swLng} and lng<#{neLng}) and (lat>#{swLat} and lat<#{neLat});
-		  ]]>
+		select i.*, FORMAT(avg(dealAmount), 0) avg from houseinfo i join housedeal d on i.aptCode = d.aptCode where (lng>#{swLng} and lng<#{neLng}) and (lat>#{swLat} and lat<#{neLat}) group by aptCode;
+	]]>
 	</select>
 	<select id="getAptDetail" parameterType="string" resultType="houseDealDto">
 		select * from housedeal where #{aptCode} = aptCode

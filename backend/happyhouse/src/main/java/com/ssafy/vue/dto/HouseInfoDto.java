@@ -20,6 +20,14 @@ public class HouseInfoDto {
 	private String jibun;
 	private String lng;
 	private String lat;
+	private String avg;
+	
+	public String getAvg() {
+		return avg;
+	}
+	public void setAvg(String avg) {
+		this.avg = avg;
+	}
 	public String getAptCode() {
 		return aptCode;
 	}
@@ -141,8 +149,10 @@ public class HouseInfoDto {
 				+ roadNameSeq + ", roadNameBasementCode=" + roadNameBasementCode + ", roadNameCode=" + roadNameCode
 				+ ", dong=" + dong + ", bonbun=" + bonbun + ", bubun=" + bubun + ", sigunguCode=" + sigunguCode
 				+ ", eubmyundongCode=" + eubmyundongCode + ", dongCode=" + dongCode + ", landCode=" + landCode
-				+ ", apartmentName=" + apartmentName + ", jibun=" + jibun + ", lng=" + lng + ", lat=" + lat + "]";
+				+ ", apartmentName=" + apartmentName + ", jibun=" + jibun + ", lng=" + lng + ", lat=" + lat + ", avg="
+				+ avg + "]";
 	}
+	
 
 
 
