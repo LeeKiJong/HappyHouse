@@ -28,7 +28,51 @@
       >
         주소 검색
       </button>
+      <div v-if="display.list" class="house-list-card">
+        <house-list
+          title="검색된 아파트 목록"
+          :description="houses.length + '개의 아파트가 검색되었습니다.'"
+        >
+          <house-list-item
+            v-for="(house, index) in houses"
+            :key="index"
+            color="info"
+            icon="square-pin"
+            :title="house.apartmentName"
+            :date-time="house.roadName + ' ' + house.bonbun"
+            @click="onClickDetail(house)"
+          />
+        </house-list>
+      </div>
+      <div v-if="display.detail">
+        <div class="p-3 pb-0 card-header bg-transparent">
+          <div class="row">
+            <div class="col-md-1 cursor-pointer" @click="setDisplayList()">
+              <i class="fa fa-arrow-left" />
+            </div>
+            <div class="col-md-10">
+              <h6 class="text-center">아파트 세부 정보</h6>
+            </div>
+            <div class="col-md-1">
+              <i class="far fa-calendar-alt" />
+            </div>
+          </div>
+          <div class="text-center">
+            <small>{{
+              this.$store.state.houseStore.house.apartmentName
+            }}</small>
+          </div>
+        </div>
+        <br />
+        <house-detail
+          class="house-detail-card"
+          :horizontal-break="false"
+          :deals="deals"
+        />
+      </div>
     </div>
+    <hr class="my-2 horizontal dark" />
+
     <house-modal></house-modal>
   </div>
 </template>
@@ -36,65 +80,89 @@
 <script>
 import Modal from "bootstrap/js/src/modal";
 import HouseModal from "@/components/house/HouseModal.vue";
+import HouseList from "@/components/house/HouseList.vue";
+import HouseListItem from "@/components/house/HouseListItem.vue";
+import HouseDetail from "@/components/house/HouseDetail.vue";
+
 import { mapMutations, mapActions } from "vuex";
+
+const houseStore = "houseStore";
+
 export default {
-  name: "configurator",
+  name: "HouseSidebar",
   components: {
     HouseModal,
+    HouseList,
+    HouseListItem,
+    HouseDetail,
   },
   props: ["toggle"],
   data() {
     return {
-      fixedKey: "",
+      houses: [],
+      deals: [],
+      display: {
+        list: true,
+        detail: false,
+      },
     };
   },
   methods: {
-    ...mapMutations(["navbarMinimize", "sidebarType", "navbarFixed"]),
-    ...mapActions(["toggleSidebarColor"]),
-
-    sidebarColor(color = "info") {
-      document.querySelector("#sidenav-main").setAttribute("data-color", color);
-      this.$store.state.mcolor = `card-background-mask-${color}`;
-    },
-
-    sidebarType(type) {
-      this.toggleSidebarColor(type);
-    },
-
-    setNavbarFixed() {
-      if (this.$route.name !== "Profile") {
-        this.$store.state.isNavFixed = !this.$store.state.isNavFixed;
-      }
-    },
-
-    sidenavTypeOnResize() {
-      let transparent = document.querySelector("#btn-transparent");
-      let white = document.querySelector("#btn-white");
-      if (window.innerWidth < 1200) {
-        transparent.classList.add("disabled");
-        white.classList.add("disabled");
-      } else {
-        transparent.classList.remove("disabled");
-        white.classList.remove("disabled");
-      }
-    },
+    ...mapMutations(houseStore, ["SET_DETAIL_HOUSE"]),
+    ...mapActions(houseStore, ["getHouseDeal"]),
     modalToggle() {
       new Modal(document.getElementById("exampleModal"), {}).show();
     },
+    async onClickDetail(house) {
+      this.setDetailHouse(house);
+      await this.getHouseDeal(house.aptCode);
+      this.setDisplayDetail();
+    },
+    setDetailHouse(house) {
+      this.SET_DETAIL_HOUSE(house);
+    },
+    setDisplayList() {
+      this.display.list = true;
+      this.display.detail = false;
+    },
+    setDisplayDetail() {
+      this.display.list = false;
+      this.display.detail = true;
+    },
   },
   computed: {
-    ifTransparent() {
-      return this.$store.state.isTransparent;
+    changeHouses() {
+      return this.$store.state.houseStore.houses;
     },
-    sidenavResponsive() {
-      return this.sidenavTypeOnResize;
+    changeDeals() {
+      return this.$store.state.houseStore.deals;
     },
   },
-  beforeMount() {
-    this.$store.state.isTransparent = "bg-transparent";
-    // Deactivate sidenav type buttons on resize and small screens
-    window.addEventListener("resize", this.sidenavTypeOnResize);
-    window.addEventListener("load", this.sidenavTypeOnResize);
+  watch: {
+    changeHouses(value) {
+      this.houses = value;
+      this.setDisplayList();
+    },
+    changeDeals(value) {
+      this.deals = value;
+    },
   },
 };
 </script>
+
+<style scoped>
+@import "https://cdn.jsdelivr.net/npm/animate.css@3.5.1";
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.house-list-card {
+  overflow: auto;
+  height: calc(90vh - 150px);
+}
+.house-detail-card {
+  overflow: auto;
+  height: calc(80vh - 150px);
+}
+</style>
