@@ -65,7 +65,7 @@
 		    <groupId>org.apache.tomcat.embed</groupId>
 		    <artifactId>tomcat-embed-jasper</artifactId>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/org.json/json -->
 		<dependency>
 		    <groupId>org.json</groupId>
@@ -89,9 +89,8 @@
 		    <version>0.9.1</version>
 		</dependency>
 
-
+		
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>

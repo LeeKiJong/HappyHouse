@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ssafy.vue.dto.Board;
+import com.ssafy.vue.dto.CommentDto;
 import com.ssafy.vue.service.BoardService;
 
 import io.swagger.annotations.Api;
@@ -37,15 +39,17 @@ public class BoardController {
 
     @ApiOperation(value = "게시판 글목록", notes = "모든 게시글의 정보를 반환한다.", response = List.class)
 	@GetMapping
-	public ResponseEntity<List<Board>> retrieveBoard() throws Exception {
+	public ResponseEntity<List<Board>> retrieveBoard(@RequestParam("type") String type) throws Exception {
 		logger.debug("retrieveBoard - 호출");
-		return new ResponseEntity<List<Board>>(boardService.retrieveBoard(), HttpStatus.OK);
+		logger.debug(type);
+		return new ResponseEntity<List<Board>>(boardService.retrieveBoard(type), HttpStatus.OK);
 	}
 
     @ApiOperation(value = "게시판 글보기", notes = "글번호에 해당하는 게시글의 정보를 반환한다.", response = Board.class)    
 	@GetMapping("{articleno}")
 	public ResponseEntity<Board> detailBoard(@PathVariable int articleno) {
 		logger.debug("detailBoard - 호출");
+		boardService.updateHit(articleno);
 		return new ResponseEntity<Board>(boardService.detailBoard(articleno), HttpStatus.OK);
 	}
 
@@ -53,6 +57,7 @@ public class BoardController {
 	@PostMapping
 	public ResponseEntity<String> writeBoard(@RequestBody Board board) {
 		logger.debug("writeBoard - 호출");
+		logger.debug(board.getType());
 		if (boardService.writeBoard(board)) {
 			return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
 		}
@@ -63,7 +68,6 @@ public class BoardController {
 	@PutMapping("{articleno}")
 	public ResponseEntity<String> updateBoard(@RequestBody Board board) {
 		logger.debug("updateBoard - 호출");
-		
 		if (boardService.updateBoard(board)) {
 			return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
 		}

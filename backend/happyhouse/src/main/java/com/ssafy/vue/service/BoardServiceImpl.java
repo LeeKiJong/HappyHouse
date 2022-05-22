@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ssafy.vue.dto.Board;
+import com.ssafy.vue.dto.CommentDto;
 import com.ssafy.vue.mapper.BoardMapper;
 
 @Service
@@ -16,8 +17,8 @@ public class BoardServiceImpl implements BoardService {
 	private BoardMapper boardMapper;
 
     @Override
-	public List<Board> retrieveBoard() {
-		return boardMapper.selectBoard();
+	public List<Board> retrieveBoard(String type) {
+		return boardMapper.selectBoard(type);
 	}
     
   	@Override
@@ -45,5 +46,10 @@ public class BoardServiceImpl implements BoardService {
 	@Transactional
 	public boolean deleteBoard(int articleno) {
 		return boardMapper.deleteBoard(articleno) == 1;
+	}
+
+	@Override
+	public List<CommentDto> retrieveComment(int articleno) {
+		return boardMapper.retrieveComment(articleno);
 	}
 }

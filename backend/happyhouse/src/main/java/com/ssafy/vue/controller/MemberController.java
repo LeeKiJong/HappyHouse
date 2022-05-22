@@ -8,6 +8,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+//import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -163,14 +164,15 @@ public class MemberController {
 				MemberDto memberDto = memberService.userInfo(userid);
 				logger.debug("회원조회 : {}", memberDto);
 				
-				File file = new File("./images/" + memberDto.getFilename());
+				//File file = new File("./images/" + memberDto.getFilename());
 				
-				//FileInputStream reader = new FileInputStream("./images/" + memberDto.getFilename());
-//				byte[] bytes = new byte[reader.available()];
-//				reader.read(bytes, 0, reader.available());
-//				reader.close();
+				FileInputStream reader = new FileInputStream("./images/" + memberDto.getFilename());
+				byte[] bytes = new byte[reader.available()];
+				reader.read(bytes, 0, reader.available());
+				reader.close();
 				
-				resultMap.put("img", FileUtils.readFileToByteArray(file));
+				//resultMap.put("img", FileUtils.readFileToByteArray(file));
+				resultMap.put("img", bytes);
 				resultMap.put("userInfo", memberDto);
 				resultMap.put("message", SUCCESS);
 				status = HttpStatus.ACCEPTED;

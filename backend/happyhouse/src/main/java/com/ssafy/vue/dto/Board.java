@@ -17,6 +17,8 @@ public class Board {
 	private int hit;
 	@ApiModelProperty(value = "작성일")
 	private String regtime;
+	@ApiModelProperty(value = "타입")
+	private String type;
 
 	public int getArticleno() {
 		return articleno;
@@ -65,8 +67,15 @@ public class Board {
 	public void setRegtime(String regtime) {
 		this.regtime = regtime;
 	}
+	public String getType() {
+		return type;
+	}
 
-	public Board(int articleno, String userid, String subject, String content, int hit, String regtime) {
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public Board(int articleno, String userid, String subject, String content, int hit, String regtime, String type) {
 		super();
 		this.articleno = articleno;
 		this.userid = userid;
@@ -74,6 +83,7 @@ public class Board {
 		this.content = content;
 		this.hit = hit;
 		this.regtime = regtime;
+		this.type = type;
 	}
 
 }

@@ -5,15 +5,25 @@
 <mapper namespace="com.ssafy.vue.mapper.BoardMapper">
 
 	<!-- 게시글 전체 조회 -->
-	<select id="selectBoard" resultType="board">
-		select articleno, userid, subject, content, hit, regtime
+	<select id="selectBoard" parameterType="String" resultType="board">
+		select *
 		from board 
+		where type = #{type}
 		order by articleno desc
 	</select>
+
+	<!-- 댓글 전체 조회 -->
+	<select id="retrieveComment" parameterType="int" resultType="commentDto">
+		select *
+		from comments 
+		where articleno=#{articleno}
+		order by regtime desc
+	</select>
+
 	
 	<!-- 게시글 상세 조회 -->
 	<select id="selectBoardByNo" resultType="board">
-		select articleno, subject, userid, content, hit, regtime
+		select *
 		from board 
 		where articleno = #{articleno}
 	</select>
@@ -28,9 +38,9 @@
 	<!-- 게시글 등록 -->
 	<insert id="insertBoard" parameterType="board">
 		insert into board(
-			subject, userid, content
+			subject, userid, content, type
 		) values (
-			#{subject}, #{userid}, #{content}
+			#{subject}, #{userid}, #{content}, #{type}
 		)
 	</insert>
 	
