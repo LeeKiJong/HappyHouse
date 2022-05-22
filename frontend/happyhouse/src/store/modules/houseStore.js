@@ -8,6 +8,7 @@ const houseStore = {
     dongs: [{ value: null, text: "선택하세요" }],
     houses: [],
     house: null,
+    deals: [],
   },
 
   getters: {},
@@ -38,17 +39,33 @@ const houseStore = {
       state.dongs = [{ value: null, text: "선택하세요" }];
     },
     SET_HOUSE_LIST: (state, houses) => {
-      //   console.log(houses);
       state.houses = houses;
     },
     SET_DETAIL_HOUSE: (state, house) => {
       state.house = house;
     },
+    SET_DEAL_LIST: (state, deals) => {
+      state.deals = deals;
+    },
   },
 
   actions: {
-    getSido: ({ commit }) => {
-      house.sidoList(
+    async getHouseDeal({ commit }, aptCode) {
+      const params = {
+        aptCode: aptCode,
+      };
+      await house.houseDeal(
+        params,
+        ({ data }) => {
+          commit("SET_DEAL_LIST", data);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    },
+    async getSido({ commit }) {
+      await house.sidoList(
         ({ data }) => {
           commit("SET_SIDO_LIST", data);
         },
@@ -57,11 +74,11 @@ const houseStore = {
         }
       );
     },
-    getGugun: ({ commit }, sidoCode) => {
+    async getGugun({ commit }, sidoCode) {
       const params = {
         sido: sidoCode,
       };
-      house.gugunList(
+      await house.gugunList(
         params,
         ({ data }) => {
           commit("SET_GUGUN_LIST", data);
@@ -71,14 +88,13 @@ const houseStore = {
         }
       );
     },
-    getDong: ({ commit }, gugunCode) => {
+    async getDong({ commit }, gugunCode) {
       const params = {
         gugun: gugunCode,
       };
-      house.dongList(
+      await house.dongList(
         params,
         ({ data }) => {
-          console.log(commit, data);
           commit("SET_DONG_LIST", data);
         },
         (error) => {
@@ -86,17 +102,14 @@ const houseStore = {
         }
       );
     },
-    getHouseListByGugun: ({ commit, state }, gugunCode) => {
-      console.log(gugunCode);
-
+    async getHouseListByGugun({ commit, state }, gugunCode) {
       const params = {
         gugun: gugunCode,
       };
 
-      house.houseListByGugun(
+      await house.houseListByGugun(
         params,
         (response) => {
-          console.log(response.data);
           state.gugun = gugunCode;
           commit("SET_HOUSE_LIST", response.data);
         },
@@ -105,15 +118,13 @@ const houseStore = {
         }
       );
     },
-    getHouseListByDong: ({ commit, state }, dongCode) => {
-      console.log(dongCode);
+    async getHouseListByDong({ commit, state }, dongCode) {
       const params = {
         dong: dongCode,
       };
-      house.houseListByDong(
+      await house.houseListByDong(
         params,
         (response) => {
-          console.log(response.data);
           state.dong = dongCode;
           commit("SET_HOUSE_LIST", response.data);
         },
@@ -122,8 +133,7 @@ const houseStore = {
         }
       );
     },
-    getHouseListByAptName: ({ commit, state }, aptName) => {
-      console.log(aptName);
+    async getHouseListByAptName({ commit, state }, aptName) {
       let gugunTemp = state.gugun;
       let dongTemp = state.dong;
       if (gugunTemp == null) {
@@ -132,17 +142,14 @@ const houseStore = {
       if (dongTemp == null) {
         dongTemp = "";
       }
-      console.log(gugunTemp);
-      console.log(dongTemp);
       const params = {
         aptName: aptName,
         gugun: gugunTemp,
         dong: dongTemp,
       };
-      house.houseListByAptName(
+      await house.houseListByAptName(
         params,
         (response) => {
-          console.log(response.data);
           commit("SET_HOUSE_LIST", response.data);
         },
         (error) => {
