@@ -14,4 +14,9 @@ public interface BoardService {
 	public boolean deleteBoard(int articleno);
 	
 	public List<CommentDto> retrieveComment(int articleno);
+
+	public boolean writeComment(CommentDto commentDto);
+
+	public boolean updateComment(CommentDto commentDto);
+	public boolean deleteComment(int commentno);
 }

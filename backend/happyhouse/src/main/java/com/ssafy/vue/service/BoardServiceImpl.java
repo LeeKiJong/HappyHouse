@@ -52,4 +52,19 @@ public class BoardServiceImpl implements BoardService {
 	public List<CommentDto> retrieveComment(int articleno) {
 		return boardMapper.retrieveComment(articleno);
 	}
+
+	@Override
+	public boolean writeComment(CommentDto commentDto) {
+		return boardMapper.writeComment(commentDto) == 1;
+	}
+
+	@Override
+	public boolean updateComment(CommentDto commentDto) {
+		return boardMapper.updateComment(commentDto) == 1;
+	}
+
+	@Override
+	public boolean deleteComment(int commentno) {
+		return boardMapper.deleteComment(commentno) == 1;
+	}
 }

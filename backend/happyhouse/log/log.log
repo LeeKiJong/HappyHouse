@@ -1,0 +1,115 @@
+2022-05-23 00:25:38.796 DEBUG 6372 --- [nio-9999-exec-9] c.ssafy.vue.controller.BoardController   : detailBoard - 호출
+2022-05-23 00:25:38.797 DEBUG 6372 --- [nio-9999-exec-5] c.ssafy.vue.controller.BoardController   : retrieveComment - 호출
+2022-05-23 00:26:31.161 DEBUG 6372 --- [nio-9999-exec-8] c.ssafy.vue.controller.BoardController   : detailBoard - 호출
+2022-05-23 00:26:31.162 DEBUG 6372 --- [nio-9999-exec-7] c.ssafy.vue.controller.BoardController   : retrieveComment - 호출
+2022-05-23 00:30:46.644 DEBUG 6372 --- [nio-9999-exec-1] c.ssafy.vue.controller.BoardController   : detailBoard - 호출
+2022-05-23 00:30:46.645 DEBUG 6372 --- [io-9999-exec-10] c.ssafy.vue.controller.BoardController   : retrieveComment - 호출
+2022-05-23 00:34:14.757 DEBUG 6372 --- [nio-9999-exec-5] c.ssafy.vue.controller.BoardController   : detailBoard - 호출
+2022-05-23 00:34:14.758 DEBUG 6372 --- [nio-9999-exec-9] c.ssafy.vue.controller.BoardController   : retrieveComment - 호출
+2022-05-23 00:34:34.588 DEBUG 6372 --- [nio-9999-exec-7] c.ssafy.vue.controller.BoardController   : detailBoard - 호출
+2022-05-23 00:34:34.589 DEBUG 6372 --- [nio-9999-exec-8] c.ssafy.vue.controller.BoardController   : retrieveComment - 호출
+2022-05-23 00:34:37.345 DEBUG 6372 --- [nio-9999-exec-3] c.ssafy.vue.controller.BoardController   : detailBoard - 호출
+2022-05-23 00:34:37.346 DEBUG 6372 --- [nio-9999-exec-6] c.ssafy.vue.controller.BoardController   : retrieveComment - 호출
+2022-05-23 00:34:38.256 DEBUG 6372 --- [io-9999-exec-10] c.ssafy.vue.controller.BoardController   : detailBoard - 호출
+2022-05-23 00:34:38.257 DEBUG 6372 --- [nio-9999-exec-1] c.ssafy.vue.controller.BoardController   : retrieveComment - 호출
+2022-05-23 00:34:41.677 DEBUG 6372 --- [nio-9999-exec-4] c.ssafy.vue.controller.BoardController   : retrieveComment - 호출
+2022-05-23 00:34:41.677 DEBUG 6372 --- [nio-9999-exec-2] c.ssafy.vue.controller.BoardController   : detailBoard - 호출
+2022-05-23 00:36:24.963  INFO 6372 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-23 00:36:25.016  INFO 6372 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 422 ms
+2022-05-23 00:36:25.154  INFO 6372 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-23 00:36:25.200  INFO 6372 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-23 00:36:25.254  INFO 6372 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-23 00:36:41.622  INFO 6372 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-23 00:36:41.666  INFO 6372 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 335 ms
+2022-05-23 00:36:41.790  INFO 6372 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-23 00:36:41.829  INFO 6372 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-23 00:36:41.881  INFO 6372 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-23 00:37:03.441  INFO 6372 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-23 00:37:03.479  INFO 6372 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 359 ms
+2022-05-23 00:37:03.597  INFO 6372 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-23 00:37:03.634  INFO 6372 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-23 00:37:03.681  INFO 6372 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-23 00:37:24.169  INFO 6372 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-23 00:37:24.211  INFO 6372 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 371 ms
+2022-05-23 00:37:24.329  INFO 6372 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-23 00:37:24.373  INFO 6372 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-23 00:37:24.427  INFO 6372 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-23 00:39:09.521  INFO 6372 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-23 00:39:09.558  INFO 6372 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 377 ms
+2022-05-23 00:39:09.669  INFO 6372 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-23 00:39:09.712  INFO 6372 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-23 00:39:09.757  INFO 6372 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-23 00:40:31.070  INFO 6372 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-23 00:40:31.072  INFO 6372 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-05-23 00:40:31.076  WARN 6372 --- [nio-9999-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2022-05-23 00:41:10.470 DEBUG 6372 --- [nio-9999-exec-3] c.ssafy.vue.controller.BoardController   : detailBoard - 호출
+2022-05-23 00:41:10.472 DEBUG 6372 --- [nio-9999-exec-4] c.ssafy.vue.controller.BoardController   : retrieveComment - 호출
+2022-05-23 00:41:16.061 DEBUG 6372 --- [nio-9999-exec-5] c.ssafy.vue.controller.BoardController   : updateComment - 호출
+2022-05-23 00:41:18.423 DEBUG 6372 --- [nio-9999-exec-6] c.ssafy.vue.controller.BoardController   : detailBoard - 호출
+2022-05-23 00:41:18.426 DEBUG 6372 --- [nio-9999-exec-7] c.ssafy.vue.controller.BoardController   : retrieveComment - 호출
+2022-05-23 00:41:32.117 DEBUG 6372 --- [nio-9999-exec-8] c.ssafy.vue.controller.BoardController   : updateComment - 호출
+2022-05-23 00:41:33.590 DEBUG 6372 --- [nio-9999-exec-9] c.ssafy.vue.controller.BoardController   : detailBoard - 호출
+2022-05-23 00:41:33.591 DEBUG 6372 --- [io-9999-exec-10] c.ssafy.vue.controller.BoardController   : retrieveComment - 호출
+2022-05-23 00:45:38.912 DEBUG 6372 --- [nio-9999-exec-4] c.ssafy.vue.controller.BoardController   : detailBoard - 호출
+2022-05-23 00:45:38.913 DEBUG 6372 --- [nio-9999-exec-3] c.ssafy.vue.controller.BoardController   : retrieveComment - 호출
+2022-05-23 00:46:16.446  INFO 6372 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-23 00:46:16.489  INFO 6372 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 391 ms
+2022-05-23 00:46:16.613  INFO 6372 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-23 00:46:16.661  INFO 6372 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-23 00:46:16.709  INFO 6372 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-23 00:46:39.325  INFO 6372 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-23 00:46:39.364  INFO 6372 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 373 ms
+2022-05-23 00:46:39.507  INFO 6372 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-23 00:46:39.551  INFO 6372 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-23 00:46:39.599  INFO 6372 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-23 00:46:53.956  INFO 6372 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-23 00:46:54.001  INFO 6372 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 383 ms
+2022-05-23 00:46:54.109  INFO 6372 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-23 00:46:54.145  INFO 6372 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-23 00:46:54.194  INFO 6372 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-23 00:47:21.907  INFO 6372 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-23 00:47:21.956  INFO 6372 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 328 ms
+2022-05-23 00:47:22.072  INFO 6372 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-23 00:47:22.113  INFO 6372 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-23 00:47:22.161  INFO 6372 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-23 00:47:46.904  INFO 6372 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-23 00:47:46.942  INFO 6372 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 372 ms
+2022-05-23 00:47:47.054  INFO 6372 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-23 00:47:47.098  INFO 6372 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-23 00:47:47.145  INFO 6372 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-23 00:48:44.355  INFO 6372 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-23 00:48:44.357  INFO 6372 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-05-23 00:48:44.359 DEBUG 6372 --- [nio-9999-exec-1] c.ssafy.vue.controller.BoardController   : retrieveBoard - 호출
+2022-05-23 00:48:44.359 DEBUG 6372 --- [nio-9999-exec-1] c.ssafy.vue.controller.BoardController   : board
+2022-05-23 00:48:45.164 DEBUG 6372 --- [nio-9999-exec-2] c.ssafy.vue.controller.BoardController   : detailBoard - 호출
+2022-05-23 00:48:45.164 DEBUG 6372 --- [nio-9999-exec-3] c.ssafy.vue.controller.BoardController   : retrieveComment - 호출
+2022-05-23 00:49:49.281 DEBUG 6372 --- [nio-9999-exec-6] c.ssafy.vue.controller.BoardController   : detailBoard - 호출
+2022-05-23 00:49:49.282 DEBUG 6372 --- [nio-9999-exec-7] c.ssafy.vue.controller.BoardController   : retrieveComment - 호출
+2022-05-23 00:49:50.470 DEBUG 6372 --- [nio-9999-exec-8] c.ssafy.vue.controller.BoardController   : deleteComment - 호출
+2022-05-23 00:49:52.309 DEBUG 6372 --- [nio-9999-exec-9] c.ssafy.vue.controller.BoardController   : detailBoard - 호출
+2022-05-23 00:49:52.310 DEBUG 6372 --- [io-9999-exec-10] c.ssafy.vue.controller.BoardController   : retrieveComment - 호출
+2022-05-23 00:49:53.594 DEBUG 6372 --- [nio-9999-exec-3] c.ssafy.vue.controller.BoardController   : deleteComment - 호출
+2022-05-23 00:49:55.262 DEBUG 6372 --- [nio-9999-exec-2] c.ssafy.vue.controller.BoardController   : detailBoard - 호출
+2022-05-23 00:49:55.264 DEBUG 6372 --- [nio-9999-exec-5] c.ssafy.vue.controller.BoardController   : retrieveComment - 호출
+2022-05-23 02:17:12.663 DEBUG 6372 --- [nio-9999-exec-6] c.ssafy.vue.controller.BoardController   : retrieveBoard - 호출
+2022-05-23 02:17:12.667 DEBUG 6372 --- [nio-9999-exec-6] c.ssafy.vue.controller.BoardController   : board
+2022-05-23 02:17:20.471 DEBUG 6372 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : 로그인 토큰정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMjM5ODQwNDY4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMyNDM0NDAsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.npSnNX4NIexBJk-mZVDq9oPOYcSSYBauwfH2JntdMs8
+2022-05-23 02:17:20.577 DEBUG 6372 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : 회원조회
+2022-05-23 02:17:20.580  INFO 6372 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : 사용 가능한 토큰!!!
+2022-05-23 02:17:20.582 DEBUG 6372 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : 회원조회 : MemberDto [userid=1, username=1, userpwd=null, email=1, filename=KakaoTalk_20220214_222917304.jpg, joindate=2022-05-22 14:48:07]
+2022-05-23 02:17:22.080 DEBUG 6372 --- [nio-9999-exec-3] c.ssafy.vue.controller.BoardController   : retrieveBoard - 호출
+2022-05-23 02:17:22.080 DEBUG 6372 --- [nio-9999-exec-3] c.ssafy.vue.controller.BoardController   : board
+2022-05-23 02:17:23.541 DEBUG 6372 --- [nio-9999-exec-5] c.ssafy.vue.controller.BoardController   : detailBoard - 호출
+2022-05-23 02:17:23.541 DEBUG 6372 --- [nio-9999-exec-2] c.ssafy.vue.controller.BoardController   : retrieveComment - 호출
+2022-05-23 02:23:40.189 DEBUG 6372 --- [nio-9999-exec-6] c.ssafy.vue.controller.BoardController   : retrieveBoard - 호출
+2022-05-23 02:23:40.189 DEBUG 6372 --- [nio-9999-exec-6] c.ssafy.vue.controller.BoardController   : board
+2022-05-23 02:23:40.907 DEBUG 6372 --- [nio-9999-exec-8] c.ssafy.vue.controller.BoardController   : detailBoard - 호출
+2022-05-23 02:23:40.908 DEBUG 6372 --- [io-9999-exec-10] c.ssafy.vue.controller.BoardController   : retrieveComment - 호출
+2022-05-23 02:24:08.753 DEBUG 6372 --- [nio-9999-exec-9] c.ssafy.vue.controller.BoardController   : retrieveBoard - 호출
+2022-05-23 02:24:08.753 DEBUG 6372 --- [nio-9999-exec-9] c.ssafy.vue.controller.BoardController   : board
+2022-05-23 02:24:09.432 DEBUG 6372 --- [nio-9999-exec-1] c.ssafy.vue.controller.BoardController   : detailBoard - 호출
+2022-05-23 02:24:09.432 DEBUG 6372 --- [nio-9999-exec-3] c.ssafy.vue.controller.BoardController   : retrieveComment - 호출
+2022-05-23 02:24:42.487 DEBUG 6372 --- [nio-9999-exec-2] c.ssafy.vue.controller.BoardController   : detailBoard - 호출
+2022-05-23 02:24:42.489 DEBUG 6372 --- [nio-9999-exec-5] c.ssafy.vue.controller.BoardController   : retrieveComment - 호출
+2022-05-23 02:25:41.333 DEBUG 6372 --- [nio-9999-exec-7] c.ssafy.vue.controller.BoardController   : detailBoard - 호출
+2022-05-23 02:25:41.335 DEBUG 6372 --- [nio-9999-exec-4] c.ssafy.vue.controller.BoardController   : retrieveComment - 호출

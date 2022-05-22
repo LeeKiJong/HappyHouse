@@ -17,4 +17,9 @@ public interface BoardMapper {
 	public int deleteBoard(int articleno);
 	
 	public List<CommentDto> retrieveComment(int articleno);
+
+	public int writeComment(CommentDto commentDto);
+
+	public int updateComment(CommentDto commentDto);
+	public int deleteComment(int commentno);
 }

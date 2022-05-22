@@ -43,6 +43,15 @@
 			#{subject}, #{userid}, #{content}, #{type}
 		)
 	</insert>
+
+	<!-- 댓글 등록 -->
+	<insert id="writeComment" parameterType="commentDto">
+		insert into comments(
+			articleno, userid, content
+		) values (
+			#{articleno}, #{userid}, #{content}
+		)
+	</insert>
 	
 	<!-- 게시글 수정 -->
 	<update id="updateBoard" parameterType="board">
@@ -53,11 +62,24 @@
 		 where articleno = #{articleno}
 	</update>
 
+	<!-- 댓글수정 -->
+	<update id="updateComment" parameterType="commentDto">
+		update comments 
+		   set content = #{content}
+		 where commentno = #{commentno}
+	</update>
+
 	<!-- 게시글 삭제 -->
 	<delete id="deleteBoard" parameterType="int">
 		delete 
 		from board 
 		where articleno = #{articleno}
+	</delete>
+	<!-- 댓글 삭제 -->
+	<delete id="deleteComment" parameterType="int">
+		delete 
+		from comments 
+		where commentno = #{commentno}
 	</delete>
 
 </mapper>

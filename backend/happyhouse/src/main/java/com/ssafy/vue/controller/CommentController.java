@@ -45,15 +45,33 @@ public class CommentController {
     }
     
     @PostMapping
-	public ResponseEntity<String> writeComment(@RequestBody CommentDto commentDto) {
+    public ResponseEntity<String> writeComment(@RequestBody CommentDto commentDto) {
         logger.debug("writeComment - 호출");
-        logger.debug("writeComment : {}", commentDto);
-		// logger.debug(board.getType());
-		// if (boardService.writeBoard(board)) {
-		// 	return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
-		// }
-        // return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
-        
+        logger.debug("writeComment : {}", commentDto.toString());
+        //  if (boardService.writeComment(commentDto)) {
+        //  	return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
+        //  }
+        //  return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
         return null;
+
+    }
+    
+    @PutMapping("{commentno}")
+    public ResponseEntity<String> updateComment(@RequestBody CommentDto commentDto) {
+        logger.debug("updateComment - 호출");
+        if (boardService.updateComment(commentDto)) {
+            return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
+        }
+        return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
+    }
+
+    @DeleteMapping("{commentno}")
+	public ResponseEntity<String> deleteComment(@PathVariable int commentno) {
+		logger.debug("deleteComment - 호출");
+		if (boardService.deleteComment(commentno)) {
+			return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
+		}
+		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
+    
 }

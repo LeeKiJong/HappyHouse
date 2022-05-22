@@ -50,9 +50,17 @@ public class CommentDto {
     public CommentDto(int commentno, int articleno, String userid, String content, String regtime) {
         super();
         this.commentno = commentno;
-		this.articleno = articleno;
-		this.userid = userid;
-		this.content = content;
-		this.regtime = regtime;
-	}
+        this.articleno = articleno;
+        this.userid = userid;
+        this.content = content;
+        this.regtime = regtime;
+    }
+
+    @Override
+    public String toString() {
+        return "CommentDto [articleno=" + articleno + ", commentno=" + commentno + ", content=" + content + ", regtime="
+                + regtime + ", userid=" + userid + "]";
+    }
+    
+    
 }
