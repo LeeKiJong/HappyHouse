@@ -6,6 +6,9 @@ import UserJoin from "@/components/user/UserJoin.vue";
 
 import MapView from "@/components/map/MapView.vue";
 
+import HouseList from "@/components/house/HouseList.vue";
+import HouseDetail from "@/components/house/HouseDetail.vue";
+
 import Dashboard from "@/views/Dashboard.vue";
 import Tables from "@/views/Tables.vue";
 import Billing from "@/views/Billing.vue";
@@ -41,6 +44,18 @@ const routes = [
     path: "/map",
     name: "map",
     component: MapView,
+    children: [
+      {
+        path: "list/:dongCode",
+        name: "houseList",
+        component: HouseList,
+      },
+      {
+        path: "list/:dongCode/:aptCode",
+        name: "houseDetail",
+        component: HouseDetail,
+      },
+    ],
   },
   {
     path: "/dashboard",

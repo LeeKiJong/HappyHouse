@@ -36,7 +36,12 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-info" @click="searchAptDong()">
+          <button
+            type="button"
+            class="btn btn-info"
+            data-bs-dismiss="modal"
+            @click="searchAptDong()"
+          >
             검색
           </button>
           <button
