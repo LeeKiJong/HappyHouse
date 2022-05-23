@@ -1,26 +1,7 @@
 <template>
   <div class="map-container">
-    <naver-maps
-      class="h-100 w-100"
-      :mapOptions="mapOptions"
-      :initLayers="initLayers"
-      @onLoad="onLoadMap($event)"
-      @init="toggleEvent()"
-      @dragend="toggleEvent()"
-      @zoom_changed="toggleEvent()"
-    >
-      <naver-marker
-        v-for="(house, index) in houses"
-        :key="index"
-        :latitude="parseFloat(house.lat)"
-        :longitude="parseFloat(house.lng)"
-        @onLoad="onLoadMarker($event)"
-      >
-        <!-- Html Icon  -->
-      </naver-marker>
-    </naver-maps>
+    <div id="map" class="h-100 w-100" />
   </div>
-  <button @click="test()">test</button>
   <house-sidebar
     :toggle="toggleConfigurator"
     :class="[
@@ -32,11 +13,8 @@
 </template>
 
 <script>
-import { ref } from "vue";
-import { NaverMaps, NaverMarker } from "vue3-naver-maps";
 import HouseSidebar from "@/components/house/HouseSidebar.vue";
 import { mapMutations, mapActions } from "vuex";
-// import MarkerClustering from "@/vue-naver-map/index";
 
 const houseStore = "houseStore";
 
@@ -44,124 +22,268 @@ export default {
   name: "MapView",
   components: {
     HouseSidebar,
-    NaverMaps,
-    NaverMarker,
   },
-  setup: () => {
-    const map = ref();
-    const houses = ref();
-    const marker = ref();
-    const markers = ref();
-
-    const mapOptions = {
-      latitude: 37.56663888630603, // 지도 중앙 위도
-      longitude: 126.97838310403904, // 지도 중앙 경도
-      zoom: 16,
-      zoomControl: false,
-      zoomControlOptions: { position: "TOP_RIGHT" },
-    };
-    const initLayers = [
-      "BACKGROUND",
-      "BACKGROUND_DETAIL",
-      "POI_KOREAN",
-      "TRANSIT",
-      "ENGLISH",
-    ];
-
-    const onLoadMap = (mapObject) => {
-      map.value = mapObject;
-      markers.value = [];
-    };
-    const onLoadMarker = (markerObject) => {
-      marker.value = markerObject;
-      markers.value.push(markerObject);
-    };
-
+  data() {
     return {
-      map,
-      markers,
-      houses,
-      mapOptions,
-      initLayers,
-      onLoadMap,
-      onLoadMarker,
+      map: [],
+      clusterer: [],
+      customOverlays: [],
+      houses: [],
+      markers: [],
     };
+  },
+
+  mounted() {
+    if (window.kakao && window.kakao.maps) {
+      this.initMap();
+    } else {
+      const script = document.createElement("script");
+      /* global kakao */
+      script.onload = () => kakao.maps.load(this.initMap);
+      script.src =
+        "//dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=786ea11e71ca9d8b2f94bb6cbd905330&libraries=services,clusterer";
+      document.head.appendChild(script);
+    }
   },
   methods: {
     ...mapMutations(["toggleConfigurator"]),
     ...mapActions(houseStore, ["getHouseListIfMovedMap"]),
+    // 지도 초기화
+    async initMap() {
+      const map = this.createMap();
 
-    /**
-     * zoom_changed, dragend 이벤트가 발생하면 실행되는 이벤트입니다.
-     */
-    async toggleEvent() {
-      await this.setHousesByBounds();
+      this.map = map;
+
+      this.createClusterer(map);
+
+      // boundary 정보를 가져옵니다.
+      const boundary = this.getBoundary(map);
+
+      await this.getHouseListIfMovedMap(boundary);
 
       this.houses = this.$store.state.houseStore.houses;
 
-      // console.log(MarkerClustering());
-    },
-    /**
-     * 지도의 경계값을 이용하여 현재 지도의  아파트 리스트를 state에 저장합니다.
-     */
-    async setHousesByBounds() {
-      const level = this.map.getZoom();
-      const bounds = this.map.getBounds();
+      this.removeMarkers();
 
-      const mapInfo = {
-        level: level,
-        swLat: bounds._sw._lat,
-        swLng: bounds._sw._lng,
-        neLat: bounds._ne._lat,
-        neLng: bounds._ne._lng,
+      this.removeCustomOverlays();
+
+      this.createMarkers(map);
+
+      if (map.getLevel() < 6) {
+        this.createCustomOverlays(map);
+      }
+
+      //지도가 확대 또는 축소되면 마지막 파라미터로 넘어온 함수를 호출하도록 이벤트를 등록합니다
+      this.addEventListener("zoom_changed", map);
+      // 지도가  마지막 파라미터로 넘어온 함수를 호출하도록 이벤트를 등록합니다
+      this.addEventListener("dragend", map);
+    },
+    createMap() {
+      var mapContainer = document.getElementById("map"); // 지도를 표시할 div
+
+      var mapOption = {
+        center: new kakao.maps.LatLng(36.1007890373718, 128.430402123994), // 지도의 중심좌표
+        level: 4, // 지도의 확대 레벨
       };
 
-      await this.getHouseListIfMovedMap(mapInfo);
+      return new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+    },
+    addEventListener(event, map) {
+      kakao.maps.event.addListener(map, event, () => {
+        this.toggleEvent(map);
+      });
+    },
+    /**
+     * zoom_changed, dragend 이벤트가 발생하면 실행되는 이벤트입니다.
+     */
+    async toggleEvent(map) {
+      // boundary 정보를 가져옵니다.
+      const boundary = this.getBoundary(map);
+
+      await this.getHouseListIfMovedMap(boundary);
+
+      this.houses = this.$store.state.houseStore.houses;
+
+      this.removeMarkers();
+
+      this.removeCustomOverlays();
+
+      this.createMarkers(map);
+
+      if (map.getLevel() < 6) {
+        this.createCustomOverlays(map);
+      }
+
+      await this.setEventIfCompletedCluster();
+
+      this.clusterer.addMarkers(this.markers, true);
+
+      if (map.getLevel() >= 6) {
+        this.removeMarkers();
+      }
+    },
+
+    // 지도 경계선의 위도 경도 가져오기
+    getBoundary(map) {
+      let bounds = map.getBounds();
+
+      const boundary = {
+        level: map.getLevel(),
+        swLat: bounds.getSouthWest().getLat(),
+        swLng: bounds.getSouthWest().getLng(),
+        neLat: bounds.getNorthEast().getLat(),
+        neLng: bounds.getNorthEast().getLng(),
+      };
+
+      return boundary;
+    },
+
+    createClusterer(map) {
+      this.clusterer = new kakao.maps.MarkerClusterer({
+        map: map, // 마커들을 클러스터로 관리하고 표시할 지도 객체
+        averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정
+        minLevel: 6, // 클러스터 할 최소 지도 레벨
+      });
+    },
+    createCustomOverlays(map) {
+      this.houses.forEach((element) => {
+        var customOverlay = new kakao.maps.CustomOverlay({
+          map: map,
+          position: new kakao.maps.LatLng(element.lat, element.lng),
+          content: this.getCustomOverlayContent(element),
+          yAnchor: 0.2,
+        });
+        this.customOverlays.push(customOverlay);
+      });
+    },
+    removeCustomOverlays() {
+      for (let i = 0; i < this.customOverlays.length; i++) {
+        this.customOverlays[i].setMap(null);
+      }
+      this.customOverlays = [];
+    },
+    /**
+     * 마커 생성
+     */
+    createMarkers(map) {
+      // 마커를 생성합니다
+      this.houses.forEach((element) => {
+        var marker = new kakao.maps.Marker({
+          map: map,
+          position: new kakao.maps.LatLng(element.lat, element.lng), // 마커를 표시할 위치
+          title: element.avg, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+          // image: this.getMarkerImage(), // 마커 이미지
+        });
+        this.markers.push(marker);
+      });
+    },
+    /**
+     * 주소 state 변경 감지 시 마커 삭제
+     */
+    removeMarkers() {
+      this.markers.forEach((element) => {
+        element.setMap(null);
+      });
+      this.markers = [];
+    },
+    /**
+     * 클러스터링이 완료됐을 때 발생하는 clustered 이벤트 등록
+     */
+    async setEventIfCompletedCluster() {
+      new Promise(() => {
+        kakao.maps.event.addListener(
+          this.clusterer,
+          "clustered",
+          function (clusters) {
+            clusters.forEach((cluster) => {
+              // 클러스터러에 포함된 마커 배열을 가져옵니다.
+              var sum = 0;
+              cluster.getMarkers().forEach((marker) => {
+                sum += parseInt(marker.Gb);
+              });
+              // 클러스터러 오버레이의 콘텐츠 내부 텍스트 변경해주세요.
+              cluster.getClusterMarker().getContent().innerText =
+                parseFloat((sum / cluster.getSize()).toFixed(1)) + "억";
+            });
+          }
+        );
+      });
+    },
+    /**
+     * 마커로 표시할 이미지를 반환하는 메서드
+     * return 마커 이미지
+     */
+    getMarkerImage() {
+      // 마커 이미지의 이미지 주소입니다
+      var imageSrc = require(`@/assets/img/ssafy.png`);
+      // 마커 이미지의 이미지 크기 입니다
+      var imageSize = new kakao.maps.Size(24, 35);
+      // 마커 이미지를 리턴합니다
+      return new kakao.maps.MarkerImage(imageSrc, imageSize);
+    },
+    /**
+     * 커스텀 오버레이에 표출될 내용(HTML 문자열이나 document element 가능) 반환
+     * return String
+     */
+    getCustomOverlayContent(element) {
+      return `
+      <div class="customoverlay">
+        <a href="https://map.kakao.com/link/map/11394059" target="_blank">
+          <span class="title">
+            ${element.avg}억
+          </span>
+        </a>
+      </div>
+      `;
     },
     /**
      * 주소를 입력받으면 좌표값으로 변환합니다.
      * @param {String} address 지번 주소
      * @return {naver.maps.Point} 변환된 좌표값
      */
-    searchAddressToCoordinate(address) {
-      window.naver.maps.Service.geocode(
-        {
-          query: `${address.sido} ${address.gugun} ${address.dong}`,
-        },
-        (status, response) => {
-          if (status === window.naver.maps.Service.Status.ERROR) {
-            if (!address) {
-              return alert("Geocode Error, Please check address");
+    async searchAddressToCoordinate(address) {
+      // 주소-좌표 변환 객체를 생성합니다
+      var geocoder = new kakao.maps.services.Geocoder();
+      // 주소로 좌표를 검색합니다
+
+      return new Promise((resolve, reject) => {
+        geocoder.addressSearch(
+          `${address.sido} ${address.gugun} ${address.dong}`,
+          function (result, status) {
+            // 정상적으로 검색이 완료됐으면
+            if (status === kakao.maps.services.Status.OK) {
+              resolve(new kakao.maps.LatLng(result[0].y, result[0].x));
+            } else {
+              reject(status);
             }
-            return alert("Geocode Error, address:" + address);
           }
-
-          if (response.v2.meta.totalCount === 0) {
-            return alert("No result.");
-          }
-
-          var item = response.v2.addresses[0];
-
-          return new window.naver.maps.Point(item.x, item.y);
-        }
-      );
+        );
+      });
     },
     /**
      * 주소를 입력받고 해당하는 주소로 지도를 이동합니다.
      * @param {String} address 지번 주소
      */
-    setCenterByAddress(address) {
-      const point = this.searchAddressToCoordinate(address);
+    async setCenterByAddress(address) {
+      const point = await this.searchAddressToCoordinate(address);
 
-      this.map.setZoom(18);
+      this.map.setLevel(2);
       this.map.setCenter(point);
-      this.toggleEvent();
+      this.toggleEvent(this.map);
     },
-    clusterMarkers() {},
   },
+  computed: {},
+  watch: {},
 };
 </script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#map {
+  width: 400px;
+  height: 400px;
+}
+
 .button-group {
   margin: 10px 0px;
 }
