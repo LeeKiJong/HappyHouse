@@ -207,3 +207,847 @@ java.lang.Error: Unresolved compilation problem:
 2022-05-24 01:01:50.555 DEBUG 9992 --- [nio-9999-exec-2] c.s.vue.controller.HouseMapController    : MapInfoDto [level=4, swLat=36.10715575604503, swLng=128.33174813474983, neLat=36.12026178370922, neLng=128.3682223259181]
 2022-05-24 01:01:51.770 DEBUG 9992 --- [nio-9999-exec-4] c.s.vue.controller.HouseMapController    : MapInfoDto [level=5, swLat=36.102212813564265, swLng=128.31913896420534, neLat=36.12842136010556, neLng=128.39209061280462]
 2022-05-24 01:01:53.289 DEBUG 9992 --- [nio-9999-exec-3] c.s.vue.controller.HouseMapController    : MapInfoDto [level=6, swLat=36.092033561559056, swLng=128.29400934953304, neLat=36.14443651058353, neLng=128.4399252105071]
+2022-05-24 02:18:14.053  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-24 02:18:14.093  INFO 9992 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 371 ms
+2022-05-24 02:18:14.212  INFO 9992 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-24 02:18:14.251  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-24 02:18:14.305  INFO 9992 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-24 02:19:20.382  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-24 02:19:20.425  INFO 9992 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 342 ms
+2022-05-24 02:19:20.533  INFO 9992 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-24 02:19:20.567  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-24 02:19:20.612  INFO 9992 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-24 02:19:38.407  INFO 9992 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-24 02:19:38.410  INFO 9992 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-05-24 02:19:38.424 ERROR 9992 --- [nio-9999-exec-3] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/vue] threw exception [Request processing failed; nested exception is org.springframework.web.multipart.MultipartException: Failed to parse multipart servlet request; nested exception is javax.servlet.ServletException: org.apache.tomcat.util.http.fileupload.impl.InvalidContentTypeException: the request doesn't contain a multipart/form-data or multipart/mixed stream, content type header is application/json] with root cause
+
+org.apache.tomcat.util.http.fileupload.impl.InvalidContentTypeException: the request doesn't contain a multipart/form-data or multipart/mixed stream, content type header is application/json
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemIteratorImpl.init(FileItemIteratorImpl.java:151)
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemIteratorImpl.getMultiPartStream(FileItemIteratorImpl.java:205)
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemIteratorImpl.findNextItem(FileItemIteratorImpl.java:224)
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemIteratorImpl.<init>(FileItemIteratorImpl.java:142)
+	at org.apache.tomcat.util.http.fileupload.FileUploadBase.getItemIterator(FileUploadBase.java:252)
+	at org.apache.tomcat.util.http.fileupload.FileUploadBase.parseRequest(FileUploadBase.java:276)
+	at org.apache.catalina.connector.Request.parseParts(Request.java:2932)
+	at org.apache.catalina.connector.Request.getParts(Request.java:2834)
+	at org.apache.catalina.connector.RequestFacade.getParts(RequestFacade.java:1098)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.parseRequest(StandardMultipartHttpServletRequest.java:95)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.<init>(StandardMultipartHttpServletRequest.java:88)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.<init>(StandardMultipartHttpServletRequest.java:72)
+	at org.springframework.web.multipart.support.MultipartResolutionDelegate.asMultipartHttpServletRequest(MultipartResolutionDelegate.java:82)
+	at org.springframework.web.multipart.support.RequestPartServletServerHttpRequest.<init>(RequestPartServletServerHttpRequest.java:68)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestPartMethodArgumentResolver.resolveArgument(RequestPartMethodArgumentResolver.java:139)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2022-05-24 02:20:51.313  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-24 02:20:51.382  INFO 9992 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 407 ms
+2022-05-24 02:20:51.523  INFO 9992 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-24 02:20:51.563  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-24 02:20:51.610  INFO 9992 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-24 02:20:55.588  INFO 9992 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-24 02:20:55.590  INFO 9992 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-05-24 02:20:55.592 ERROR 9992 --- [nio-9999-exec-1] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/vue] threw exception [Request processing failed; nested exception is org.springframework.web.multipart.MultipartException: Failed to parse multipart servlet request; nested exception is javax.servlet.ServletException: org.apache.tomcat.util.http.fileupload.impl.InvalidContentTypeException: the request doesn't contain a multipart/form-data or multipart/mixed stream, content type header is application/json] with root cause
+
+org.apache.tomcat.util.http.fileupload.impl.InvalidContentTypeException: the request doesn't contain a multipart/form-data or multipart/mixed stream, content type header is application/json
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemIteratorImpl.init(FileItemIteratorImpl.java:151)
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemIteratorImpl.getMultiPartStream(FileItemIteratorImpl.java:205)
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemIteratorImpl.findNextItem(FileItemIteratorImpl.java:224)
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemIteratorImpl.<init>(FileItemIteratorImpl.java:142)
+	at org.apache.tomcat.util.http.fileupload.FileUploadBase.getItemIterator(FileUploadBase.java:252)
+	at org.apache.tomcat.util.http.fileupload.FileUploadBase.parseRequest(FileUploadBase.java:276)
+	at org.apache.catalina.connector.Request.parseParts(Request.java:2932)
+	at org.apache.catalina.connector.Request.getParts(Request.java:2834)
+	at org.apache.catalina.connector.RequestFacade.getParts(RequestFacade.java:1098)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.parseRequest(StandardMultipartHttpServletRequest.java:95)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.<init>(StandardMultipartHttpServletRequest.java:88)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.<init>(StandardMultipartHttpServletRequest.java:72)
+	at org.springframework.web.multipart.support.MultipartResolutionDelegate.asMultipartHttpServletRequest(MultipartResolutionDelegate.java:82)
+	at org.springframework.web.multipart.support.RequestPartServletServerHttpRequest.<init>(RequestPartServletServerHttpRequest.java:68)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestPartMethodArgumentResolver.resolveArgument(RequestPartMethodArgumentResolver.java:139)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2022-05-24 02:22:10.086  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-24 02:22:10.185  INFO 9992 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 491 ms
+2022-05-24 02:22:10.311  INFO 9992 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-24 02:22:10.344  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-24 02:22:10.417  INFO 9992 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-24 02:22:11.432  INFO 9992 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-24 02:22:11.433  INFO 9992 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-05-24 02:22:11.436 DEBUG 9992 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=1, username=111, userpwd=11, email=1111, filename=null, joindate=null]
+2022-05-24 02:24:58.183 DEBUG 9992 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=1, username=111, userpwd=11, email=1111, filename=null, joindate=null]
+2022-05-24 02:24:58.921  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-24 02:24:58.960  INFO 9992 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 365 ms
+2022-05-24 02:24:59.073  INFO 9992 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-24 02:24:59.109  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-24 02:24:59.158  INFO 9992 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-24 02:25:00.978  INFO 9992 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-24 02:25:00.979  INFO 9992 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-05-24 02:25:00.982 DEBUG 9992 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=1, username=111, userpwd=11, email=1111, filename=null, joindate=null]
+2022-05-24 02:26:30.121 DEBUG 9992 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=1, username=111, userpwd=11, email=1111, filename=null, joindate=null]
+2022-05-24 02:27:54.879 DEBUG 9992 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=2, username=222, userpwd=22, email=2222, filename=null, joindate=null]
+2022-05-24 02:32:49.747 DEBUG 9992 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=3, username=333, userpwd=33, email=3333, filename=null, joindate=null]
+2022-05-24 02:33:35.403 DEBUG 9992 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=4, username=444, userpwd=44, email=4444, filename=null, joindate=null]
+2022-05-24 02:35:33.403 DEBUG 9992 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=5, username=555, userpwd=55, email=5555, filename=null, joindate=null]
+2022-05-24 02:36:55.950 DEBUG 9992 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=6, username=666, userpwd=66, email=6666, filename=null, joindate=null]
+2022-05-24 02:38:17.572 DEBUG 9992 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=7, username=777, userpwd=77, email=7777, filename=null, joindate=null]
+2022-05-24 02:38:26.154 DEBUG 9992 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?α??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzI3NTA2MTMyLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzMzExMDYsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjcifQ.kuKwfNz8YgCyfxyEa8hFUJYKwX0epYxVysKKk-2vXNw
+2022-05-24 02:38:26.163 DEBUG 9992 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 02:38:26.178  INFO 9992 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 02:38:26.180 DEBUG 9992 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=7, username=777, userpwd=null, email=7777, filename=null, joindate=2022-05-24 02:38:17]
+2022-05-24 02:38:26.181 ERROR 9992 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??????? ???? : {}
+
+java.io.FileNotFoundException: .\images\null (지정된 파일을 찾을 수 없습니다)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at com.ssafy.vue.controller.MemberController.getInfo(MemberController.java:166)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2022-05-24 02:39:44.523 DEBUG 9992 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=8, username=888, userpwd=88, email=8888, filename=null, joindate=null]
+2022-05-24 02:47:53.888 DEBUG 9992 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=8, username=888, userpwd=88, email=8888, filename=null, joindate=null]
+2022-05-24 02:47:56.193 DEBUG 9992 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=8, username=888, userpwd=88, email=8888, filename=null, joindate=null]
+2022-05-24 02:47:57.910 DEBUG 9992 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=9, username=888, userpwd=88, email=8888, filename=null, joindate=null]
+2022-05-24 02:54:05.229 DEBUG 9992 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=12, username=124, userpwd=123, email=23123, filename=null, joindate=null]
+2022-05-24 02:54:50.748 DEBUG 9992 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=423, username=32423, userpwd=4324, email=234, filename=null, joindate=null]
+2022-05-24 02:56:00.732 DEBUG 9992 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=56, username=45654, userpwd=456546, email=6456, filename=null, joindate=null]
+2022-05-24 02:56:30.604 DEBUG 9992 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=6876867, username=76876, userpwd=8768, email=8678, filename=null, joindate=null]
+2022-05-24 02:56:55.832 DEBUG 9992 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=jh, username=jgh, userpwd=gh, email=ghj, filename=null, joindate=null]
+2022-05-24 02:59:24.723 DEBUG 9992 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=hjk, username=khj, userpwd=hj, email=khjk, filename=null, joindate=null]
+2022-05-24 02:59:37.710 DEBUG 9992 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=sa, username=dasd, userpwd=s, email=asd, filename=null, joindate=null]
+2022-05-24 03:21:22.798  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-24 03:21:22.838  INFO 9992 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 400 ms
+2022-05-24 03:21:22.947  INFO 9992 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-24 03:21:22.999  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-24 03:21:23.058  INFO 9992 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-24 03:21:25.085  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-24 03:21:25.120  INFO 9992 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 298 ms
+2022-05-24 03:21:25.218  INFO 9992 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-24 03:21:25.250  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-24 03:21:25.298  INFO 9992 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-24 03:22:16.258  INFO 9992 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-24 03:22:16.260  INFO 9992 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-05-24 03:22:16.261 DEBUG 9992 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=7ㅕ56, username=u56u, userpwd=u56u65, email=56u5, filename=null, joindate=null]
+2022-05-24 03:24:28.336 DEBUG 9992 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=fdgdfg, username=xdfg, userpwd=dfgfdg, email=dfxgdxfgdfxg, filename=null, joindate=null]
+2022-05-24 03:24:56.077 DEBUG 9992 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=nfghghnhg, username=nhgn, userpwd=nghngh, email=ghn, filename=null, joindate=null]
+2022-05-24 03:26:11.933 DEBUG 9992 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=1, username=111, userpwd=11, email=1111, filename=null, joindate=null]
+2022-05-24 03:26:14.180 DEBUG 9992 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?α??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzMwMzc0MTc5LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzMzM5NzQsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.Ax_AAtSIysuvbw2c80ORbRj_U5IFv06YjhHR4b9njPw
+2022-05-24 03:26:14.189 DEBUG 9992 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 03:26:14.190  INFO 9992 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 03:26:14.192 DEBUG 9992 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 03:26:14.193 ERROR 9992 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??????? ???? : {}
+
+java.io.FileNotFoundException: .\images\null (지정된 파일을 찾을 수 없습니다)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at com.ssafy.vue.controller.MemberController.getInfo(MemberController.java:166)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2022-05-24 03:28:14.851  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-24 03:28:14.889  INFO 9992 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 357 ms
+2022-05-24 03:28:14.999  INFO 9992 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-24 03:28:15.034  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-24 03:28:15.082  INFO 9992 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-24 03:28:16.941  INFO 9992 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-24 03:28:16.943  INFO 9992 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-05-24 03:28:16.963 DEBUG 9992 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?α??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzMwNDk2OTYyLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzMzQwOTYsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.8QLahHdkTPpfUKFY2EUuJdeK9Tbb9mwU6DpQO7FK3vI
+2022-05-24 03:28:16.968 DEBUG 9992 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 03:28:16.968  INFO 9992 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 03:28:16.970 DEBUG 9992 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 03:28:16.971 ERROR 9992 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????? ???? : {}
+
+java.io.FileNotFoundException: .\images\null (지정된 파일을 찾을 수 없습니다)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at com.ssafy.vue.controller.MemberController.getInfo(MemberController.java:166)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2022-05-24 03:33:05.713 DEBUG 9992 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=2, username=222, userpwd=22, email=2222, filename=null, joindate=null]
+2022-05-24 03:33:07.608 DEBUG 9992 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?α??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzMwNzg3NjA4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzMzQzODcsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjIifQ.irmJshhgSYR9-_5lQuZudIVBV-mmZ_CVGwdEgMrs3x0
+2022-05-24 03:33:07.615 DEBUG 9992 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 03:33:07.616  INFO 9992 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 03:33:07.617 DEBUG 9992 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=2, username=222, userpwd=null, email=2222, filename=null, joindate=2022-05-24 03:33:05]
+2022-05-24 03:33:07.618 ERROR 9992 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????? ???? : {}
+
+java.io.FileNotFoundException: .\images\null (지정된 파일을 찾을 수 없습니다)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at com.ssafy.vue.controller.MemberController.getInfo(MemberController.java:166)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2022-05-24 03:37:51.688 DEBUG 9992 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=3, username=333, userpwd=33, email=3333, filename=null, joindate=null]
+2022-05-24 03:42:34.891 DEBUG 9992 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=3, username=333, userpwd=33, email=3333, filename=null, joindate=null]
+2022-05-24 03:42:37.195 DEBUG 9992 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=4, username=333, userpwd=33, email=3333, filename=null, joindate=null]
+2022-05-24 03:43:48.133 DEBUG 9992 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=4, username=444, userpwd=44, email=444, filename=null, joindate=null]
+2022-05-24 03:43:49.471 DEBUG 9992 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=5, username=444, userpwd=44, email=444, filename=null, joindate=null]
+2022-05-24 03:44:29.485 DEBUG 9992 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=6, username=666, userpwd=66, email=6666, filename=null, joindate=null]
+2022-05-24 03:45:23.786 DEBUG 9992 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=7, username=777, userpwd=77, email=7777, filename=null, joindate=null]
+2022-05-24 03:46:06.580 DEBUG 9992 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=9, username=999, userpwd=99, email=9999, filename=null, joindate=null]
+2022-05-24 03:46:33.579 DEBUG 9992 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=0, username=000, userpwd=00, email=0000, filename=null, joindate=null]
+2022-05-24 03:46:54.083 DEBUG 9992 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=34, username=34, userpwd=34, email=34, filename=null, joindate=null]
+2022-05-24 03:48:33.065 DEBUG 9992 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=455435, username=3453, userpwd=345, email=5345, filename=null, joindate=null]
+2022-05-24 03:49:11.122 DEBUG 9992 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=fhjf, username=fghfg, userpwd=fgh, email=hfghfgh, filename=null, joindate=null]
+2022-05-24 03:51:16.705 DEBUG 9992 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?α??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzMxODc2NzA1LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzMzU0NzYsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.iCCrqvPhe1wTxGA9lOKmpQrFk7_-0_OlNCHb-0eaouU
+2022-05-24 03:51:16.712 DEBUG 9992 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 03:51:16.713  INFO 9992 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 03:51:16.715 DEBUG 9992 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 03:51:16.716 ERROR 9992 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??????? ???? : {}
+
+java.io.FileNotFoundException: .\images\null (지정된 파일을 찾을 수 없습니다)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at com.ssafy.vue.controller.MemberController.getInfo(MemberController.java:166)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2022-05-24 03:52:58.041  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-24 03:52:58.079  INFO 9992 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 343 ms
+2022-05-24 03:52:58.179  INFO 9992 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-24 03:52:58.213  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-24 03:52:58.262  INFO 9992 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-24 03:52:59.910  INFO 9992 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-24 03:52:59.913  INFO 9992 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-05-24 03:52:59.915 DEBUG 9992 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 03:52:59.937 DEBUG 9992 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?α??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzMxOTc5OTM2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzMzU1NzksInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.ybNuCVxVy-N_dtLWZxlP7Qz5TJJtu-Fw0ZpEmpkq6kQ
+2022-05-24 03:52:59.943 DEBUG 9992 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 03:52:59.944  INFO 9992 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 03:52:59.947 DEBUG 9992 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 03:52:59.948 ERROR 9992 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????? ???? : {}
+
+java.io.FileNotFoundException: .\images\null (지정된 파일을 찾을 수 없습니다)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at com.ssafy.vue.controller.MemberController.getInfo(MemberController.java:167)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2022-05-24 03:54:31.122  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-24 03:54:31.162  INFO 9992 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 378 ms
+2022-05-24 03:54:31.266  INFO 9992 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-24 03:54:31.301  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-24 03:54:31.348  INFO 9992 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-24 03:54:44.694  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-24 03:54:44.738  INFO 9992 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 363 ms
+2022-05-24 03:54:44.857  INFO 9992 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-24 03:54:44.896  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-24 03:54:44.948  INFO 9992 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-24 03:54:45.049  INFO 9992 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-24 03:54:45.050  INFO 9992 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-05-24 03:54:45.053 DEBUG 9992 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 03:54:45.071 DEBUG 9992 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?α??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzMyMDg1MDcxLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzMzU2ODUsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.GH9aqNNksKgl1ONSV77eCwvyK8HKAzSYp16a-NTTDK8
+2022-05-24 03:54:45.077 DEBUG 9992 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 03:54:45.078  INFO 9992 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 03:54:45.080 DEBUG 9992 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 03:54:45.081 ERROR 9992 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????? ???? : {}
+
+java.io.FileNotFoundException: .\images\null (지정된 파일을 찾을 수 없습니다)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at com.ssafy.vue.controller.MemberController.getInfo(MemberController.java:167)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2022-05-24 03:55:09.608  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-24 03:55:09.644  INFO 9992 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 339 ms
+2022-05-24 03:55:09.743  INFO 9992 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-24 03:55:09.778  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-24 03:55:09.822  INFO 9992 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-24 03:55:59.403  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-24 03:55:59.439  INFO 9992 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 352 ms
+2022-05-24 03:55:59.533  INFO 9992 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-24 03:55:59.567  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-24 03:55:59.611  INFO 9992 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-24 03:56:36.938  INFO 9992 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-24 03:56:36.940  INFO 9992 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-05-24 03:56:36.942 DEBUG 9992 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 03:56:36.966 DEBUG 9992 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?α??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzMyMTk2OTY1LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzMzU3OTYsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.muXqgSPGjBp41BnYkVQs2u8XAZIWKvgrZZs0NjTaGYo
+2022-05-24 03:56:36.973 DEBUG 9992 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 03:56:36.974  INFO 9992 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 03:56:36.977 DEBUG 9992 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 03:56:36.978 ERROR 9992 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????? ???? : {}
+
+java.io.FileNotFoundException: .\images\null (지정된 파일을 찾을 수 없습니다)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at com.ssafy.vue.controller.MemberController.getInfo(MemberController.java:168)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2022-05-24 03:57:06.716  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-24 03:57:06.752  INFO 9992 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 364 ms
+2022-05-24 03:57:06.856  INFO 9992 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-24 03:57:06.892  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-24 03:57:06.942  INFO 9992 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-24 04:05:33.309  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-24 04:05:33.346  INFO 9992 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 370 ms
+2022-05-24 04:05:33.451  INFO 9992 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-24 04:05:33.486  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-24 04:05:33.535  INFO 9992 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-24 04:05:42.745  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-24 04:05:42.823  INFO 9992 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 387 ms
+2022-05-24 04:05:42.999  INFO 9992 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-24 04:05:43.054  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-24 04:05:43.105  INFO 9992 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-24 04:05:50.514  INFO 9992 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-24 04:05:50.516  INFO 9992 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-05-24 04:05:50.518 DEBUG 9992 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 04:05:50.535 DEBUG 9992 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?α??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzMyNzUwNTM1LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzMzYzNTAsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.KUpmdHCSsudOVwGddB2Ji7EOdCQ_fp2r9TsPT7W0aW8
+2022-05-24 04:05:50.542 DEBUG 9992 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 04:05:50.543  INFO 9992 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 04:05:50.544 DEBUG 9992 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 04:07:08.648 DEBUG 9992 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 04:07:08.651 DEBUG 9992 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?α??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzMyODI4NjUxLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzMzY0MjgsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.oKgSki7MPSEuTrLRyQvbCTQ7C58e80ABBohQO2l0dJU
+2022-05-24 04:07:08.657 DEBUG 9992 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 04:07:08.658  INFO 9992 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 04:07:08.659 DEBUG 9992 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 04:19:34.850 DEBUG 9992 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 04:19:34.852 DEBUG 9992 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ?α??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzMzNTc0ODUxLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzMzcxNzQsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.O7UalvshYhCE7aOPOyo4yXHzzdGUQVzg822ZR3hk4jo
+2022-05-24 04:19:34.857 DEBUG 9992 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 04:19:34.858  INFO 9992 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 04:19:34.859 DEBUG 9992 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 04:31:40.411 DEBUG 9992 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 04:31:40.413 DEBUG 9992 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?α??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzM0MzAwNDEzLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzMzc5MDAsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.cKEWxJVh80nXZJSTlMTPpn-QyvywUDlvDa5_5lvk5iI
+2022-05-24 04:31:40.419 DEBUG 9992 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 04:31:40.420  INFO 9992 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 04:31:40.421 DEBUG 9992 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 04:34:53.640 DEBUG 9992 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 04:34:53.642 DEBUG 9992 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?α??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzM0NDkzNjQyLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzMzgwOTMsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.wkb6a_ieX8JOZEzG_AV8Cs0i4ttW2dxfoh39lRADm1o
+2022-05-24 04:34:53.648 DEBUG 9992 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 04:34:53.649  INFO 9992 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 04:34:53.651 DEBUG 9992 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 04:36:57.074  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-24 04:36:57.110  INFO 9992 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 351 ms
+2022-05-24 04:36:57.220  INFO 9992 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-24 04:36:57.253  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-24 04:36:57.299  INFO 9992 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-24 04:38:10.256  INFO 9992 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-24 04:38:10.258  INFO 9992 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-05-24 04:38:10.260 DEBUG 9992 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 04:38:10.278 DEBUG 9992 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?α??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzM0NjkwMjc3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzMzgyOTAsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.9MZ3-4YPmwA1MHBSvU97vTQNTz7BWo5C6KuJ68Vwq3o
+2022-05-24 04:38:10.283 DEBUG 9992 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 04:38:10.285  INFO 9992 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 04:38:10.287 DEBUG 9992 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 04:41:02.847 DEBUG 9992 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 04:41:02.849 DEBUG 9992 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?α??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzM0ODYyODQ5LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzMzg0NjIsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.jxnJ35Lif62D6_4sMPF7XP4Was1rfptvrvc2xzvIvNE
+2022-05-24 04:41:02.854 DEBUG 9992 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 04:41:02.855  INFO 9992 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 04:41:02.856 DEBUG 9992 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 04:43:43.593 DEBUG 9992 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 04:43:43.595 DEBUG 9992 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?α??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzM1MDIzNTk1LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzMzg2MjMsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.vyEhEdxrr1irhkLQ-IHKg6wDgL8G5kwqnmW9Rbl9P74
+2022-05-24 04:43:43.601 DEBUG 9992 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 04:43:43.601  INFO 9992 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 04:43:43.603 DEBUG 9992 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 04:43:56.782 DEBUG 9992 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 04:43:56.784 DEBUG 9992 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ?α??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzM1MDM2NzgzLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzMzg2MzYsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.lJKAK7xl0t3ISoL0W6qffPwwwsMXd5NoCX2aqESKo0c
+2022-05-24 04:43:56.789 DEBUG 9992 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 04:43:56.790  INFO 9992 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 04:43:56.792 DEBUG 9992 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 04:44:46.214 DEBUG 9992 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 04:44:46.216 DEBUG 9992 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?α??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzM1MDg2MjE2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzMzg2ODYsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.JT_XLpLv0KhFMqkVAAViL9r0CotgF73XWCe9mzel2D8
+2022-05-24 04:44:46.222 DEBUG 9992 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 04:44:46.222  INFO 9992 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 04:44:46.224 DEBUG 9992 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 04:47:01.283 DEBUG 9992 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 04:47:01.285 DEBUG 9992 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?α??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzM1MjIxMjg1LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzMzg4MjEsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.fmoxzlZ0kJqtVRn5OohIX4YZ7_WppeWx5pi3IygZyJ4
+2022-05-24 04:47:01.292 DEBUG 9992 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 04:47:01.293  INFO 9992 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 04:47:01.295 DEBUG 9992 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 04:59:12.217  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-24 04:59:12.254  INFO 9992 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 378 ms
+2022-05-24 04:59:12.374  INFO 9992 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-24 04:59:12.408  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-24 04:59:12.454  INFO 9992 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged

@@ -21,8 +21,10 @@ public class MemberServiceImpl implements MemberService {
 	
 	@Override
 	public MemberDto login(MemberDto memberDto) throws Exception {
+		System.out.println("qwe");
 		if(memberDto.getUserid() == null || memberDto.getUserpwd() == null)
 			return null;
+			System.out.println("asd");
 		return memberMapper.login(memberDto);
 	}
 

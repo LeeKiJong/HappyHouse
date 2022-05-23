@@ -9,7 +9,6 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
 //import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,16 +52,11 @@ public class MemberController {
 	
 	@ApiOperation(value = "회원가입", notes = "회원가입 결과 메세지를 반환한다.")
 	@PostMapping(value = "/join")
-    public ResponseEntity<String> requestUploadFile(@ApiParam(value = "회원가입 시 필요한 회원정보(memberDto).", required = true) @RequestPart(value = "user") MemberDto memberDto,
-    		@RequestPart(value = "img") MultipartFile file) throws JsonMappingException, JsonProcessingException {
+    public ResponseEntity<String> join(@RequestBody @ApiParam(value = "회원가입 시 필요한 회원정보(memberDto).", required = true) MemberDto memberDto) throws JsonMappingException, JsonProcessingException {
 		logger.debug("회원가입 정보 : {}", memberDto.toString());
-		logger.debug(file.getOriginalFilename());
-		
+
         try {
         	if (memberService.join(memberDto)) {
-        		FileOutputStream writer = new FileOutputStream("./images/" + file.getOriginalFilename());
-                writer.write(file.getBytes());
-                writer.close();
 				return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
 			}
         } catch (Exception e) {
@@ -75,6 +69,7 @@ public class MemberController {
 	@PostMapping("/login")
 	public ResponseEntity<Map<String, Object>> login(
 			@RequestBody @ApiParam(value = "로그인 시 필요한 회원정보(아이디, 비밀번호).", required = true) MemberDto memberDto) {
+		logger.debug(memberDto.toString());
 		Map<String, Object> resultMap = new HashMap<>();
 		HttpStatus status = null;
 		try {
@@ -168,7 +163,15 @@ public class MemberController {
 				
 				//File file = new File("./images/" + memberDto.getFilename());
 				
-				FileInputStream reader = new FileInputStream("./images/" + memberDto.getFilename());
+				String path = "";
+				if (!new File("./images/" + memberDto.getFilename()).exists()) {
+					path = "./images/default.png";
+					memberDto.setFilename("default.png");
+				} 
+				else {
+					path = "./images/" + memberDto.getFilename();	
+				}
+				FileInputStream reader = new FileInputStream(path);
 				byte[] bytes = new byte[reader.available()];
 				reader.read(bytes, 0, reader.available());
 				reader.close();
