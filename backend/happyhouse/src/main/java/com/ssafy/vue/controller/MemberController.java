@@ -51,11 +51,11 @@ public class MemberController {
 	private MemberService memberService;
 
 	
-	@ApiOperation(value = "íšŒì›ê°€ì…", notes = "íšŒì›ê°€ì… ê²°ê³¼ ë©”ì„¸ì§€ë¥¼ ë°˜í™˜í•œë‹¤.")
+	@ApiOperation(value = "È¸¿ø°¡ÀÔ", notes = "È¸¿ø°¡ÀÔ °á°ú ¸Ş¼¼Áö¸¦ ¹İÈ¯ÇÑ´Ù.")
 	@PostMapping(value = "/join")
-    public ResponseEntity<String> requestUploadFile(@ApiParam(value = "íšŒì›ê°€ì… ì‹œ í•„ìš”í•œ íšŒì›ì •ë³´(memberDto).", required = true) @RequestPart(value = "user") MemberDto memberDto,
+    public ResponseEntity<String> requestUploadFile(@ApiParam(value = "È¸¿ø°¡ÀÔ ½Ã ÇÊ¿äÇÑ È¸¿øÁ¤º¸(memberDto).", required = true) @RequestPart(value = "user") MemberDto memberDto,
     		@RequestPart(value = "img") MultipartFile file) throws JsonMappingException, JsonProcessingException {
-		logger.debug("íšŒì›ê°€ì… ì •ë³´ : {}", memberDto.toString());
+		logger.debug("È¸¿ø°¡ÀÔ Á¤º¸ : {}", memberDto.toString());
 		logger.debug(file.getOriginalFilename());
 		
         try {
@@ -71,17 +71,17 @@ public class MemberController {
         return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
     }
 
-	@ApiOperation(value = "ë¡œê·¸ì¸", notes = "Access-tokenê³¼ ë¡œê·¸ì¸ ê²°ê³¼ ë©”ì„¸ì§€ë¥¼ ë°˜í™˜í•œë‹¤.", response = Map.class)
+	@ApiOperation(value = "·Î±×ÀÎ", notes = "Access-token°ú ·Î±×ÀÎ °á°ú ¸Ş¼¼Áö¸¦ ¹İÈ¯ÇÑ´Ù.", response = Map.class)
 	@PostMapping("/login")
 	public ResponseEntity<Map<String, Object>> login(
-			@RequestBody @ApiParam(value = "ë¡œê·¸ì¸ ì‹œ í•„ìš”í•œ íšŒì›ì •ë³´(ì•„ì´ë””, ë¹„ë°€ë²ˆí˜¸).", required = true) MemberDto memberDto) {
+			@RequestBody @ApiParam(value = "·Î±×ÀÎ ½Ã ÇÊ¿äÇÑ È¸¿øÁ¤º¸(¾ÆÀÌµğ, ºñ¹Ğ¹øÈ£).", required = true) MemberDto memberDto) {
 		Map<String, Object> resultMap = new HashMap<>();
 		HttpStatus status = null;
 		try {
 			MemberDto loginUser = memberService.login(memberDto);
 			if (loginUser != null) {
 				String token = jwtService.create("userid", loginUser.getUserid(), "access-token");// key, data, subject
-				logger.debug("ë¡œê·¸ì¸ í† í°ì •ë³´ : {}", token);
+				logger.debug("·Î±×ÀÎ ÅäÅ«Á¤º¸ : {}", token);
 				resultMap.put("access-token", token);
 				resultMap.put("message", SUCCESS);
 				status = HttpStatus.ACCEPTED;
@@ -90,79 +90,81 @@ public class MemberController {
 				status = HttpStatus.ACCEPTED;
 			}
 		} catch (Exception e) {
-			logger.error("ë¡œê·¸ì¸ ì‹¤íŒ¨ : {}", e);
+			logger.error("·Î±×ÀÎ ½ÇÆĞ : {}", e);
 			resultMap.put("message", e.getMessage());
 			status = HttpStatus.INTERNAL_SERVER_ERROR;
 		}
 		return new ResponseEntity<Map<String, Object>>(resultMap, status);
 	}
 
-	@ApiOperation(value = "íšŒì›ì •ë³´ ìˆ˜ì •", notes = "íšŒì›ì •ë³´ ìˆ˜ì • ê²°ê³¼ ë©”ì„¸ì§€ë¥¼ ë°˜í™˜í•œë‹¤.")
+	@ApiOperation(value = "È¸¿øÁ¤º¸ ¼öÁ¤", notes = "È¸¿øÁ¤º¸ ¼öÁ¤ °á°ú ¸Ş¼¼Áö¸¦ ¹İÈ¯ÇÑ´Ù.")
 	@PostMapping("/update/{userid}")
 	public ResponseEntity<String> update(
-			@RequestBody @ApiParam(value = "íšŒì›ì •ë³´ ìˆ˜ì • ì‹œ í•„ìš”í•œ íšŒì›ì •ë³´.", required = true) MemberDto memberDto,@PathVariable String userid, HttpServletRequest request) {
-		logger.debug("íšŒì›ì •ë³´ ìˆ˜ì • : {}", memberDto.toString());
-		logger.debug("í† í° id : {}", userid);
-		logger.debug("token : {} ", request.getHeader("access-token"));
+			@PathVariable("userid") @ApiParam(value = "¼öÁ¤ÇÒ È¸¿øÀÇ ¾ÆÀÌµğ.", required = true) String userid,
+			@ApiParam(value = "¼öÁ¤ ½Ã ÇÊ¿äÇÑ È¸¿øÁ¤º¸(memberDto).", required = true) @RequestPart(value = "user") MemberDto memberDto,
+		@RequestPart(value = "img", required = false) MultipartFile file) {
+		logger.debug("È¸¿øÁ¤º¸ ¼öÁ¤ : {}", memberDto.toString());
+		logger.debug("ÅäÅ« id : {}", userid);
+		logger.debug("token : {} ", userid);
 
-		if (jwtService.isUsable(request.getHeader("access-token"))) {
-			logger.info("ì‚¬ìš© ê°€ëŠ¥í•œ í† í°!!!");
-			if(memberDto.getUserid().equals(userid)) {
-				logger.info("í† í°ê³¼ ì•„ì´ë”” ì¼ì¹˜!!!");
-				try {
-					if (memberService.update(memberDto)) {
-						return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
-					}
-				} catch (Exception e) {
-					logger.error("ì •ë³´ì¡°íšŒ ì‹¤íŒ¨ : {}", e);
+		if (jwtService.isUsable(userid)) {
+			logger.info("»ç¿ë °¡´ÉÇÑ ÅäÅ«!!!");
+			try {
+				if (memberService.update(memberDto)) {
+					if (!new File("./images/" + memberDto.getFilename()).exists()) {
+						FileOutputStream writer = new FileOutputStream("./images/" + memberDto.getFilename());
+						writer.write(file.getBytes());
+						writer.close();
+					} 
+					return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
 				}
-			}else {
-				logger.info("í† í°ê³¼ ì•„ì´ë”” ë¶ˆì¼ì¹˜!!!");
+			} catch (Exception e) {
+				logger.error("Á¤º¸Á¶È¸ ½ÇÆĞ : {}", e);
 			}
 		} else {
-			logger.error("ì‚¬ìš© ë¶ˆê°€ëŠ¥ í† í°!!!");
+			logger.error("»ç¿ë ºÒ°¡´É ÅäÅ«!!!");
 		}
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
 	
-	@ApiOperation(value = "íšŒì› ì‚­ì œ", notes = "íšŒì›ì •ë³´ ì‚­ì œ ê²°ê³¼ ë©”ì„¸ì§€ë¥¼ ë°˜í™˜í•œë‹¤.")
+	@ApiOperation(value = "È¸¿ø »èÁ¦", notes = "È¸¿øÁ¤º¸ »èÁ¦ °á°ú ¸Ş¼¼Áö¸¦ ¹İÈ¯ÇÑ´Ù.")
 	@GetMapping("/info/delete/{userid}")
 	public ResponseEntity<String> delete(
-			@PathVariable("userid") @ApiParam(value = "ì‚­ì œí•  íšŒì›ì˜ ì•„ì´ë””.", required = true) String userid, HttpServletRequest request) {
-		logger.debug("íšŒì›ì •ë³´ ì‚­ì œ : {}", userid);
+			@PathVariable("userid") @ApiParam(value = "»èÁ¦ÇÒ È¸¿øÀÇ ¾ÆÀÌµğ.", required = true) String userid, HttpServletRequest request) {
+		logger.debug("È¸¿øÁ¤º¸ »èÁ¦ : {}", userid);
 		logger.debug("token : {} ", request.getHeader("access-token"));
 		
 		if (jwtService.isUsable(request.getHeader("access-token"))) {
-			logger.info("ì‚¬ìš© ê°€ëŠ¥í•œ í† í°!!!");
+			logger.info("»ç¿ë °¡´ÉÇÑ ÅäÅ«!!!");
 			try {
 				if (memberService.delete(userid)) {
 					return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
 				}
 			} catch (Exception e) {
-				logger.error("ì •ë³´ ì‚­ì œ ì‹¤íŒ¨ : {}", e);
+				logger.error("Á¤º¸ »èÁ¦ ½ÇÆĞ : {}", e);
 			}
 		} else {
-			logger.error("ì‚¬ìš© ë¶ˆê°€ëŠ¥ í† í°!!!");
+			logger.error("»ç¿ë ºÒ°¡´É ÅäÅ«!!!");
 		}
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 		
 	}
 	
 	
-	@ApiOperation(value = "íšŒì›ì¸ì¦", notes = "íšŒì› ì •ë³´ë¥¼ ë‹´ì€ Tokenì„ ë°˜í™˜í•œë‹¤.", response = Map.class)
+	@ApiOperation(value = "È¸¿øÀÎÁõ", notes = "È¸¿ø Á¤º¸¸¦ ´ãÀº TokenÀ» ¹İÈ¯ÇÑ´Ù.", response = Map.class)
 	@GetMapping("/info/{userid}")
 	public ResponseEntity<Map<String, Object>> getInfo(
-			@PathVariable("userid") @ApiParam(value = "ì¸ì¦í•  íšŒì›ì˜ ì•„ì´ë””.", required = true) String userid,
+			@PathVariable("userid") @ApiParam(value = "ÀÎÁõÇÒ È¸¿øÀÇ ¾ÆÀÌµğ.", required = true) String userid,
 			HttpServletRequest request) {
-		logger.debug("íšŒì›ì¡°íšŒ");
+		logger.debug("È¸¿øÁ¶È¸");
 		Map<String, Object> resultMap = new HashMap<>();
 		HttpStatus status = HttpStatus.ACCEPTED;
 		if (jwtService.isUsable(request.getHeader("access-token"))) {
-			logger.info("ì‚¬ìš© ê°€ëŠ¥í•œ í† í°!!!");
+			logger.info("»ç¿ë °¡´ÉÇÑ ÅäÅ«!!!");
 			try {
-//				ë¡œê·¸ì¸ ì‚¬ìš©ì ì •ë³´.
+//				·Î±×ÀÎ »ç¿ëÀÚ Á¤º¸.
 				MemberDto memberDto = memberService.userInfo(userid);
-				logger.debug("íšŒì›ì¡°íšŒ : {}", memberDto);
+				logger.debug("È¸¿øÁ¶È¸ : {}", memberDto);
 				
 				//File file = new File("./images/" + memberDto.getFilename());
 				
@@ -170,19 +172,18 @@ public class MemberController {
 				byte[] bytes = new byte[reader.available()];
 				reader.read(bytes, 0, reader.available());
 				reader.close();
-				
 				//resultMap.put("img", FileUtils.readFileToByteArray(file));
 				resultMap.put("img", bytes);
 				resultMap.put("userInfo", memberDto);
 				resultMap.put("message", SUCCESS);
 				status = HttpStatus.ACCEPTED;
 			} catch (Exception e) {
-				logger.error("ì •ë³´ì¡°íšŒ ì‹¤íŒ¨ : {}", e);
+				logger.error("Á¤º¸Á¶È¸ ½ÇÆĞ : {}", e);
 				resultMap.put("message", e.getMessage());
 				status = HttpStatus.INTERNAL_SERVER_ERROR;
 			}
 		} else {
-			logger.error("ì‚¬ìš© ë¶ˆê°€ëŠ¥ í† í°!!!");
+			logger.error("»ç¿ë ºÒ°¡´É ÅäÅ«!!!");
 			resultMap.put("message", FAIL);
 			status = HttpStatus.ACCEPTED;
 		}

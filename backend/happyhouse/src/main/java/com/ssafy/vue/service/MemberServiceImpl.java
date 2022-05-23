@@ -28,7 +28,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public boolean update(MemberDto memberDto) throws Exception {
-		if(memberDto.getUserid() == null || memberDto.getUserpwd() == null || memberDto.getEmail() ==null || memberDto.getUsername() == null)
+		if(memberDto.getUserid() == null || memberDto.getEmail() ==null || memberDto.getUsername() == null)
 			return false;
 		return memberMapper.update(memberDto)==1;
 	}
