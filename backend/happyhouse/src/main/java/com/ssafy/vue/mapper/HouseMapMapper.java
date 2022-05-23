@@ -3,6 +3,7 @@ package com.ssafy.vue.mapper;
 import java.sql.SQLException;
 import java.util.List;
 
+import com.ssafy.vue.dto.DateDto;
 import com.ssafy.vue.dto.HouseDealDto;
 import com.ssafy.vue.dto.HouseInfoDto;
 import com.ssafy.vue.dto.MapInfoDto;
@@ -19,5 +20,5 @@ public interface HouseMapMapper {
 	List<HouseInfoDto> getAptInName_dong(String aptName, String dong) throws SQLException;
 	List<HouseInfoDto> getAptInMap(MapInfoDto mapInfoDto) throws SQLException;
 	List<HouseDealDto> getAptDetail(String aptCode) throws SQLException;
-	
+	List<HouseDealDto> getAptDetailInDate(DateDto dateDto) throws SQLException;
 }

@@ -87,4 +87,12 @@ public class HouseMapController {
 
 		return new ResponseEntity<List<HouseDealDto>>(haHouseMapService.getAptDetail(aptCode), HttpStatus.OK);
 	}
+	@GetMapping("/apt/dealInDate")
+	public ResponseEntity<List<HouseDealDto>> apt_detailInDate(@RequestParam("aptCode") String aptCode, @RequestParam("from") String from,
+	@RequestParam("to") String to) throws Exception {
+		//logger.debug("deal : {}", haHouseMapService.getAptDetail(aptCode));
+		System.out.println(aptCode + " " + from +  " " + to);
+		return new ResponseEntity<List<HouseDealDto>>(haHouseMapService.getAptDetailInDate(aptCode, from, to),
+				HttpStatus.OK);
+	}
 }
