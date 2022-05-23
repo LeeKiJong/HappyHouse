@@ -37,5 +37,12 @@ async function houseListByAptName(params, success, fail) {
     .catch(fail);
 }
 
-export { sidoList, gugunList, dongList };
+async function houseListIfMovedMap(params, success, fail) {
+  await api
+    .post(`/map/apt/map`, JSON.stringify(params))
+    .then(success)
+    .catch(fail);
+}
+
+export { sidoList, gugunList, dongList, houseListIfMovedMap };
 export { houseListByAptName, houseListByDong, houseListByGugun, houseDeal };

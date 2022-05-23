@@ -157,6 +157,17 @@ const houseStore = {
         }
       );
     },
+    async getHouseListIfMovedMap({ commit }, mapInfo) {
+      await house.houseListIfMovedMap(
+        mapInfo,
+        (response) => {
+          commit("SET_HOUSE_LIST", response.data);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    },
     // getHouseList: ({ commit }, gugunCode) => {
     //   // vue cli enviroment variables 검색
     //   //.env.local file 생성.
