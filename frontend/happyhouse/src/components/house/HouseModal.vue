@@ -130,8 +130,22 @@ export default {
      * 동 정보로 아파트 리스트 가져오기
      */
     searchAptDong() {
+      const sido = document.querySelector("#sido");
+      const gugun = document.querySelector("#gugun");
+      const dong = document.querySelector("#dong");
+
+      const address = {
+        sido: sido.options[sido.selectedIndex].text,
+        gugun: gugun.options[gugun.selectedIndex].text,
+        dong: dong.options[dong.selectedIndex].text,
+      };
+
       this.dongCode = document.querySelector("#dong").value;
-      if (this.dongCode) this.getHouseListByDong(this.dongCode);
+
+      if (this.dongCode) {
+        this.getHouseListByDong(this.dongCode);
+        this.$emit("address", address);
+      }
     },
     sendKeyword() {
       if (this.aptName) this.getHouseListByAptName(this.aptName);

@@ -73,7 +73,7 @@
     </div>
     <hr class="my-2 horizontal dark" />
 
-    <house-modal></house-modal>
+    <house-modal @address="emit"></house-modal>
   </div>
 </template>
 
@@ -128,6 +128,9 @@ export default {
     setDisplayDetail() {
       this.display.list = false;
       this.display.detail = true;
+    },
+    emit(address) {
+      this.$emit("address", address);
     },
   },
   computed: {
