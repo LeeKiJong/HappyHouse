@@ -81,27 +81,21 @@ export default {
   components: {
     DatePicker,
   },
-  data() {
-    return {
-      house: "",
-      date: {
-        from: null,
-        to: null,
-        aptCode: this.$store.state.houseStore.deals,
-      },
-    };
-  },
   methods: {
     ...mapActions(houseStore, ["getAptDealInDate"]),
     async dateSelect() {
-      this.date.from = document.querySelector("#dateFrom").value;
-      this.date.to = document.querySelector("#dateTo").value;
-      if (this.date.from == null) {
+      const date = {
+        from: document.querySelector("#dateFrom").value.replaceAll(".", "-"),
+        to: document.querySelector("#dateTo").value.replaceAll(".", "-"),
+        aptCode: this.$store.state.houseStore.house.aptCode,
+      };
+
+      if (date.from == null) {
         alert("시작일을 입력해주세요");
-      } else if (this.date.to == null) {
+      } else if (date.to == null) {
         alert("종료일을 입력해주세요");
       } else {
-        await this.getAptDealInDate(this.date);
+        await this.getAptDealInDate(date);
       }
     },
   },

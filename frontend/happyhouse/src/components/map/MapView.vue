@@ -9,6 +9,7 @@
       this.$store.state.hideConfigButton ? 'd-none' : '',
     ]"
     @address="setCenterByAddress"
+    @house="setCenterByHouseLatLng"
   ></house-sidebar>
 </template>
 
@@ -48,6 +49,7 @@ export default {
   },
   methods: {
     ...mapMutations(["toggleConfigurator"]),
+    ...mapMutations(houseStore, ["SET_DONG"]),
     ...mapActions(houseStore, ["getHouseListIfMovedMap"]),
     // 지도 초기화
     async initMap() {
@@ -114,6 +116,10 @@ export default {
       this.setEventIfCompletedCluster();
 
       this.clusterer.addMarkers(this.markers, true);
+
+      const address = await this.searchCoordToDongCode(map);
+
+      this.SET_DONG(address.code);
     },
 
     // 지도 경계선의 위도 경도 가져오기
@@ -273,6 +279,26 @@ export default {
         );
       });
     },
+    async searchCoordToDongCode(map) {
+      const center = map.getCenter();
+
+      // 주소-좌표 변환 객체를 생성합니다
+      var geocoder = new kakao.maps.services.Geocoder();
+
+      return new Promise((resolve, reject) => {
+        geocoder.coord2RegionCode(
+          center.getLng(),
+          center.getLat(),
+          function (result, status) {
+            if (status === kakao.maps.services.Status.OK) {
+              resolve(result[0]);
+            } else {
+              reject(status);
+            }
+          }
+        );
+      });
+    },
     /**
      * 주소를 입력받고 해당하는 주소로 지도를 이동합니다.
      * @param {String} address 지번 주소
@@ -284,9 +310,12 @@ export default {
       this.map.setCenter(point);
       this.toggleEvent(this.map);
     },
+    setCenterByHouseLatLng(house) {
+      this.map.setCenter(new kakao.maps.LatLng(house.lat, house.lng));
+      this.map.setLevel(1);
+      console.log(1);
+    },
   },
-  computed: {},
-  watch: {},
 };
 </script>
 
