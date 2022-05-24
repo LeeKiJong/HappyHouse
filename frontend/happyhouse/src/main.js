@@ -20,11 +20,9 @@ import router from "./router";
 import "./assets/css/nucleo-icons.css";
 import "./assets/css/nucleo-svg.css";
 import SoftUIDashboard from "./soft-ui-dashboard";
-import naver from "vue3-naver-maps";
 
 const appInstance = createApp(App);
 appInstance.use(store);
 appInstance.use(router);
 appInstance.use(SoftUIDashboard);
-appInstance.use(naver, { clientId: "6rr2rf1q0p", subModules: "geocoder" });
 appInstance.mount("#app");

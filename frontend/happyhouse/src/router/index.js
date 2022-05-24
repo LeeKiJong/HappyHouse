@@ -42,7 +42,7 @@ const routes = [
   },
   {
     path: "/map",
-    name: "map",
+    name: "Map",
     component: MapView,
     children: [
       {

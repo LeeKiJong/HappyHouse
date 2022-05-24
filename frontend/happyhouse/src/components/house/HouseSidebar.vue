@@ -24,25 +24,34 @@
         class="btn bg-gradient-info w-100"
         data-toggle="modal"
         data-target="#exampleModal"
-        @click="modalToggle()"
+        @click="modalToggle('exampleModal')"
       >
         주소 검색
       </button>
-      <div v-if="display.list" class="house-list-card">
-        <house-list
-          title="검색된 아파트 목록"
-          :description="houses.length + '개의 아파트가 검색되었습니다.'"
-        >
-          <house-list-item
-            v-for="(house, index) in houses"
-            :key="index"
-            color="info"
-            icon="square-pin"
-            :title="house.apartmentName"
-            :date-time="house.roadName + ' ' + house.bonbun"
-            @click="onClickDetail(house)"
-          />
-        </house-list>
+      <div v-if="display.list">
+        <div class="house-list-card">
+          <house-list
+            title="검색된 아파트 목록"
+            :description="houses.length + '개의 아파트가 검색되었습니다.'"
+          >
+            <house-list-item
+              v-for="(house, index) in houses"
+              :key="index"
+              color="info"
+              icon="square-pin"
+              :title="house.apartmentName"
+              :date-time="house.roadName + ' ' + house.bonbun"
+              @click="onClickDetail(house)"
+            />
+          </house-list>
+        </div>
+        <vsud-input
+          id="aptName"
+          type="text"
+          placeholder="아파트 이름으로 검색하세요!"
+          name="aptName"
+          @keyup="searchByAptName"
+        />
       </div>
       <div v-if="display.detail">
         <div class="p-3 pb-0 card-header bg-transparent">
@@ -54,7 +63,10 @@
               <h6 class="text-center">아파트 세부 정보</h6>
             </div>
             <div class="col-md-1">
-              <i class="far fa-calendar-alt" />
+              <i
+                class="far fa-calendar-alt cursor-pointer"
+                @click="modalToggle('houseModalCalendar')"
+              />
             </div>
           </div>
           <div class="text-center">
@@ -72,17 +84,19 @@
       </div>
     </div>
     <hr class="my-2 horizontal dark" />
-
     <house-modal @address="emit"></house-modal>
+    <house-modal-calendar></house-modal-calendar>
   </div>
 </template>
 
 <script>
 import Modal from "bootstrap/js/src/modal";
 import HouseModal from "@/components/house/HouseModal.vue";
+import HouseModalCalendar from "@/components/house/HouseModalCalendar.vue";
 import HouseList from "@/components/house/HouseList.vue";
 import HouseListItem from "@/components/house/HouseListItem.vue";
 import HouseDetail from "@/components/house/HouseDetail.vue";
+import VsudInput from "@/components/vsud/VsudInput.vue";
 
 import { mapMutations, mapActions } from "vuex";
 
@@ -95,6 +109,8 @@ export default {
     HouseList,
     HouseListItem,
     HouseDetail,
+    VsudInput,
+    HouseModalCalendar,
   },
   props: ["toggle"],
   data() {
@@ -109,9 +125,9 @@ export default {
   },
   methods: {
     ...mapMutations(houseStore, ["SET_DETAIL_HOUSE"]),
-    ...mapActions(houseStore, ["getHouseDeal"]),
-    modalToggle() {
-      new Modal(document.getElementById("exampleModal"), {}).show();
+    ...mapActions(houseStore, ["getHouseDeal", "getHouseListByAptName"]),
+    modalToggle(id) {
+      new Modal(document.getElementById(id), {}).show();
     },
     async onClickDetail(house) {
       this.setDetailHouse(house);
@@ -131,6 +147,9 @@ export default {
     },
     emit(address) {
       this.$emit("address", address);
+    },
+    searchByAptName() {
+      this.getHouseListByAptName(document.querySelector("#aptName").value);
     },
   },
   computed: {

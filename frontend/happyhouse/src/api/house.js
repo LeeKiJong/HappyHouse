@@ -30,6 +30,13 @@ async function houseDeal(params, success, fail) {
   await api.get(`/map/apt/deal`, { params: params }).then(success).catch(fail);
 }
 
+async function houseDealInDate(params, success, fail) {
+  await api
+    .get(`/map/apt/dealInDate`, { params: params })
+    .then(success)
+    .catch(fail);
+}
+
 async function houseListByAptName(params, success, fail) {
   await api
     .get(`/map/apt/aptName`, { params: params })
@@ -44,5 +51,5 @@ async function houseListIfMovedMap(params, success, fail) {
     .catch(fail);
 }
 
-export { sidoList, gugunList, dongList, houseListIfMovedMap };
+export { sidoList, gugunList, dongList, houseListIfMovedMap, houseDealInDate };
 export { houseListByAptName, houseListByDong, houseListByGugun, houseDeal };
