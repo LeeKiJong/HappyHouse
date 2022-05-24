@@ -1051,3 +1051,765 @@ java.io.FileNotFoundException: .\images\null (走舛吉 督析聖 達聖 呪 蒸柔艦陥)
 2022-05-24 04:59:12.374  INFO 9992 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
 2022-05-24 04:59:12.408  INFO 9992 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
 2022-05-24 04:59:12.454  INFO 9992 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-24 09:47:26.743  INFO 19648 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-05-24 09:47:26.746  INFO 19648 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-05-24 09:47:28.328  INFO 19648 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-24 09:47:28.499  INFO 19648 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1752 ms
+2022-05-24 09:47:29.156  INFO 19648 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-24 09:47:29.306  INFO 19648 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-24 09:48:15.937  INFO 19648 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-24 09:48:15.939  INFO 19648 --- [nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-05-24 09:48:16.002 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=3, username=333, userpwd=33, email=3333, filename=null, joindate=null]
+2022-05-24 09:48:18.594 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=4, username=333, userpwd=33, email=3333, filename=null, joindate=null]
+2022-05-24 09:48:20.028 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=5, username=333, userpwd=33, email=3333, filename=null, joindate=null]
+2022-05-24 09:48:23.059 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=qwe, username=333, userpwd=33, email=3333, filename=null, joindate=null]
+2022-05-24 09:48:24.928 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : MemberDto [userid=qwe, username=null, userpwd=33, email=null, filename=null, joindate=null]
+2022-05-24 09:48:24.973 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzUzMzA0OTQ2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNTY5MDQsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6InF3ZSJ9.9UIgplnf70VQAy-3FYMuv88LK3NE6d2XQW0a5vRNB5U
+2022-05-24 09:48:24.993 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 09:48:25.010  INFO 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 09:48:25.013 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=qwe, username=333, userpwd=null, email=3333, filename=null, joindate=2022-05-24 09:48:23]
+2022-05-24 09:51:10.974 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 09:51:10.976 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzUzNDcwOTc2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNTcwNzAsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.BzY9cMdpiuYpzaUjM6f4sM5nT-IrwYUdX7XdqJf6mR8
+2022-05-24 09:51:10.994 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 09:51:10.996  INFO 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 09:51:10.997 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 10:02:44.853 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 10:02:44.856 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU0MTY0ODU2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNTc3NjQsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.pUmLVei8xJcsUw0hs3IWCBENL3cid08WhfLb7ljIuAs
+2022-05-24 10:02:44.865 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 10:02:44.867  INFO 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 10:02:44.871 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 10:03:41.700 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 10:03:41.703 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU0MjIxNzAzLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNTc4MjEsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.ojZULQ97HpbBbUJUWf5FXmBX5YWWU3c2L0Q_05K8Rqk
+2022-05-24 10:03:41.711 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 10:03:41.712  INFO 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 10:03:41.716 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 10:04:50.051 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 10:04:50.054 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU0MjkwMDUzLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNTc4OTAsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.EdzJukC_ptgOZweDvKxB8uaGsvUL02Tue4eNS0lp5JA
+2022-05-24 10:04:50.060 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 10:04:50.062  INFO 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 10:04:50.065 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 10:06:52.230 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 10:06:52.232 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU0NDEyMjMyLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNTgwMTIsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.4ftfYnzvdKKx626n2l_bXzC5f81NtPs2v8gLz0fpDV8
+2022-05-24 10:06:52.239 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 10:06:52.240  INFO 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 10:06:52.243 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 10:08:16.141 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 10:08:16.144 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU0NDk2MTQzLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNTgwOTYsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.hqtKuYfAogpqrurZqDCgPmQgMeFHyvJBwVf6j8XokF8
+2022-05-24 10:08:16.152 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 10:08:16.153  INFO 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 10:08:16.156 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 10:09:03.735 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 10:09:03.738 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU0NTQzNzM4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNTgxNDMsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.ow4ynyHbL1PzvySNhNDjVOwv2GfSZjA6g8ta7KDAT5E
+2022-05-24 10:09:03.749 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 10:09:03.750  INFO 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 10:09:03.753 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 10:09:19.792 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 10:09:19.795 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU0NTU5Nzk0LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNTgxNTksInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.UYzDoxIrzVxBeD8VutDcamtOLurlbRYgTMCwPBtdK1s
+2022-05-24 10:09:19.800 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 10:09:19.801  INFO 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 10:09:19.803 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 10:13:11.875 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 10:13:11.879 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU0NzkxODc5LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNTgzOTEsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.Bowv_p_-vwA4SK7rd89AoxFN04Wyscd1f78Yp2ze8RY
+2022-05-24 10:13:11.886 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 10:13:11.888  INFO 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 10:13:11.891 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 10:20:46.940 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 10:20:46.944 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU1MjQ2OTQ0LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNTg4NDYsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.L-yFJlCIStnsdD0J0RRYG5mvIu2iqM4eXouiy7F1EQ8
+2022-05-24 10:20:46.952 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 10:20:46.954  INFO 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 10:20:46.956 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 10:22:59.615 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 10:22:59.617 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU1Mzc5NjE3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNTg5NzksInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.-E3691iKsL4A_6q3Vl9byOtypfbDc7EJBr8Zv-SjgdI
+2022-05-24 10:22:59.623 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 10:22:59.624  INFO 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 10:22:59.627 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 10:23:47.273 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 10:23:47.276 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU1NDI3Mjc1LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNTkwMjcsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.Io1a4gPAIdtlikzzBkZt8h5icskoBNxjdP9Gd_Qg5IU
+2022-05-24 10:23:47.284 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 10:23:47.286  INFO 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 10:23:47.289 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 10:26:46.707 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 10:26:46.710 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU1NjA2NzEwLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNTkyMDYsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.nb0-KtFR0_ty-PhOaJ7VvJoBzff31s6R4ScbOp5qUIY
+2022-05-24 10:26:46.717 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 10:26:46.718  INFO 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 10:26:46.721 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 10:29:20.215 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 10:29:20.217 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU1NzYwMjE3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNTkzNjAsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.QSC1DeXhUNlW1Gp5UGRE9TweKTa5aHLsYbbEQ98AmjU
+2022-05-24 10:29:20.223 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 10:29:20.224  INFO 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 10:29:20.226 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 10:38:42.507 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 10:38:42.510 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU2MzIyNTEwLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNTk5MjIsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.3zKTONhxq_V6YmNlj5H_HmBVGE7hVAUP1dKNPspAL1c
+2022-05-24 10:38:42.519 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 10:38:42.521  INFO 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 10:38:42.524 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 10:38:57.094 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 10:38:57.098 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU2MzM3MDk3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNTk5MzcsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.CV8gbqQ44FBw823B12NlkeeoY-Q1edMHvIBorw6STiA
+2022-05-24 10:38:57.107 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 10:38:57.108  INFO 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 10:38:57.111 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 10:46:44.152 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 10:46:44.155 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU2ODA0MTU1LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjA0MDQsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.v9bbL-g5BXrYMq1k5Hkebk5BFuf6mTxImPtQqplt8jA
+2022-05-24 10:46:44.162 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 10:46:44.163  INFO 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 10:46:44.165 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 10:54:39.535 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 10:54:39.538 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU3Mjc5NTM4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjA4NzksInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.H5qQEceLSFnqdrcCi_DAtCq3UN7LhjFFSWL6OvZpuV0
+2022-05-24 10:54:39.544 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 10:54:39.546  INFO 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 10:54:39.548 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 10:55:03.869 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 10:55:03.872 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU3MzAzODcyLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjA5MDMsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.PgOt0thruIjk9cvpEmCO84n4p586pCsfvJ_548GK4MA
+2022-05-24 10:55:03.880 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 10:55:03.881  INFO 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 10:55:03.884 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 10:55:35.617 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 10:55:35.620 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU3MzM1NjE5LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjA5MzUsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.RbdC9sG8HWKpvB3Kj00VL-rFhQCV8errAzhdEVyI-qY
+2022-05-24 10:55:35.627 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 10:55:35.628  INFO 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 10:55:35.632 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 11:04:26.164 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 11:04:26.167 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU3ODY2MTY3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjE0NjYsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.Ijwa5gymS_bjCcwtr17WiNkfC8gB7XVdfF_f-ufp3Mc
+2022-05-24 11:04:26.173 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 11:04:26.174  INFO 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 11:04:26.176 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 11:08:38.260 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 11:08:38.263 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU4MTE4MjYzLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjE3MTgsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.-hg5mIQVCRV3i4qD846L9geCQxHNiAfAa2w80D0bxdQ
+2022-05-24 11:08:38.269 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 11:08:38.270  INFO 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 11:08:38.272 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 11:24:44.664 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 11:24:44.667 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU5MDg0NjY3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjI2ODQsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.HyQlUCLljK7bVjI7j5ky0i8WY4mVqVgi3DwF3aUUwQQ
+2022-05-24 11:24:44.673 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 11:24:44.674  INFO 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 11:24:44.677 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 11:31:23.695 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 11:31:23.698 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU5NDgzNjk4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjMwODMsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.R0T8ZGBK45K_gNSxcfeBTiY0AM-S_fNLccEb_V0W6Ks
+2022-05-24 11:31:23.713 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 11:31:23.714  INFO 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 11:31:23.715 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 03:26:11]
+2022-05-24 11:31:32.080 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=0222.JPG, joindate=null]
+2022-05-24 11:31:32.080 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??? id : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU5NDgzNjk4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjMwODMsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.R0T8ZGBK45K_gNSxcfeBTiY0AM-S_fNLccEb_V0W6Ks
+2022-05-24 11:31:32.080 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : token : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU5NDgzNjk4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjMwODMsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.R0T8ZGBK45K_gNSxcfeBTiY0AM-S_fNLccEb_V0W6Ks 
+2022-05-24 11:31:32.081  INFO 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 11:33:21.613 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=1, username=111, userpwd=11, email=1111, filename=null, joindate=null]
+2022-05-24 11:33:23.167 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 11:33:23.169 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU5NjAzMTY5LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjMyMDMsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.jQaTuwo0tsnKg8q-U_dDQVVnVWbrFmJC5kAPqyVF6wA
+2022-05-24 11:33:23.174 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 11:33:23.175  INFO 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 11:33:23.177 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 11:33:21]
+2022-05-24 11:34:58.659 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 11:34:58.661 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU5Njk4NjYxLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjMyOTgsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.LBzP_Iw8ZFGMxIcipDPW1sCh4vnBj1vVvtQ_rdJcGSo
+2022-05-24 11:34:58.667 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 11:34:58.668  INFO 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 11:34:58.670 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 11:33:21]
+2022-05-24 11:39:13.523 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 11:39:13.525 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzU5OTUzNTI1LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjM1NTMsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.Ce2B9rAfJtlyfA2sOHc0w33n8cQQNfiMOTPQcj2_I7Y
+2022-05-24 11:39:13.531 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 11:39:13.532  INFO 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 11:39:13.534 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 11:33:21]
+2022-05-24 11:40:41.525 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 11:40:41.528 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzYwMDQxNTI4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjM2NDEsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.jZ1ec3sh_sP7pDIotdSaBBarxOmBaV6UTz9bim2OeIY
+2022-05-24 11:40:41.535 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 11:40:41.536  INFO 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 11:40:41.539 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 11:33:21]
+2022-05-24 11:43:31.279 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 11:43:31.282 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzYwMjExMjgyLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjM4MTEsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.8Eg-njJhD2TZfxS_ns8hevvheiINVbVzKyAguMOI8Ac
+2022-05-24 11:43:31.289 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 11:43:31.290  INFO 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 11:43:31.292 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 11:33:21]
+2022-05-24 11:43:39.858 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=1, username=222, userpwd=null, email=2222, filename=0216.JPG, joindate=null]
+2022-05-24 11:43:39.858 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??? id : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzYwMjExMjgyLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjM4MTEsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.8Eg-njJhD2TZfxS_ns8hevvheiINVbVzKyAguMOI8Ac
+2022-05-24 11:43:39.858 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : token : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzYwMjExMjgyLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjM4MTEsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.8Eg-njJhD2TZfxS_ns8hevvheiINVbVzKyAguMOI8Ac 
+2022-05-24 11:43:39.859  INFO 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 12:36:29.046 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 12:36:29.051 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzYzMzg5MDUxLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjY5ODksInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.gzpF1YSY6VL_eX9nVWeyU1qP066gl74h7KaSoTX3fyI
+2022-05-24 12:36:29.058 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 12:36:29.059  INFO 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 12:36:29.061 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=222, userpwd=null, email=2222, filename=0216.JPG, joindate=2022-05-24 11:33:21]
+2022-05-24 12:37:21.426 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 12:37:21.429 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzYzNDQxNDI5LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjcwNDEsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.9G_57qoklnAeIIPPqpqIEjwOxeZ1HNL7cGTJOkbEbNI
+2022-05-24 12:37:21.436 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 12:37:21.437  INFO 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 12:37:21.441 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=222, userpwd=null, email=2222, filename=0216.JPG, joindate=2022-05-24 11:33:21]
+2022-05-24 12:39:53.755 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 12:39:53.758 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzYzNTkzNzU4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjcxOTMsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.dWoLdDgoydgggNgeIu0QSgQnW8qHyPi-HOKxAXfJy0Q
+2022-05-24 12:39:53.766 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 12:39:53.767  INFO 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 12:39:53.769 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=222, userpwd=null, email=2222, filename=0216.JPG, joindate=2022-05-24 11:33:21]
+2022-05-24 12:39:55.073 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??????? ???? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzYzNTkzNzU4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjcxOTMsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.dWoLdDgoydgggNgeIu0QSgQnW8qHyPi-HOKxAXfJy0Q
+2022-05-24 12:39:55.073 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : token : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzYzNTkzNzU4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjcxOTMsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.dWoLdDgoydgggNgeIu0QSgQnW8qHyPi-HOKxAXfJy0Q 
+2022-05-24 12:39:55.074  INFO 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 12:40:19.036 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??????? ???? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzYzNTkzNzU4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjcxOTMsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.dWoLdDgoydgggNgeIu0QSgQnW8qHyPi-HOKxAXfJy0Q
+2022-05-24 12:40:19.037 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : token : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzYzNTkzNzU4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjcxOTMsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.dWoLdDgoydgggNgeIu0QSgQnW8qHyPi-HOKxAXfJy0Q 
+2022-05-24 12:40:19.038  INFO 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 12:41:15.288 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 12:41:15.290 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzYzNjc1MjkwLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjcyNzUsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.rWAtbMw04f6DgkT-_LKnNp1zRL3-eaIPe1QoWv5zBKA
+2022-05-24 12:41:15.297 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 12:41:15.298  INFO 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 12:41:15.300 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=222, userpwd=null, email=2222, filename=0216.JPG, joindate=2022-05-24 11:33:21]
+2022-05-24 12:41:15.895 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????? ???? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzYzNjc1MjkwLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjcyNzUsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.rWAtbMw04f6DgkT-_LKnNp1zRL3-eaIPe1QoWv5zBKA
+2022-05-24 12:41:15.895 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : token : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzYzNjc1MjkwLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjcyNzUsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.rWAtbMw04f6DgkT-_LKnNp1zRL3-eaIPe1QoWv5zBKA 
+2022-05-24 12:41:15.896  INFO 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 12:41:48.738 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??????? ???? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzYzNjc1MjkwLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjcyNzUsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.rWAtbMw04f6DgkT-_LKnNp1zRL3-eaIPe1QoWv5zBKA
+2022-05-24 12:41:48.739 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : token : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzYzNjc1MjkwLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjcyNzUsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.rWAtbMw04f6DgkT-_LKnNp1zRL3-eaIPe1QoWv5zBKA 
+2022-05-24 12:41:48.740  INFO 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 12:42:35.519 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 12:42:35.521 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzYzNzU1NTIxLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjczNTUsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.m8hYRJibtflx5E3jPtgj4h_wKA4GxEXiJrrxUzBD55o
+2022-05-24 12:42:35.527 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 12:42:35.528  INFO 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 12:42:35.529 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=222, userpwd=null, email=2222, filename=0216.JPG, joindate=2022-05-24 11:33:21]
+2022-05-24 12:42:43.411 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??????? ???? : 1
+2022-05-24 12:42:43.411 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : token : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzYzNzU1NTIxLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjczNTUsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.m8hYRJibtflx5E3jPtgj4h_wKA4GxEXiJrrxUzBD55o 
+2022-05-24 12:42:43.412  INFO 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 12:44:42.131 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 12:44:43.485 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 12:44:50.096 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 12:44:57.493 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 12:45:27.714 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 12:45:36.484 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=1, username=111, userpwd=11, email=1111, filename=null, joindate=null]
+2022-05-24 12:45:38.542 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 12:45:38.546 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzYzOTM4NTQ2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjc1MzgsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.Pu88vWXee2dpf_Lk-RgJydkDunqSS01rr9gFbKsonzw
+2022-05-24 12:45:38.551 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 12:45:38.552  INFO 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 12:45:38.554 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 12:45:36]
+2022-05-24 12:54:42.418 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 12:54:42.421 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY0NDgyNDIxLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjgwODIsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.ZItec6VYsxhvWubBP0k-HC-MvTQWrr5NAY_3ONIcbCw
+2022-05-24 12:54:42.428 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 12:54:42.429  INFO 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 12:54:42.433 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 12:45:36]
+2022-05-24 12:57:59.345 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 12:57:59.348 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY0Njc5MzQ4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjgyNzksInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.ONJLvRvc-FFxQcsCoOxhdUR6pficMzk9TYPaRM11-CE
+2022-05-24 12:57:59.354 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 12:57:59.354  INFO 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 12:57:59.356 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 12:45:36]
+2022-05-24 12:59:40.859 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 12:59:40.861 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY0NzgwODYxLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjgzODAsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.G8I3X7TLb_LDYUfXIKKjzuVUEt8NUxVqzO2SG7U82C0
+2022-05-24 12:59:40.876 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 12:59:40.878  INFO 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 12:59:40.879 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 12:45:36]
+2022-05-24 13:11:29.860 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:11:29.861  INFO 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:11:29.864 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 12:45:36]
+2022-05-24 13:11:41.941 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:11:41.943  INFO 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:11:41.945 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 12:45:36]
+2022-05-24 13:12:08.557 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:12:08.558  INFO 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:12:08.560 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 12:45:36]
+2022-05-24 13:12:51.116 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:12:51.117  INFO 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:12:51.120 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 12:45:36]
+2022-05-24 13:13:15.957 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:13:15.959  INFO 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:13:15.961 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 12:45:36]
+2022-05-24 13:13:33.269 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:13:33.270  INFO 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:13:33.272 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 12:45:36]
+2022-05-24 13:13:46.641 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=1, username=2222, userpwd=null, email=222222, filename=0302.JPG, joindate=null]
+2022-05-24 13:13:46.642 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??? id : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY0Njc5MzQ4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjgyNzksInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.ONJLvRvc-FFxQcsCoOxhdUR6pficMzk9TYPaRM11-CE
+2022-05-24 13:13:46.643 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : token : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY0Njc5MzQ4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjgyNzksInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.ONJLvRvc-FFxQcsCoOxhdUR6pficMzk9TYPaRM11-CE 
+2022-05-24 13:13:46.644  INFO 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:13:47.521 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:13:47.522  INFO 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:13:47.524 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=2222, userpwd=null, email=222222, filename=0302.JPG, joindate=2022-05-24 12:45:36]
+2022-05-24 13:13:55.636 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:13:55.637  INFO 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:13:55.639 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=2222, userpwd=null, email=222222, filename=0302.JPG, joindate=2022-05-24 12:45:36]
+2022-05-24 13:13:58.943 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:13:58.945  INFO 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:13:58.948 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=2222, userpwd=null, email=222222, filename=0302.JPG, joindate=2022-05-24 12:45:36]
+2022-05-24 13:17:27.740 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 13:17:27.744 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY1ODQ3NzQzLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjk0NDcsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.iVRbimqRWjx3vDnI2ku7OJT5iLQFxeYAzvOjXU86BOw
+2022-05-24 13:17:27.750 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:17:27.751  INFO 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:17:27.753 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=2222, userpwd=null, email=222222, filename=0302.JPG, joindate=2022-05-24 12:45:36]
+2022-05-24 13:18:12.183 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 13:18:12.186 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY1ODkyMTg1LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjk0OTIsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.fj-jIPgB-GL8BEuFzLzLyM2meldGgcblDk_ovQQa-B8
+2022-05-24 13:18:12.193 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:18:12.194  INFO 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:18:12.196 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=2222, userpwd=null, email=222222, filename=0302.JPG, joindate=2022-05-24 12:45:36]
+2022-05-24 13:19:36.192 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 13:19:36.194 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY1OTc2MTk0LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjk1NzYsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.vS16Pnq2LsDe83RcBsgkGzcT_d3Yb029R7kFPwGx03U
+2022-05-24 13:19:36.204 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:19:36.205  INFO 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:19:36.206 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=2222, userpwd=null, email=222222, filename=0302.JPG, joindate=2022-05-24 12:45:36]
+2022-05-24 13:21:29.890 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 13:21:29.893 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY2MDg5ODkyLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjk2ODksInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.XxDyQ3yIPFDVqpNoDZg1uXEX7A8u1y8mMR0OX7pSOS4
+2022-05-24 13:21:29.899 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:21:29.900  INFO 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:21:29.902 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=2222, userpwd=null, email=222222, filename=0302.JPG, joindate=2022-05-24 12:45:36]
+2022-05-24 13:25:52.366 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 13:25:52.370 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY2MzUyMzY5LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNjk5NTIsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.Quu1TximI7tP01brI0u0IwyFPzShJ_IBg3SXnawzdYc
+2022-05-24 13:25:52.377 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:25:52.378  INFO 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:25:52.383 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=2222, userpwd=null, email=222222, filename=0302.JPG, joindate=2022-05-24 12:45:36]
+2022-05-24 13:28:02.058 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 13:28:02.060 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY2NDgyMDYwLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzAwODIsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.KB-NogYAKoMy7ztEzX4X5xRaBL6I7tr2GTBS69cxJ08
+2022-05-24 13:28:02.070 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:28:02.071  INFO 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:28:02.073 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=2222, userpwd=null, email=222222, filename=0302.JPG, joindate=2022-05-24 12:45:36]
+2022-05-24 13:29:54.549 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 13:29:54.551 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY2NTk0NTUxLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzAxOTQsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.AAMUQ2iqToqnJoeInLKhbtZyjpgyidhkI9LhjJuNSH4
+2022-05-24 13:29:54.562 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:29:54.563  INFO 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:29:54.566 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=2222, userpwd=null, email=222222, filename=0302.JPG, joindate=2022-05-24 12:45:36]
+2022-05-24 13:29:54.574 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:29:54.575  INFO 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:29:54.578 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=2222, userpwd=null, email=222222, filename=0302.JPG, joindate=2022-05-24 12:45:36]
+2022-05-24 13:30:18.318 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:30:18.319  INFO 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:30:18.321 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=2222, userpwd=null, email=222222, filename=0302.JPG, joindate=2022-05-24 12:45:36]
+2022-05-24 13:30:55.967 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:30:55.968  INFO 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:30:55.970 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=2222, userpwd=null, email=222222, filename=0302.JPG, joindate=2022-05-24 12:45:36]
+2022-05-24 13:32:55.750 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 13:32:55.752 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY2Nzc1NzUyLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzAzNzUsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.6CNQsuah5QDthNodKKlK3oZghbJEIz2zX-US6BjxM8o
+2022-05-24 13:32:55.763 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:32:55.764  INFO 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:32:55.767 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=2222, userpwd=null, email=222222, filename=0302.JPG, joindate=2022-05-24 12:45:36]
+2022-05-24 13:32:55.777 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:32:55.778  INFO 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:32:55.780 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=2222, userpwd=null, email=222222, filename=0302.JPG, joindate=2022-05-24 12:45:36]
+2022-05-24 13:32:57.439 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????? ???? : 1
+2022-05-24 13:32:57.439 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : token : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY2Nzc1NzUyLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzAzNzUsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.6CNQsuah5QDthNodKKlK3oZghbJEIz2zX-US6BjxM8o 
+2022-05-24 13:32:57.440  INFO 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:43:15.460 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 13:43:18.251 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 13:46:24.265 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 13:46:28.220 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 13:46:51.418 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 13:46:55.156 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 13:47:04.138 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=1, username=111, userpwd=11, email=1111, filename=null, joindate=null]
+2022-05-24 13:47:05.744 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 13:47:05.746 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY3NjI1NzQ2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzEyMjUsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.ADlUYkUrfDBqQIewLP2DnrRCIH_IxLrgROcrX0f3-iw
+2022-05-24 13:47:05.751 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:47:05.752  INFO 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:47:05.754 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 13:47:31.404 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 13:47:31.407 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY3NjUxNDA2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzEyNTEsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.nKYnTBF_1t3W2PgCj-muwwAYVbw2pTiNc07CMlLDk1M
+2022-05-24 13:47:31.414 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:47:31.415  INFO 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:47:31.417 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 13:47:31.427 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:47:31.428  INFO 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:47:31.430 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 13:48:13.837 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:48:13.838  INFO 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:48:13.840 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 13:50:23.456 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:50:23.456  INFO 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:50:23.459 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 13:55:02.554 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 13:55:02.557 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY4MTAyNTU3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzE3MDIsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.7xfFN0qAAV0XUcD7PiVSxFdBgLvC2Gcrg-jikZXzr5U
+2022-05-24 13:55:02.564 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:55:02.565  INFO 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:55:02.567 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 13:55:09.243 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 13:55:09.245 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY4MTA5MjQ0LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzE3MDksInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.Ye25F2L0PvnVfJoPDG6YPrjYCVvxc4Z6_7Wduuozo_o
+2022-05-24 13:55:09.251 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:55:09.251  INFO 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:55:09.253 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 13:55:09.263 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:55:09.264  INFO 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:55:09.265 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 13:57:48.643 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 13:57:48.646 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY4MjY4NjQ2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzE4NjgsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.pUDr0YJpLJ2hw4WtJRIpMEsfBbcSo2CS4GPZ9Ikl88A
+2022-05-24 13:57:48.651 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 13:57:48.652  INFO 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 13:57:48.653 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 14:12:13.771 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 14:12:13.773 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY5MTMzNzczLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzI3MzMsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.LmYZezOo_ANriozzBvq6k1LmCRoRkCNYJXqjEV0KY_A
+2022-05-24 14:12:13.780 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 14:12:13.781  INFO 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 14:12:13.783 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 14:12:15.154 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 14:12:15.156 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY5MTM1MTU2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzI3MzUsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.rYDWUcdb_qjtSsrnZbOEuhEmjVm968ufpPGhL80l0MI
+2022-05-24 14:12:15.161 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 14:12:15.162  INFO 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 14:12:15.164 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 14:12:15.172 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 14:12:15.173  INFO 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 14:12:15.175 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 14:12:19.331 DEBUG 19648 --- [io-9999-exec-10] c.s.vue.controller.HouseMapController    : MapInfoDto [level=5, swLat=36.087946235733234, swLng=128.39794900913694, neLat=36.11410654755617, neLng=128.4709118456629]
+2022-05-24 14:12:21.744 DEBUG 19648 --- [nio-9999-exec-1] c.s.vue.controller.HouseMapController    : MapInfoDto [level=6, swLat=36.07558138364639, swLng=128.37939201639713, neLat=36.12787984426615, neLng=128.5253301485328]
+2022-05-24 14:12:23.803 DEBUG 19648 --- [nio-9999-exec-2] c.s.vue.controller.HouseMapController    : MapInfoDto [level=6, swLat=36.0846591008299, swLng=128.3223538016291, neLat=36.13702746302716, neLng=128.4682735135985]
+2022-05-24 14:14:52.728 DEBUG 19648 --- [nio-9999-exec-5] c.s.vue.controller.HouseMapController    : MapInfoDto [level=5, swLat=36.08770084706091, swLng=128.39889945473152, neLat=36.11386057893614, neLng=128.4718623565525]
+2022-05-24 14:14:53.799 DEBUG 19648 --- [nio-9999-exec-6] c.s.vue.controller.HouseMapController    : MapInfoDto [level=6, swLat=36.07385467406971, swLng=128.38377977793695, neLat=36.12614781003857, neLng=128.5297173934268]
+2022-05-24 14:14:55.168 DEBUG 19648 --- [nio-9999-exec-7] c.s.vue.controller.HouseMapController    : MapInfoDto [level=6, swLat=36.0805671070046, swLng=128.31915469373487, neLat=36.13293962018331, neLng=128.4650647501528]
+2022-05-24 14:14:58.685 DEBUG 19648 --- [nio-9999-exec-8] c.s.vue.controller.HouseMapController    : MapInfoDto [level=6, swLat=36.089888513996016, swLng=128.2973716026781, neLat=36.142287423320795, neLng=128.44328554323934]
+2022-05-24 14:15:02.353 DEBUG 19648 --- [nio-9999-exec-9] c.s.vue.controller.HouseMapController    : MapInfoDto [level=6, swLat=36.08811968599252, swLng=128.30755675649198, neLat=36.140506123538906, neLng=128.4534737341483]
+2022-05-24 14:15:10.625 DEBUG 19648 --- [io-9999-exec-10] c.s.vue.controller.HouseMapController    : MapInfoDto [level=6, swLat=36.09117727913441, swLng=128.3694277938697, neLat=36.14348722890099, neLng=128.5153889784204]
+2022-05-24 14:15:19.053 DEBUG 19648 --- [nio-9999-exec-2] c.s.vue.controller.HouseMapController    : MapInfoDto [level=5, swLat=36.08817788221568, swLng=128.4012615939867, neLat=36.114336145054075, neLng=128.47422567586653]
+2022-05-24 14:15:21.758 DEBUG 19648 --- [nio-9999-exec-3] c.s.vue.controller.HouseMapController    : MapInfoDto [level=6, swLat=36.07641395135647, swLng=128.37751944561316, neLat=36.12871467945966, neLng=128.52345797718613]
+2022-05-24 14:18:41.135 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=2, username=222, userpwd=22, email=2222, filename=null, joindate=null]
+2022-05-24 14:18:48.129 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : MemberDto [userid=2, username=null, userpwd=22, email=null, filename=null, joindate=null]
+2022-05-24 14:18:48.132 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY5NTI4MTMyLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzMxMjgsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjIifQ.kz8M7SokYUzVbZUUKOOWMpdR6QYXPzy_bAZXch0lU44
+2022-05-24 14:18:48.140 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 14:18:48.141  INFO 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 14:18:48.143 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=2, username=222, userpwd=null, email=2222, filename=null, joindate=2022-05-24 14:18:41]
+2022-05-24 14:19:04.056 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : MemberDto [userid=2, username=null, userpwd=22, email=null, filename=null, joindate=null]
+2022-05-24 14:19:04.059 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY5NTQ0MDU4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzMxNDQsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjIifQ.TbpctT2zGXtpEajISQgYA6mFkVNXF0XLWY650joDirk
+2022-05-24 14:19:04.066 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 14:19:04.067  INFO 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 14:19:04.069 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=2, username=222, userpwd=null, email=2222, filename=null, joindate=2022-05-24 14:18:41]
+2022-05-24 14:19:04.077 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 14:19:04.078  INFO 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 14:19:04.079 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=2, username=222, userpwd=null, email=2222, filename=null, joindate=2022-05-24 14:18:41]
+2022-05-24 14:19:21.793 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=2, username=333, userpwd=null, email=3333, filename=0222.JPG, joindate=null]
+2022-05-24 14:19:21.793 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??? id : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY5NTQ0MDU4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzMxNDQsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjIifQ.TbpctT2zGXtpEajISQgYA6mFkVNXF0XLWY650joDirk
+2022-05-24 14:19:21.794 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : token : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY5NTQ0MDU4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzMxNDQsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjIifQ.TbpctT2zGXtpEajISQgYA6mFkVNXF0XLWY650joDirk 
+2022-05-24 14:19:21.795  INFO 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 14:19:23.057 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 14:19:23.059  INFO 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 14:19:23.061 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=2, username=333, userpwd=null, email=3333, filename=0222.JPG, joindate=2022-05-24 14:18:41]
+2022-05-24 14:19:40.183 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??????? ???? : 2
+2022-05-24 14:19:40.184 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : token : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY5NTQ0MDU4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzMxNDQsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjIifQ.TbpctT2zGXtpEajISQgYA6mFkVNXF0XLWY650joDirk 
+2022-05-24 14:19:40.185  INFO 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 14:20:42.577 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 14:20:42.580 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY5NjQyNTc5LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzMyNDIsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.XgOkwYqRsXFjojihwVZQyWUdTvK6ZyOysxvItsxInsw
+2022-05-24 14:20:42.595 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 14:20:42.596  INFO 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 14:20:42.597 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 14:20:44.762 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : MemberDto [userid=2, username=null, userpwd=22, email=null, filename=null, joindate=null]
+2022-05-24 14:20:52.879 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 14:20:52.881 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzY5NjUyODgxLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzMyNTIsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.DrhQu73naNS8mZcjXLC3fFrd8tCaQnvG6Im5MasDQRM
+2022-05-24 14:20:52.888 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 14:20:52.889  INFO 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 14:20:52.891 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 14:20:52.900 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 14:20:52.901  INFO 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 14:20:52.903 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 14:22:48.176 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 14:22:48.177  INFO 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 14:22:48.179 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 14:35:01.804 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=3, username=333, userpwd=33, email=3333, filename=null, joindate=null]
+2022-05-24 14:35:03.485 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : MemberDto [userid=3, username=null, userpwd=33, email=null, filename=null, joindate=null]
+2022-05-24 14:35:03.488 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzcwNTAzNDg3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzQxMDMsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjMifQ.7mTXyMiUik4-QqiVOFPGNHj5V2PJ3LbYWgqpt10_qR0
+2022-05-24 14:35:03.496 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 14:35:03.497  INFO 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 14:35:03.498 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=3, username=333, userpwd=null, email=3333, filename=null, joindate=2022-05-24 14:35:01]
+2022-05-24 14:35:23.089 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=34, username=44, userpwd=4, email=44, filename=null, joindate=null]
+2022-05-24 14:36:00.036 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=54, username=5454, userpwd=54, email=54, filename=null, joindate=null]
+2022-05-24 14:36:09.919 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=567, username=765, userpwd=65756, email=756, filename=null, joindate=null]
+2022-05-24 14:36:11.427 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : MemberDto [userid=567, username=null, userpwd=65756, email=null, filename=null, joindate=null]
+2022-05-24 14:36:11.429 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzcwNTcxNDI5LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzQxNzEsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjU2NyJ9.CLQLo-8sGRl3HGo7LSIenG9SK-4yB2IZGRGSugIJ_cQ
+2022-05-24 14:36:11.446 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 14:36:11.447  INFO 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 14:36:11.449 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=567, username=765, userpwd=null, email=756, filename=null, joindate=2022-05-24 14:36:09]
+2022-05-24 14:36:11.452 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 14:36:11.453  INFO 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 14:36:11.455 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=567, username=765, userpwd=null, email=756, filename=null, joindate=2022-05-24 14:36:09]
+2022-05-24 14:38:49.934 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 14:38:49.935  INFO 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 14:38:49.937 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=567, username=765, userpwd=null, email=756, filename=null, joindate=2022-05-24 14:36:09]
+2022-05-24 14:47:16.139 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 14:47:16.140  INFO 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 14:47:16.144 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=567, username=765, userpwd=null, email=756, filename=null, joindate=2022-05-24 14:36:09]
+2022-05-24 14:47:21.629 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 14:47:21.630  INFO 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 14:47:21.632 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=567, username=765, userpwd=null, email=756, filename=null, joindate=2022-05-24 14:36:09]
+2022-05-24 14:48:20.015 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 14:48:20.015  INFO 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 14:48:20.017 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=567, username=765, userpwd=null, email=756, filename=null, joindate=2022-05-24 14:36:09]
+2022-05-24 14:59:24.016 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 14:59:24.018 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzcxOTY0MDE4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzU1NjQsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.iMb2s6tmN_y5Rws0K9hUNMFqbeZuBig7hvme5dXIrhs
+2022-05-24 14:59:24.026 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 14:59:24.027  INFO 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 14:59:24.028 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 15:00:05.089 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 15:00:05.091 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzcyMDA1MDkxLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzU2MDUsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.WLYRyNIj2mZ-qUmDLbKosxcmLtcvjO5Xoe0JviUEids
+2022-05-24 15:00:05.096 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 15:00:05.097  INFO 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 15:00:05.099 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 15:00:05.107 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 15:00:05.108  INFO 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 15:00:05.109 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 15:02:40.301 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 15:02:40.302  INFO 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 15:02:40.305 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 15:13:13.870 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 15:13:13.871  INFO 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 15:13:13.874 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 15:14:32.839 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 15:14:32.840  INFO 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 15:14:32.843 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=567, username=765, userpwd=null, email=756, filename=null, joindate=2022-05-24 14:36:09]
+2022-05-24 15:14:32.979 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 15:14:32.981  INFO 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 15:14:32.984 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 15:43:41.824 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 15:43:41.826  INFO 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 15:43:41.828 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 15:45:42.359 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 15:45:42.360  INFO 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 15:45:42.363 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 15:46:09.158 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 15:46:09.159  INFO 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 15:46:09.162 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 15:46:12.176 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 15:46:12.177  INFO 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 15:46:12.179 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:00:02.892 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:00:02.895 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc1NjAyODk0LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzkyMDIsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.eIgJgX93JT4CWeEs7sEHb-3tfOB1mCTiyXyG1P-MzWw
+2022-05-24 16:00:02.900 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:00:02.900  INFO 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:00:02.902 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:00:13.941 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:00:13.943 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc1NjEzOTQyLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzkyMTMsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.wq91YpHjIgRTqxNIvgn5bKEOlko4YH1fzCgmfTpZiic
+2022-05-24 16:00:13.948 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:00:13.948  INFO 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:00:13.950 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:00:13.958 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:00:13.958  INFO 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:00:13.960 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:01:51.260 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:01:51.262 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc1NzExMjYyLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzkzMTEsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.VJXTwZ4zwuf-0ThxtHEqMSYZPFiOL-F9UcrOMYYfdgo
+2022-05-24 16:01:51.267 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:01:51.268  INFO 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:01:51.269 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:07:04.045 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=64, username=35, userpwd=5435, email=43535, filename=null, joindate=null]
+2022-05-24 16:07:05.952 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : MemberDto [userid=64, username=null, userpwd=5435, email=null, filename=null, joindate=null]
+2022-05-24 16:07:05.955 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc2MDI1OTU1LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzk2MjUsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjY0In0.vpCLg4mkeVGG6I6cOWbGHR3Hb-gbu8VF79sl0LS-fus
+2022-05-24 16:07:05.970 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:07:05.971  INFO 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:07:05.973 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=64, username=35, userpwd=null, email=43535, filename=null, joindate=2022-05-24 16:07:04]
+2022-05-24 16:07:05.977 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:07:05.977  INFO 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:07:05.979 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=64, username=35, userpwd=null, email=43535, filename=null, joindate=2022-05-24 16:07:04]
+2022-05-24 16:07:19.688 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:07:19.690 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc2MDM5NjkwLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzk2MzksInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.GS3Cjpx8CZ0nAoNJMzaNTPq3bKcZxAi_ogMMAjzLiPg
+2022-05-24 16:07:19.694 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:07:19.695  INFO 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:07:19.696 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:09:57.290 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=676, username=6756, userpwd=676, email=56756, filename=null, joindate=null]
+2022-05-24 16:09:58.776 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : MemberDto [userid=676, username=null, userpwd=676, email=null, filename=null, joindate=null]
+2022-05-24 16:09:58.778 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc2MTk4Nzc4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzk3OTgsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjY3NiJ9.3AaSutJFulI5Jx89sxoU1e2igU8peGYCkQee0iFsdNQ
+2022-05-24 16:09:58.786 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:09:58.786  INFO 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:09:58.788 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=676, username=6756, userpwd=null, email=56756, filename=null, joindate=2022-05-24 16:09:57]
+2022-05-24 16:11:07.365 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:11:07.367 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc2MjY3MzY3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzk4NjcsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.34wRkF17qILggYk21tCBlbzzWD7CsPtqWHV3GcAtIC0
+2022-05-24 16:11:07.372 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:11:07.373  INFO 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:11:07.374 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:11:14.008 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:11:14.010 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc2Mjc0MDEwLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzk4NzQsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.swl7f9dLa6IEv0Cb3PMuWyH80YXqEmvzoqlmHVgYqE4
+2022-05-24 16:11:14.015 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:11:14.016  INFO 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:11:14.017 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:11:14.026 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:11:14.027  INFO 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:11:14.029 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:11:20.062 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:11:20.064 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc2MjgwMDYzLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzNzk4ODAsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.D97f-oTDnzNRVTw27a55-_NYWrWgY2bs_ChpMoql1eo
+2022-05-24 16:11:20.068 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:11:20.069  INFO 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:11:20.070 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:13:32.947 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=768, username=678, userpwd=678, email=768, filename=null, joindate=null]
+2022-05-24 16:13:34.554 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : MemberDto [userid=768, username=null, userpwd=678, email=null, filename=null, joindate=null]
+2022-05-24 16:13:34.558 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc2NDE0NTU3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODAwMTQsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6Ijc2OCJ9.iPw4JMop_L8C9St9g_6aPnkFQNiu7QCxe1NxNLbNGXw
+2022-05-24 16:13:34.574 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:13:34.575  INFO 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:13:34.577 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=768, username=678, userpwd=null, email=768, filename=null, joindate=2022-05-24 16:13:32]
+2022-05-24 16:13:34.580 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:13:34.581  INFO 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:13:34.583 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=768, username=678, userpwd=null, email=768, filename=null, joindate=2022-05-24 16:13:32]
+2022-05-24 16:13:49.053 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:13:49.056 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc2NDI5MDU2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODAwMjksInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.KKE3wbykcbE6FO_IGnwdki60CuBQcyB302TB0dm_2pI
+2022-05-24 16:13:49.062 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:13:49.063  INFO 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:13:49.064 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:14:07.426 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:14:07.429 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc2NDQ3NDI5LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODAwNDcsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.7Lv12IhO8a5E23bx1hQ9dDUYQxBrc8nyDn0HEizYHBs
+2022-05-24 16:14:07.436 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:14:07.436  INFO 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:14:07.438 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:14:07.454 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:14:07.456  INFO 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:14:07.460 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:14:10.466 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:14:10.468 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc2NDUwNDY4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODAwNTAsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.DDabpOPdT6RRADE4Pb5Vd_RT_qiPc5ve5GShbeh9fog
+2022-05-24 16:14:10.472 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:14:10.473  INFO 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:14:10.474 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:17:00.016 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:17:00.019 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc2NjIwMDE5LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODAyMjAsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.opSN61TKKys_Bm3taf9PoCjOgpCVQ0uhhtuB0_J7CbU
+2022-05-24 16:17:00.024 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:17:00.025  INFO 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:17:00.027 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:17:00.035 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:17:00.036  INFO 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:17:00.038 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:17:03.535 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:17:03.537 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc2NjIzNTM3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODAyMjMsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.LzyqDe_H-h_dhl9KaWmryXl9ZtSkxi6OnXTneOegbDs
+2022-05-24 16:17:03.542 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:17:03.542  INFO 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:17:03.543 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:17:16.520 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=657, username=567, userpwd=56756, email=567567, filename=null, joindate=null]
+2022-05-24 16:17:20.360 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:17:20.363 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc2NjQwMzYyLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODAyNDAsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.LMmX9_6GmLUTYwoMEzD1E7-1yLLsdmHPRM0sAX2sEbw
+2022-05-24 16:17:20.367 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:17:20.368  INFO 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:17:20.370 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:17:20.378 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:17:20.379  INFO 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:17:20.380 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:17:56.191 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=4211, username=4564, userpwd=48964, email=45654, filename=null, joindate=null]
+2022-05-24 16:18:01.288 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : MemberDto [userid=4211, username=null, userpwd=48964, email=null, filename=null, joindate=null]
+2022-05-24 16:18:01.290 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc2NjgxMjkwLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODAyODEsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjQyMTEifQ.ZhhiSBPjU8UYUaS03p_YP3gq60yFnIoaOo1je7bzMfQ
+2022-05-24 16:18:01.298 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:18:01.299  INFO 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:18:01.301 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=4211, username=4564, userpwd=null, email=45654, filename=null, joindate=2022-05-24 16:17:56]
+2022-05-24 16:18:18.568 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=1231, username=45465, userpwd=1561, email=154615, filename=null, joindate=null]
+2022-05-24 16:18:20.095 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1231, username=null, userpwd=1561, email=null, filename=null, joindate=null]
+2022-05-24 16:18:20.097 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc2NzAwMDk3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODAzMDAsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEyMzEifQ.fbf0MmMAP06Z1Xd3npKy4gZ2uIn1WTfOMrJ98LMuoxM
+2022-05-24 16:18:20.114 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:18:20.115  INFO 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:18:20.117 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1231, username=45465, userpwd=null, email=154615, filename=null, joindate=2022-05-24 16:18:18]
+2022-05-24 16:18:20.120 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:18:20.121  INFO 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:18:20.123 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1231, username=45465, userpwd=null, email=154615, filename=null, joindate=2022-05-24 16:18:18]
+2022-05-24 16:18:35.115 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:18:35.117 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc2NzE1MTE3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODAzMTUsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.cuHj-ILtqH5aaKlCdPUTsn32WoJSSb2DRcWsc5k-ne0
+2022-05-24 16:18:35.124 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:18:35.125  INFO 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:18:35.127 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:22:14.299 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=5675, username=56765, userpwd=567, email=756, filename=null, joindate=null]
+2022-05-24 16:22:15.785 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : MemberDto [userid=5675, username=null, userpwd=567, email=null, filename=null, joindate=null]
+2022-05-24 16:22:15.787 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc2OTM1Nzg3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODA1MzUsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjU2NzUifQ.pVC9Xx_NfXFTzSX82aUs-FF6WC4qLy9MPFHaR91Rujk
+2022-05-24 16:22:15.805 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:22:15.806  INFO 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:22:15.808 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=5675, username=56765, userpwd=null, email=756, filename=null, joindate=2022-05-24 16:22:14]
+2022-05-24 16:22:15.812 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:22:15.813  INFO 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:22:15.815 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=5675, username=56765, userpwd=null, email=756, filename=null, joindate=2022-05-24 16:22:14]
+2022-05-24 16:22:25.085 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:22:25.088 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc2OTQ1MDg3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODA1NDUsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.wc02fRnybWMyZMXQnUTv1LRt-bFO4yUbj9m-mlwF4es
+2022-05-24 16:22:25.094 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:22:25.094  INFO 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:22:25.096 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:23:10.585 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:23:10.587 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc2OTkwNTg3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODA1OTAsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.KqGoRgdNgDgdGckJdKAR-5jkGLM4bybBN7eLiV41WkY
+2022-05-24 16:23:10.600 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:23:10.601  INFO 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:23:10.602 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:23:14.937 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:23:14.939 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc2OTk0OTM5LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODA1OTQsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.KbfCtchXcsIjiPAuEzmhH8I0Vv28qYsnwQ7ALsPHxQM
+2022-05-24 16:23:14.947 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:23:14.948  INFO 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:23:14.950 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:23:58.079 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??????? ???? : MemberDto [userid=345, username=345345, userpwd=345, email=345, filename=null, joindate=null]
+2022-05-24 16:24:00.616 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:24:00.617 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc3MDQwNjE3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODA2NDAsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.sheroP0psy_27CEkrGiYT9873j11EcsoRT8cbkKw72M
+2022-05-24 16:24:00.623 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:24:00.624  INFO 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:24:00.625 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:24:00.633 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:24:00.634  INFO 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:24:00.635 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:24:03.980 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:24:03.982 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc3MDQzOTgyLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODA2NDMsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.sOIFrZBD4aiwAWhhzHkSiBNkNcFIflZDnqfQGtLLHxs
+2022-05-24 16:24:03.988 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:24:03.988  INFO 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:24:03.990 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:25:16.528 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:25:16.529 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc3MTE2NTI5LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODA3MTYsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.QtMvHJsBSnLCjaSHO5ThviOmXzc3sdw8MXvdwFCAzF0
+2022-05-24 16:25:16.534 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:25:16.535  INFO 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:25:16.537 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:25:16.551 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:25:16.551  INFO 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:25:16.554 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:25:19.604 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:25:19.606 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc3MTE5NjA2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODA3MTksInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.p3Rn4wu05cGsu66JdWhCqdWz3K8KNfG-PpWM_CMMjf8
+2022-05-24 16:25:19.612 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:25:19.612  INFO 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:25:19.614 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:26:28.356 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:26:28.358 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc3MTg4MzU3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODA3ODgsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.le0l8CiuFtRTsQf3SD63ktd3AVz9XBSSV_VZf0H4K5Y
+2022-05-24 16:26:28.362 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:26:28.363  INFO 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:26:28.364 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:26:28.382 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:26:28.383  INFO 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:26:28.385 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:26:31.318 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:26:31.320 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc3MTkxMzIwLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODA3OTEsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.OqkfwXPaDvnfaewE8aU_BLd8LDEzJWiJMPzc4IKGDA0
+2022-05-24 16:26:31.324 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:26:31.325  INFO 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:26:31.326 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:26:32.040 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:26:32.042 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc3MTkyMDQyLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODA3OTIsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.Iq_wVg119WVkTyNXrcfX1HScQPXPo4tThESeiWQwdt0
+2022-05-24 16:26:32.047 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:26:32.047  INFO 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:26:32.049 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:26:32.057 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:26:32.059  INFO 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:26:32.060 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:27:05.563 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:27:05.565 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc3MjI1NTY1LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODA4MjUsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.sOk_ozL-epNXvPh8q-iQggq57-WDwc9xAxSiOY-fnYU
+2022-05-24 16:27:05.576 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:27:05.577  INFO 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:27:05.579 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:27:10.324 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:27:10.326 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc3MjMwMzI2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODA4MzAsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.nRoYIpf-yfNcF_Clnrs1Zyw6H20iB6neI9WZGi_vKVw
+2022-05-24 16:27:19.578 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:27:19.580 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc3MjM5NTgwLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODA4MzksInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.eeTHLfcyNrIhr_rlVW8Prl8YIxWaHC_znh76g8FH3AE
+2022-05-24 16:27:19.604 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:27:19.604  INFO 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:27:19.606 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:27:23.129 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:27:23.131 DEBUG 19648 --- [nio-9999-exec-2] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc3MjQzMTMxLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODA4NDMsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.DvfvOjOqCNPAFXd7jHBpWTE6bQnMzA-A4JxK1mHIw_I
+2022-05-24 16:27:23.136 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:27:23.137  INFO 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:27:23.139 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:27:24.095 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:27:24.097 DEBUG 19648 --- [nio-9999-exec-4] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc3MjQ0MDk3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODA4NDQsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.SQPUjlvaJW9FSIbtsWSSxonFS_cnOr5A-c1tNWjr8h0
+2022-05-24 16:27:24.102 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:27:24.103  INFO 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:27:24.104 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:27:24.112 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:27:24.112  INFO 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:27:24.114 DEBUG 19648 --- [nio-9999-exec-6] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:27:36.792 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:27:36.794 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc3MjU2Nzk0LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODA4NTYsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.In1PKuwZcZM2yxpxe3kmRIaH9UH3XlO_r0aJzJC7lok
+2022-05-24 16:27:36.799 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:27:36.800  INFO 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:27:36.801 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:27:40.519 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:27:40.520 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc3MjYwNTIwLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODA4NjAsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.duhrglGW04InbvumJ7ta8HrZRmUENv0jEN2LD8krO0E
+2022-05-24 16:27:40.525 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:27:40.525  INFO 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:27:40.527 DEBUG 19648 --- [io-9999-exec-10] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:27:40.535 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:27:40.536  INFO 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:27:40.538 DEBUG 19648 --- [nio-9999-exec-1] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:29:52.047 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:29:52.048  INFO 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:29:52.051 DEBUG 19648 --- [nio-9999-exec-3] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:30:39.463 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:30:39.464  INFO 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:30:39.466 DEBUG 19648 --- [nio-9999-exec-5] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:34:05.524 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : MemberDto [userid=1, username=null, userpwd=11, email=null, filename=null, joindate=null]
+2022-05-24 16:34:05.527 DEBUG 19648 --- [nio-9999-exec-7] c.ssafy.vue.controller.MemberController  : ?メ??? ??????? : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjUzMzc3NjQ1NTI2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTMzODEyNDUsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjEifQ.k16HwSCvJp7N79c2G0f2bLkxrpMC2qyNVJXOVBkjois
+2022-05-24 16:34:05.533 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:34:05.534  INFO 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:34:05.536 DEBUG 19648 --- [nio-9999-exec-8] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:34:05.546 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??????
+2022-05-24 16:34:05.547  INFO 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ??? ?????? ???!!!
+2022-05-24 16:34:05.549 DEBUG 19648 --- [nio-9999-exec-9] c.ssafy.vue.controller.MemberController  : ?????? : MemberDto [userid=1, username=111, userpwd=null, email=1111, filename=null, joindate=2022-05-24 13:47:04]
+2022-05-24 16:49:10.490  INFO 19648 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-24 16:49:10.545  INFO 19648 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 496 ms
+2022-05-24 16:49:10.734  INFO 19648 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-24 16:49:10.784  INFO 19648 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-24 16:49:10.871  INFO 19648 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-24 16:49:54.006  INFO 19648 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-24 16:49:54.049  INFO 19648 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 357 ms
+2022-05-24 16:49:54.164  INFO 19648 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-24 16:49:54.200  INFO 19648 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-24 16:49:54.263  INFO 19648 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-24 16:50:28.200  INFO 19648 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2022-05-24 16:50:28.241  INFO 19648 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 351 ms
+2022-05-24 16:50:28.345  INFO 19648 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-24 16:50:28.378  INFO 19648 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path '/vue'
+2022-05-24 16:50:28.439  INFO 19648 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged

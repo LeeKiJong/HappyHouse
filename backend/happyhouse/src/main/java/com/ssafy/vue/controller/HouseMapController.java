@@ -66,12 +66,12 @@ public class HouseMapController {
 		return new ResponseEntity<List<HouseInfoDto>>(haHouseMapService.getAptInDong(dong), HttpStatus.OK);
 	}
 	@GetMapping("/apt/aptName")
-	public ResponseEntity<List<HouseInfoDto>> apt_aptName(@RequestParam("aptName") String aptName, @RequestParam("gugun") String gugun, @RequestParam("dong") String dong) throws Exception {
+	public ResponseEntity<List<HouseInfoDto>> apt_aptName(@RequestParam("aptName") String aptName, @RequestParam("dong") String dong) throws Exception {
 		//logger.debug(aptName);
 		//logger.debug(gugun);
 		//logger.debug(dong);
 		//logger.debug("name : {}", haHouseMapService.getAptInName(aptName, gugun, dong));
-		return new ResponseEntity<List<HouseInfoDto>>(haHouseMapService.getAptInName(aptName, gugun, dong), HttpStatus.OK);
+		return new ResponseEntity<List<HouseInfoDto>>(haHouseMapService.getAptInName(aptName, dong), HttpStatus.OK);
 
 	}
 	@PostMapping("/apt/map")
