@@ -9,6 +9,7 @@ const houseStore = {
     houses: [],
     house: null,
     deals: [],
+    dong: "",
   },
 
   getters: {},
@@ -28,6 +29,9 @@ const houseStore = {
       dongs.forEach((dong) => {
         state.dongs.push({ value: dong.dongCode, text: dong.dong });
       });
+    },
+    SET_DONG: (state, dong) => {
+      state.dong = dong;
     },
     CLEAR_SIDO_LIST: (state) => {
       state.sidos = [{ value: null, text: "선택하세요" }];

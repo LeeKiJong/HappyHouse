@@ -130,6 +130,7 @@ export default {
       new Modal(document.getElementById(id), {}).show();
     },
     async onClickDetail(house) {
+      this.$emit("house", house);
       this.setDetailHouse(house);
       await this.getHouseDeal(house.aptCode);
       this.setDisplayDetail();
@@ -163,7 +164,6 @@ export default {
   watch: {
     changeHouses(value) {
       this.houses = value;
-      this.setDisplayList();
     },
     changeDeals(value) {
       this.deals = value;
