@@ -12,7 +12,14 @@
         </sidenav-collapse>
       </li>
       <li class="nav-item">
-        <sidenav-collapse navText="Tables" :to="{ name: 'Tables' }">
+        <sidenav-collapse navText="Profile" :to="{ name: 'Profile' }">
+          <template #icon>
+            <customer-support />
+          </template>
+        </sidenav-collapse>
+      </li>
+      <li class="nav-item">
+        <sidenav-collapse navText="Map" :to="{ name: 'Map' }">
           <template #icon>
             <office />
           </template>
@@ -50,13 +57,6 @@
         >
           PAGES
         </h6>
-      </li>
-      <li class="nav-item">
-        <sidenav-collapse navText="Profile" :to="{ name: 'Profile' }">
-          <template #icon>
-            <customer-support />
-          </template>
-        </sidenav-collapse>
       </li>
       <li class="nav-item">
         <sidenav-collapse navText="Sign In" :to="{ name: 'Sign In' }">

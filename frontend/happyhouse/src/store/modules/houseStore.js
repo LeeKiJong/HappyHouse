@@ -102,6 +102,17 @@ const houseStore = {
         }
       );
     },
+    async getAptDealInDate({ commit }, date) {
+      await house.houseDealInDate(
+        date,
+        ({ data }) => {
+          commit("SET_DEAL_LIST", data);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    },
     async getHouseListByGugun({ commit, state }, gugunCode) {
       const params = {
         gugun: gugunCode,

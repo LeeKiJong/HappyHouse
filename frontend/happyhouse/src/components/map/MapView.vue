@@ -30,6 +30,7 @@ export default {
       customOverlays: [],
       houses: [],
       markers: [],
+      clusterLevel: 6,
     };
   },
 
@@ -63,13 +64,9 @@ export default {
 
       this.houses = this.$store.state.houseStore.houses;
 
-      this.removeMarkers();
+      // this.createMarkers(map);
 
-      this.removeCustomOverlays();
-
-      this.createMarkers(map);
-
-      if (map.getLevel() < 6) {
+      if (map.getLevel() < this.clusterLevel) {
         this.createCustomOverlays(map);
       }
 
@@ -110,17 +107,13 @@ export default {
 
       this.createMarkers(map);
 
-      if (map.getLevel() < 6) {
+      if (map.getLevel() < this.clusterLevel) {
         this.createCustomOverlays(map);
       }
 
-      await this.setEventIfCompletedCluster();
+      this.setEventIfCompletedCluster();
 
       this.clusterer.addMarkers(this.markers, true);
-
-      if (map.getLevel() >= 6) {
-        this.removeMarkers();
-      }
     },
 
     // 지도 경계선의 위도 경도 가져오기
@@ -142,7 +135,16 @@ export default {
       this.clusterer = new kakao.maps.MarkerClusterer({
         map: map, // 마커들을 클러스터로 관리하고 표시할 지도 객체
         averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정
-        minLevel: 6, // 클러스터 할 최소 지도 레벨
+        minLevel: this.clusterLevel, // 클러스터 할 최소 지도 레벨
+        styles: [
+          {
+            height: "100px",
+            width: "100px",
+            image:
+              "url(https://cdn-icons-png.flaticon.com/512/2598/2598818.png)",
+            textAlign: "center",
+          },
+        ],
       });
     },
     createCustomOverlays(map) {
@@ -151,7 +153,8 @@ export default {
           map: map,
           position: new kakao.maps.LatLng(element.lat, element.lng),
           content: this.getCustomOverlayContent(element),
-          yAnchor: 0.2,
+          xAnchor: 0.5,
+          yAnchor: 0.9,
         });
         this.customOverlays.push(customOverlay);
       });
@@ -165,14 +168,14 @@ export default {
     /**
      * 마커 생성
      */
-    createMarkers(map) {
+    createMarkers() {
       // 마커를 생성합니다
       this.houses.forEach((element) => {
         var marker = new kakao.maps.Marker({
-          map: map,
+          // map: map.getLevel() < this.clusterLevel ? map : null,
           position: new kakao.maps.LatLng(element.lat, element.lng), // 마커를 표시할 위치
           title: element.avg, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-          // image: this.getMarkerImage(), // 마커 이미지
+          image: this.getMarkerImage(), // 마커 이미지
         });
         this.markers.push(marker);
       });
@@ -202,8 +205,13 @@ export default {
                 sum += parseInt(marker.Gb);
               });
               // 클러스터러 오버레이의 콘텐츠 내부 텍스트 변경해주세요.
-              cluster.getClusterMarker().getContent().innerText =
-                parseFloat((sum / cluster.getSize()).toFixed(1)) + "억";
+              cluster.getClusterMarker().setContent(`
+              <div class="pin-wrap">
+                <img class="cluster-pin-image" src="https://cdn-icons-png.flaticon.com/512/2598/2598818.png"/>
+                <span class="text-sm text-center text-light font-weight-bold cluster-pin-text">
+                ${parseFloat((sum / cluster.getSize()).toFixed(1))}억</span>
+              </div>
+                `);
             });
           }
         );
@@ -215,9 +223,9 @@ export default {
      */
     getMarkerImage() {
       // 마커 이미지의 이미지 주소입니다
-      var imageSrc = require(`@/assets/img/ssafy.png`);
+      var imageSrc = require(`@/assets/img/pin.png`);
       // 마커 이미지의 이미지 크기 입니다
-      var imageSize = new kakao.maps.Size(24, 35);
+      var imageSize = new kakao.maps.Size(35, 35);
       // 마커 이미지를 리턴합니다
       return new kakao.maps.MarkerImage(imageSrc, imageSize);
     },
@@ -227,12 +235,17 @@ export default {
      */
     getCustomOverlayContent(element) {
       return `
-      <div class="customoverlay">
-        <a href="https://map.kakao.com/link/map/11394059" target="_blank">
-          <span class="title">
-            ${element.avg}억
-          </span>
-        </a>
+      <div class="pin-wrap">
+        <img class="pin-image" src="https://cdn-icons-png.flaticon.com/512/2598/2598818.png"/>
+        <span class="text-sm text-center text-light font-weight-bold pin-text">${element.avg}억</span>
+      </div>
+      `;
+    },
+    getClusterContent(element) {
+      return `
+      <div class="pin-wrap">
+        <img class="cluster-pin-image" src="https://cdn-icons-png.flaticon.com/512/2598/2598818.png"/>
+        <span class="text-sm text-center text-light font-weight-bold cluster-pin-text">${element}억</span>
       </div>
       `;
     },
@@ -278,18 +291,35 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-#map {
-  width: 400px;
-  height: 400px;
+<style>
+.pin-wrap {
+  position: relative;
 }
-
-.button-group {
-  margin: 10px 0px;
+.pin-image {
+  height: 35px;
+  width: 35px;
+  height: 40px;
+  width: 40px;
+  vertical-align: middle;
 }
-
-button {
-  margin: 0 3px;
+.cluster-pin-image {
+  height: 60px;
+  width: 60px;
+  vertical-align: middle;
+}
+.pin-text {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, 50%);
+}
+.cluster-pin-text {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, 50%);
 }
 
 .map-container {
