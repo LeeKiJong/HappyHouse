@@ -31,9 +31,6 @@
 	<select id="getAptInDong" parameterType="string" resultType="houseInfoDto">
 		select * from houseinfo where #{dong} = dongCode
 	</select>
-	<select id="getAptInName_gugun" parameterType="string" resultType="houseInfoDto">
-		select * from houseinfo where sigunguCode=#{gugun} and apartmentName like #{aptName};
-	</select>
 	<select id="getAptInName_dong" parameterType="string" resultType="houseInfoDto">
 		select * from houseinfo where dongCode = #{dong} and apartmentName like #{aptName};
 	</select>

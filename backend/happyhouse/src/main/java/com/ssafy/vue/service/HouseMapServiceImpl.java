@@ -50,12 +50,9 @@ public class HouseMapServiceImpl implements HouseMapService {
 	}
 	
 	@Override
-	public List<HouseInfoDto> getAptInName(String aptName, String gugun, String dong) throws Exception {
-		if(dong.equals("")) {
-			return houseMapMapper.getAptInName_gugun("%"+aptName+"%", gugun);
-		}else {
-			return houseMapMapper.getAptInName_dong("%"+aptName+"%", dong);
-		}
+	public List<HouseInfoDto> getAptInName(String aptName, String dong) throws Exception {
+		return houseMapMapper.getAptInName_dong("%"+aptName+"%", dong);
+		
 	}
 	
 	@Override

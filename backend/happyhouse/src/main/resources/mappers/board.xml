@@ -12,6 +12,11 @@
 		order by articleno desc
 	</select>
 
+	<!-- 게시글 전체 조회 -->
+	<select id="searchBoard" parameterType="board" resultType="board">
+		select * from board where type = #{type} and subject LIKE #{subject} order by articleno desc;
+	</select>
+
 	<!-- 댓글 전체 조회 -->
 	<select id="retrieveComment" parameterType="int" resultType="commentDto">
 		select *

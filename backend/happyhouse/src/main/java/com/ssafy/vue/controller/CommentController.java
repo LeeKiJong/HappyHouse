@@ -48,11 +48,10 @@ public class CommentController {
     public ResponseEntity<String> writeComment(@RequestBody CommentDto commentDto) {
         logger.debug("writeComment - 호출");
         logger.debug("writeComment : {}", commentDto.toString());
-        //  if (boardService.writeComment(commentDto)) {
-        //  	return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
-        //  }
-        //  return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
-        return null;
+         if (boardService.writeComment(commentDto)) {
+         	return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
+         }
+         return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 
     }
     

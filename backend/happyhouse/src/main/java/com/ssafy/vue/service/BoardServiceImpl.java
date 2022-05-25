@@ -67,4 +67,10 @@ public class BoardServiceImpl implements BoardService {
 	public boolean deleteComment(int commentno) {
 		return boardMapper.deleteComment(commentno) == 1;
 	}
+
+	@Override
+	public List<Board> searchBoard(Board board) {
+		board.setSubject("%" + board.getSubject()+"%"); 
+		return boardMapper.searchBoard(board);
+	}
 }

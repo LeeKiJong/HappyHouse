@@ -1,6 +1,7 @@
 package com.ssafy.vue.controller;
 
 import java.util.List;
+import java.util.StringTokenizer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,6 +44,13 @@ public class BoardController {
 		logger.debug("retrieveBoard - 호출");
 		logger.debug(type);
 		return new ResponseEntity<List<Board>>(boardService.retrieveBoard(type), HttpStatus.OK);
+	}
+
+	@ApiOperation(value = "검색", notes = "검색한 게시글의 정보를 반환한다.", response = List.class)
+	@PostMapping("/search")
+	public ResponseEntity<List<Board>> searchBoard(@RequestBody Board board) throws Exception {
+		logger.debug("searchBoard - 호출");
+		return new ResponseEntity<List<Board>>(boardService.searchBoard(board), HttpStatus.OK);
 	}
 
     @ApiOperation(value = "게시판 글보기", notes = "글번호에 해당하는 게시글의 정보를 반환한다.", response = Board.class)    
