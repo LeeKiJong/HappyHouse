@@ -1,6 +1,5 @@
 <template>
   <div class="p-3 pb-0 card-header">
-    <h6>{{ title }}</h6>
     <!-- eslint-disable vue/no-v-html -->
     <p v-if="description" class="text-sm" v-html="description" />
   </div>
@@ -48,10 +47,10 @@ export default {
   mounted() {
     var ctx = document.getElementById(this.id).getContext("2d");
 
-    var gradientStroke1 = ctx.createLinearGradient(0, 230, 0, 50);
+    var gradientStroke1 = ctx.createLinearGradient(50, 230, 0, 50);
 
     gradientStroke1.addColorStop(1, "rgba(203,12,159,0.2)");
-    gradientStroke1.addColorStop(0.2, "rgba(72,72,176,0.0)");
+    gradientStroke1.addColorStop(0.2, "rgba(55,72,176,0.0)");
     gradientStroke1.addColorStop(0, "rgba(203,12,159,0)");
 
     let chartStatus = Chart.getChart(this.id);
@@ -75,19 +74,6 @@ export default {
             backgroundColor: gradientStroke1,
             fill: true,
             data: this.chart.datasets[0].data,
-            maxBarThickness: 6,
-          },
-          {
-            label: this.chart.datasets[1].label,
-            tension: 0.4,
-            borderWidth: 0,
-            pointRadius: 0,
-            borderColor: "#3A416F",
-            // eslint-disable-next-line no-dupe-keys
-            borderWidth: 3,
-            backgroundColor: gradientStroke1,
-            fill: true,
-            data: this.chart.datasets[1].data,
             maxBarThickness: 6,
           },
         ],

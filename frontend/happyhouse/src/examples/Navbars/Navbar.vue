@@ -19,10 +19,6 @@
         ></div>
         <ul class="navbar-nav justify-content-end">
           <li class="nav-item d-flex align-items-center">
-            <!-- <i
-              class="fa fa-user"
-              :class="this.$store.state.isRTL ? 'ms-sm-2' : 'me-sm-1'"
-            ></i> -->
             <span class="text-sm"
               ><span class="font-weight-bold">{{ userInfo.username }}</span
               >님 환영합니다.</span

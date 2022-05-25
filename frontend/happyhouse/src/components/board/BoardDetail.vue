@@ -6,34 +6,51 @@
           <br />
           <div class="card-header pb-0 px-3">
             <div
-              class="col-lg-2 col-md-4 pb-4 cursor-pointer"
+              class="col-lg-2 col-md-12 pb-4 cursor-pointer"
               @click="historyBack()"
             >
               <i class="fa fa-arrow-left" />&nbsp;
               <small>돌아가기</small>
             </div>
-            <h6 class="mb-3 text-sm" id="inputSubject">
+            <div class="text-sm" id="inputSubject">
               <h5>{{ article.subject }}</h5>
-            </h6>
+            </div>
             <div class="row">
-              <span class="col-auto text-xs">
+              <span class="col-auto text-xs align-self-center">
                 작성자:
                 <span class="text-dark font-weight-bold ms-sm-2">
                   {{ article.userid }}
                 </span>
               </span>
-              <span class="col-auto text-xs">
+              <span class="col-auto text-xs align-self-center">
                 작성일:
                 <span class="text-dark ms-sm-2 font-weight-bold">
                   {{ yyyyMMdd(article.regtime) }}
                 </span>
               </span>
-              <span class="col-auto text-xs">
+              <span class="col-auto text-xs align-self-center">
                 조회수:
                 <span class="text-dark ms-sm-2 font-weight-bold">
                   {{ article.hit }}
                 </span>
               </span>
+              <div class="ms-auto text-end col-md-2" v-if="confirmShow">
+                <a
+                  class="btn btn-link text-dark px-3 py-0 mb-0"
+                  @click="moveModifyArticle"
+                >
+                  <i
+                    class="fas fa-pencil-alt text-dark me-2"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+                <a
+                  class="btn btn-link text-danger text-gradient px-3 py-0 mb-0"
+                  @click="deleteArticle"
+                >
+                  <i class="far fa-trash-alt me-2" aria-hidden="true"></i>
+                </a>
+              </div>
             </div>
           </div>
           <div class="card-body pt-4 p-3">
@@ -58,44 +75,26 @@
                   </h6>
                   <br />
                 </div>
-                <div class="ms-auto text-end" v-if="confirmShow">
-                  <a
-                    class="btn btn-link text-dark px-3 mb-0"
-                    @click="moveModifyArticle"
-                  >
-                    <i
-                      class="fas fa-pencil-alt text-dark me-2"
-                      aria-hidden="true"
-                    ></i>
-                    Edit
-                  </a>
-                  <a
-                    class="btn btn-link text-danger text-gradient px-3 mb-0"
-                    @click="deleteArticle"
-                  >
-                    <i class="far fa-trash-alt me-2" aria-hidden="true"></i
-                    >Delete
-                  </a>
-                </div>
               </li>
             </ul>
           </div>
           <comment-input-item />
-          <comment-list :list-array="comments" />
+          <comment-list />
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-//import { getArticle, deleteArticle } from "@/api/board";
 import { getArticle, deleteArticle, modifyArticle } from "@/api/board";
 import CommentInputItem from "@/components/board/item/CommentInputItem.vue";
 import VsudButton from "@/components/vsud/VsudButton.vue";
-import { listComment } from "@/api/comment";
-const memberStore = "memberStore";
-import { mapState } from "vuex";
 import CommentList from "@/components/board/item/Comment_list.vue";
+import { mapState, mapActions } from "vuex";
+
+const memberStore = "memberStore";
+const boardStore = "boardStore";
+
 export default {
   name: "BoardDetail",
   components: {
@@ -121,6 +120,7 @@ export default {
   },
   created() {
     this.comments.articleno = this.$route.params.articleno;
+
     getArticle(
       this.$route.params.articleno,
       (response) => {
@@ -133,24 +133,15 @@ export default {
         console.log("삭제시 에러발생!!", error);
       }
     );
+
     if (this.userInfo.userid == this.article.userid) {
       this.confirmShow = true;
     }
-    listComment(
-      this.$route.params.articleno,
-      (response) => {
-        this.comments = response.data;
-        console.log(this.comments);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+
+    this.getComments();
   },
   methods: {
-    back() {
-      this.$router.push({ name: "boardList" });
-    },
+    ...mapActions(boardStore, ["listComment"]),
     modifyConfirm() {
       modifyArticle(
         {
@@ -166,7 +157,7 @@ export default {
           }
           alert(msg);
           // 현재 route를 /list로 변경.
-          this.$router.push({ name: "boardList" });
+          this.$router.push({ name: "Board" });
         },
         (error) => {
           console.log(error);
@@ -206,7 +197,7 @@ export default {
       }
       input.insertAdjacentHTML(
         "afterBegin",
-        "<input type='text' id = 'subject' value='" +
+        "<input type='text' id = 'subject' class='form-control' value='" +
           this.article.subject +
           "'/></input>"
       );
@@ -216,15 +207,18 @@ export default {
       }
       input2.insertAdjacentHTML(
         "afterBegin",
-        "<textarea id = 'content' cols='80' rows='7'/>" +
+        "<textarea id = 'content' cols='80' class='form-control' rows='10'/>" +
           this.article.content +
           "</textarea>"
       );
     },
+    getComments() {
+      this.listComment(this.$route.params.articleno);
+    },
     deleteArticle() {
       if (confirm("정말로 삭제?")) {
         deleteArticle(this.article.articleno, () => {
-          this.$router.push({ name: "boardList" });
+          this.$router.push({ name: "Board" });
         });
       }
     },

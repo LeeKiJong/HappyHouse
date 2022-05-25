@@ -81,6 +81,27 @@
           :horizontal-break="false"
           :deals="deals"
         />
+        <gradient-line-chart
+          id="chart-line"
+          :chart="{
+            labels: [
+              '2015',
+              '2016',
+              '2017',
+              '2018',
+              '2019',
+              '2020',
+              '2021',
+              '2022',
+            ],
+            datasets: [
+              {
+                label: 'apt',
+                data: deals_year,
+              },
+            ],
+          }"
+        />
       </div>
     </div>
     <hr class="my-2 horizontal dark" />
@@ -97,6 +118,7 @@ import HouseList from "@/components/house/HouseList.vue";
 import HouseListItem from "@/components/house/HouseListItem.vue";
 import HouseDetail from "@/components/house/HouseDetail.vue";
 import VsudInput from "@/components/vsud/VsudInput.vue";
+import GradientLineChart from "@/examples/Charts/GradientLineChart.vue";
 
 import { mapMutations, mapActions } from "vuex";
 
@@ -111,12 +133,14 @@ export default {
     HouseDetail,
     VsudInput,
     HouseModalCalendar,
+    GradientLineChart,
   },
   props: ["toggle"],
   data() {
     return {
       houses: [],
       deals: [],
+      deals_year: [],
       display: {
         list: true,
         detail: false,
@@ -166,6 +190,22 @@ export default {
       this.houses = value;
     },
     changeDeals(value) {
+      let year = 2015;
+      let temp = 0;
+      let count = 0;
+      this.$store.state.houseStore.deals.forEach((element) => {
+        console.log(element.dealYear + ", " + element.dealAmount);
+        if (element.dealYear == year) {
+          count += 1;
+          temp += parseFloat(element.dealAmount);
+        } else {
+          this.deals_year.push(temp / count);
+          temp = parseFloat(element.dealAmount);
+          count = 1;
+          year += 1;
+        }
+      });
+      this.deals_year.push(temp / count);
       this.deals = value;
     },
   },
@@ -185,6 +225,6 @@ export default {
 }
 .house-detail-card {
   overflow: auto;
-  height: calc(80vh - 150px);
+  height: calc(50vh - 150px);
 }
 </style>

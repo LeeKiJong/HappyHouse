@@ -1,5 +1,6 @@
 <template>
-  <div class="pt-4 p-3">
+  <div class="m-3">
+    <hr class="mt-4" />
     <label for="comment">댓글</label>
     <div class="row">
       <vsud-input
@@ -17,16 +18,16 @@
         댓글 작성
       </vsud-button>
     </div>
-    <hr />
   </div>
 </template>
 
 <script>
-import { writeComment } from "@/api/comment";
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 import VsudInput from "@/components/vsud/VsudInput.vue";
 import VsudButton from "@/components/vsud/VsudButton.vue";
+
 const memberStore = "memberStore";
+const boardStore = "boardStore";
 
 export default {
   name: "CommentInputItem",
@@ -53,26 +54,15 @@ export default {
     this.comment.userid = this.userInfo.userid;
   },
   methods: {
-    registComment() {
+    ...mapActions(boardStore, ["listComment", "writeComment"]),
+    async registComment() {
       if (document.getElementById("content").value != "") {
-        writeComment(
-          {
-            articleno: this.comment.articleno,
-            userid: this.comment.userid,
-            content: document.getElementById("content").value,
-          },
-          ({ data }) => {
-            let msg = "등록 처리시 문제가 발생했습니다.";
-            if (data === "success") {
-              msg = "등록이 완료되었습니다.";
-            }
-            alert(msg);
-            location.reload();
-          },
-          (error) => {
-            console.log(error);
-          }
-        );
+        const comment = {
+          articleno: this.comment.articleno,
+          userid: this.comment.userid,
+          content: document.getElementById("content").value,
+        };
+        await this.writeComment(comment);
       } else {
         alert("댓글을 입력해주세요");
       }
@@ -80,8 +70,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.alert {
-}
-</style>

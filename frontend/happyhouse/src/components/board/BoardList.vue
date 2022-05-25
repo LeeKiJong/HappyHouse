@@ -96,7 +96,7 @@
         style="margin-left: auto; margin-right: auto"
       >
         <vsud-pagination-item prev @click="prevPage" :disabled="pageNum == 1" />
-        <div v-for="pageNum in pageCount - 1" :key="pageNum">
+        <div v-for="pageNum in pageCount" :key="pageNum">
           <div v-if="curNum == pageNum">
             <vsud-pagination-item
               :label="pageNum"
@@ -111,7 +111,7 @@
         <vsud-pagination-item
           next
           @click="nextPage"
-          :disabled="pageNum == pageCount - 1"
+          :disabled="pageNum == pageCount"
         />
       </vsud-pagination>
     </div>
@@ -131,7 +131,7 @@ export default {
   data() {
     return {
       articles: [],
-      pageNum: 0,
+      pageNum: 1,
       curNum: 1,
     };
   },
@@ -149,7 +149,7 @@ export default {
     pageSize: {
       type: Number,
       required: false,
-      default: 10,
+      default: 9,
     },
   },
   methods: {
@@ -171,7 +171,7 @@ export default {
       this.$router.push({ name: "boardRegister" });
     },
     nextPage() {
-      if (this.pageNum < this.pageCount - 1) this.pageNum += 1;
+      if (this.pageNum < this.pageCount) this.pageNum += 1;
       this.curNum = this.pageNum;
     },
     movePage(num) {
@@ -179,7 +179,7 @@ export default {
       this.curNum = this.pageNum;
     },
     prevPage() {
-      if (this.pageNum > 0) this.pageNum -= 1;
+      if (this.pageNum - 1 > 0) this.pageNum -= 1;
       this.curNum = this.pageNum;
     },
     // filter로 쓸 filter ID 지정
@@ -222,8 +222,9 @@ export default {
       return page;
     },
     paginatedData() {
-      const start = this.pageNum * this.pageSize,
+      const start = (this.pageNum - 1) * this.pageSize,
         end = start + this.pageSize;
+
       return this.listArray.slice(start, end);
     },
   },

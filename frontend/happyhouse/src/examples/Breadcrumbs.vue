@@ -12,14 +12,14 @@
           href="#"
           >لوحات القيادة</a
         >
-        <a v-else :class="textWhite" class="opacity-8" href="#">Pages</a>
+        <a v-else :class="textWhite" class="opacity-8" href="#">Happyhouse</a>
       </li>
       <li
         class="text-sm breadcrumb-item active"
         :class="textWhite ? 'text-white' : 'text-dark'"
         aria-current="page"
       >
-        {{ currentPage }}
+        Pages
       </li>
     </ol>
     <h6 class="mb-0 font-weight-bolder" :class="textWhite ? 'text-white' : ''">
