@@ -49,10 +49,6 @@
   </div>
 </template>
 <script>
-//import { getArticle, deleteArticle } from "@/api/board";
-//import { listComment } from "@/api/comment";
-//import CommentList from "@/components/board/item/Comment_list";
-//import CommentInputItem from "@/components/board/item/CommentInputItem.vue";
 import { writeArticle } from "@/api/board";
 import VsudButton from "@/components/vsud/VsudButton.vue";
 import { mapState } from "vuex";
@@ -78,9 +74,6 @@ export default {
     ...mapState(memberStore, ["userInfo"]),
   },
   methods: {
-    back() {
-      this.$router.push({ name: "boardList" });
-    },
     writeConfirm() {
       this.article.userid = this.userInfo.userid;
 
@@ -97,7 +90,7 @@ export default {
             msg = "등록이 완료되었습니다.";
           }
           alert(msg);
-          this.$router.push({ name: "boardList" });
+          this.$router.push({ name: "Board" });
         },
         (error) => {
           console.log(error);

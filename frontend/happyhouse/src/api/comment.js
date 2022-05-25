@@ -3,7 +3,6 @@ import { apiInstance } from "@/api/index.js";
 const api = apiInstance();
 
 function listComment(articleno, success, fail) {
-  console.log(articleno);
   api.get(`/comment/${articleno}`).then(success).catch(fail);
 }
 

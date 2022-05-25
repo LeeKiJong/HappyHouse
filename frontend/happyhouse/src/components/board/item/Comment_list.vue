@@ -1,98 +1,73 @@
 <template>
-<div class="card-body pt-4 p-3">
-<ul class="list-group">
-           <div v-for="comments in paginatedData" :key="comments.commentno">
-                <li
-          class="list-group-item border-0 bg-gray-100 border-radius-lg"
-        >
-          <div class="flex-column">
-            <span class="mb-2 text-xs">
-              <span :id="comments.commentno" class="text-dark font-weight-bold" style="font-size: 17px;">
-                {{ comments.content }}</span
-              >
-              <vsud-button
-              v-if="comments.commentno == show"
-              class="m-1" style="width: 10.5%;float:right;"  
-                                  color="info"
-                    variant="gradient"
-              @click="updateComment"
-            >
-              수정 완료
-            </vsud-button>
-            <vsud-button
-              v-if="comments.userid == userInfo.userid  && comments.commentno != show"
-                                  color="info"
-                    variant="gradient"
-              style="width: 5%;float:right;"   
-              class="m-1"
-              @click="clickDelete(comments)"
-            >
-              삭제
-            </vsud-button>
-            <vsud-button
-              v-if="comments.userid == userInfo.userid && comments.commentno != show"
-              style="width: 5%; float:right;"                    color="info"
-                    variant="gradient"
-              class="m-1"
-              @click="clickUpdate(comments)"
-            >
-            수정
-            </vsud-button>
-              
-            
+  <comment-input-item />
+  <div class="card-body pt-0 p-3 comment-list-card">
+    <ul class="list-group">
+      <div
+        v-for="comment in $store.state.boardStore.comments"
+        :key="comment.commentno"
+      >
+        <li class="list-group-item border-0 bg-gray-100 border-radius-lg">
+          <div>
+            <span class="mb-2 text-xs col-auto">
+              &nbsp;&nbsp;{{ comment.userid }}
             </span>
-            <br/>
-            <span class="mb-2 text-xs">
-              작성일: 
-              <span class="text-dark ms-sm-2 font-weight-bold">
-                {{ yyyyMMdd(comments.regtime) }}</span
+            <span
+              class="ms-auto text-end col-auto"
+              v-if="
+                comment.userid == userInfo.userid && comment.commentno != show
+              "
+            >
+              <a
+                class="btn btn-link text-danger text-gradient px-2 py-0 mb-0"
+                @click="deleteComment(comment)"
               >
+                <i class="far fa-trash-alt me-2" aria-hidden="true"></i>
+              </a>
             </span>
-            <span class="mb-2 text-xs">
-              작성자: 
-              <span class="text-dark ms-sm-2 font-weight-bold">
-                {{ comments.userid }}</span
-              >
-            </span>
-            
-            
-            
           </div>
-          </li>
-
-
-   </div>
-        </ul>
+          <div class="row">
+            <span class="mb-2 text-xs">
+              <p
+                :id="comment.commentno"
+                class="m-0 text-lg font-weight-bold align-self-center"
+              >
+                {{ comment.content }}
+              </p>
+            </span>
+            <br />
           </div>
+        </li>
+      </div>
+    </ul>
+  </div>
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex";
+
 const memberStore = "memberStore";
-import { mapState } from "vuex";
-import { modifyComment, deleteComment } from "@/api/comment";
-import VsudButton from "@/components/vsud/VsudButton.vue"
+const boardStore = "boardStore";
+
 export default {
   name: "comment-list",
-  components:{
-    VsudButton,
-  },
   data() {
     return {
       commentno: "",
-      show:"",
+      show: "",
     };
   },
-  props: {
-    listArray: {
-      type: Array,
-      required: true,
+  created() {
+    this.listComment(this.$route.params.articleno);
+  },
+  computed: {
+    ...mapState(memberStore, ["userInfo"]),
+    paginatedData() {
+      return this.listArray;
     },
   },
-  created() {
-    console.log("asd");
-  },
   methods: {
-      yyyyMMdd: function (value) {
+    ...mapActions(boardStore, ["listComment", "deleteComment"]),
+    yyyyMMdd: function (value) {
       // 들어오는 value 값이 공백이면 그냥 공백으로 돌려줌
       if (value == "") return "";
 
@@ -115,67 +90,6 @@ export default {
 
       // 최종 포맷 (ex - '2021-10-08')
       return year + "-" + month + "-" + day;
-    },
-    updateComment() {
-      var text = document.getElementById("temp1").value;
-      if (text == "") {
-        console.log("입력하세요");
-      } else {
-        console.log("확인");
-        console.log(this.commentno);
-        modifyComment(
-          {
-            commentno: this.commentno,
-            content: text,
-          },
-          ({ data }) => {
-            let msg = "수정 처리시 문제가 발생했습니다.";
-            if (data === "success") {
-              msg = "수정이 완료되었습니다.";
-            }
-            alert(msg);
-            location.reload();
-          },
-          (error) => {
-            console.log(error);
-          },
-        );
-      }
-
-      //   const input = document.getElementById("inputContent");
-      //   console.log(input.innerText);
-    },
-    clickUpdate(comment) {
-      this.commentno = comment.commentno;
-      this.show=comment.commentno;
-      const input = document.getElementById(comment.commentno);
-      while (input.hasChildNodes()) {
-        input.removeChild(input.lastChild);
-      }
-      input.insertAdjacentHTML("afterBegin", "<input id ='temp1' value='" + comment.content+"'/>");
-    },
-    clickDelete(comment) {
-      this.commentno = comment.commentno;
-      deleteComment(
-        comment.commentno,
-        ({ data }) => {
-          let msg = "삭제 처리시 문제가 발생했습니다.";
-          if (data === "success") {
-            msg = "삭제가 완료되었습니다.";
-          }
-          alert(msg);
-          location.reload();
-        },
-        (error) => {
-          console.log(error);
-        },
-      );
-    },
-  },
-  computed: {
-    ...mapState(memberStore, ["userInfo"]),
-    paginatedData() {
-      return this.listArray;
     },
   },
 };
@@ -212,5 +126,9 @@ table tr td {
 }
 .btn-cover .page-count {
   padding: 0 1rem;
+}
+.comment-list-card {
+  overflow: auto;
+  height: calc(45vh - 180px);
 }
 </style>
