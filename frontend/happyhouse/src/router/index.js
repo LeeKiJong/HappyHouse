@@ -15,6 +15,7 @@ import Rtl from "@/views/Rtl.vue";
 import SignIn from "@/views/SignIn.vue";
 import SignUp from "@/views/SignUp.vue";
 
+import BoardView from "@/components/board/BoardView.vue";
 import BoardList from "@/components/board/BoardList.vue";
 import BoardDetail from "@/components/board/BoardDetail.vue";
 
@@ -63,9 +64,15 @@ const routes = [
   },
   {
     path: "/map",
-    name: "map",
+    name: "Map",
     component: MapView,
     beforeEnter: onlyAuthUser,
+  },
+  {
+    path: "/board",
+    name: "Board",
+    beforeEnter: onlyAuthUser,
+    component: BoardView,
   },
   {
     path: "/list",
