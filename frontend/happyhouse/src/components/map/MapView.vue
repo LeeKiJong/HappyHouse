@@ -1,5 +1,5 @@
 <template>
-  <div class="map-container">
+  <div class="container-fluid map-container">
     <div id="map" class="h-100 w-100" />
   </div>
   <house-sidebar
@@ -231,7 +231,7 @@ export default {
       // 마커 이미지의 이미지 주소입니다
       var imageSrc = require(`@/assets/img/pin.png`);
       // 마커 이미지의 이미지 크기 입니다
-      var imageSize = new kakao.maps.Size(35, 35);
+      var imageSize = new kakao.maps.Size(1, 1);
       // 마커 이미지를 리턴합니다
       return new kakao.maps.MarkerImage(imageSrc, imageSize);
     },
@@ -325,10 +325,8 @@ export default {
   position: relative;
 }
 .pin-image {
-  height: 35px;
-  width: 35px;
   height: 40px;
-  width: 40px;
+  width: 50px;
   vertical-align: middle;
 }
 .cluster-pin-image {
@@ -352,7 +350,6 @@ export default {
 }
 
 .map-container {
-  width: 85vw;
   height: 80vh;
 }
 </style>

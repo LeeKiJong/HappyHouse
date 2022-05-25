@@ -20,14 +20,14 @@
         </sidenav-collapse>
       </li>
       <li class="nav-item">
-        <sidenav-collapse navText="Map" :to="{ name: 'map' }">
+        <sidenav-collapse navText="Map" :to="{ name: 'Map' }">
           <template #icon>
             <office />
           </template>
         </sidenav-collapse>
       </li>
       <li class="nav-item">
-        <sidenav-collapse navText="Board" :to="{ name: 'boardList' }">
+        <sidenav-collapse navText="Board" :to="{ name: 'Board' }">
           <template #icon>
             <credit-card />
           </template>
