@@ -1,6 +1,5 @@
 import jwt_decode from "jwt-decode";
-import { deleteUser, login, register, update } from "@/api/member.js";
-import { findById } from "../../api/member";
+import * as member from "@/api/member.js";
 
 const memberStore = {
   namespaced: true,
@@ -14,6 +13,7 @@ const memberStore = {
     isDelete: false,
     isDeleteError: false,
     userInfo: null,
+    img_path: null,
   },
   getters: {
     checkUserInfo: function (state) {
@@ -49,13 +49,38 @@ const memberStore = {
       state.isLogin = true;
       state.userInfo = userInfo;
     },
+    SET_IMG_PATH: (state, img_path) => {
+      state.img_path = img_path;
+    },
   },
   actions: {
+    async getUserInfo({ commit }, token) {
+      let decode_token = jwt_decode(token.token);
+
+      return new Promise((resolve, reject) => {
+        member.findById(
+          decode_token.userid,
+          (response) => {
+            if (response.data.message === "success") {
+              commit("SET_IMG_PATH", response.data.img);
+              commit("SET_USER_INFO", response.data.userInfo);
+              resolve();
+            } else {
+              console.log("유저 정보 없음!!");
+              reject();
+            }
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+      });
+    },
     async registerConfirm({ commit }, user) {
-      await register(
+      await member.register(
         user,
         (response) => {
-          if (response.data.message === "success") {
+          if (response.data === "success") {
             commit("SET_IS_REGISTER", true);
             commit("SET_IS_REGISTER_ERROR", false);
           } else {
@@ -67,7 +92,7 @@ const memberStore = {
       );
     },
     async userConfirm({ commit }, user) {
-      await login(
+      await member.login(
         user,
         (response) => {
           if (response.data.message === "success") {
@@ -83,11 +108,14 @@ const memberStore = {
         () => {}
       );
     },
-    async updateConfirm({ commit }, user) {
-      await update(
-        user,
+    async updateConfirm({ commit }, formData) {
+      let token = sessionStorage.getItem("access-token");
+      let decode_token = jwt_decode(token);
+      await member.update(
+        decode_token.userid,
+        formData,
         (response) => {
-          if (response.data.message === "success") {
+          if (response.data === "success") {
             commit("SET_IS_UPDATE", true);
             commit("SET_IS_UPDATE_ERROR", false);
           } else {
@@ -98,11 +126,12 @@ const memberStore = {
         () => {}
       );
     },
-    async deleteConfirm({ commit }, userid) {
-      await deleteUser(
-        userid,
+    async deleteConfirm({ commit }, token) {
+      let decode_token = jwt_decode(token);
+      await member.deleteUser(
+        decode_token.userid,
         (response) => {
-          if (response.data.message === "success") {
+          if (response.data === "success") {
             commit("SET_IS_DELETE", true);
             commit("SET_IS_DELETE_ERROR", false);
           } else {
@@ -111,22 +140,6 @@ const memberStore = {
           }
         },
         () => {}
-      );
-    },
-    getUserInfo({ commit }, token) {
-      let decode_token = jwt_decode(token);
-      findById(
-        decode_token.userid,
-        (response) => {
-          if (response.data.message === "success") {
-            commit("SET_USER_INFO", response.data.userInfo);
-          } else {
-            console.log("유저 정보 없음!!");
-          }
-        },
-        (error) => {
-          console.log(error);
-        }
       );
     },
   },

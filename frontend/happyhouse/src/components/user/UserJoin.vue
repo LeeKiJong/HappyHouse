@@ -264,7 +264,10 @@ export default {
       await this.registerConfirm(this.user);
       if (this.isRegister) {
         alert("회원가입 성공!");
-        this.$router.push({ name: "signIn" });
+        this.$router.push({
+          name: "login",
+          params: { userid: this.user.userid, userpwd: this.user.userpwd },
+        });
       }
     },
   },

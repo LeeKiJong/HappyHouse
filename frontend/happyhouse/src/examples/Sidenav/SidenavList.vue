@@ -4,52 +4,6 @@
     id="sidenav-collapse-main"
   >
     <ul class="navbar-nav">
-      <li class="nav-item">
-        <sidenav-collapse navText="Dashboard" :to="{ name: 'Dashboard' }">
-          <template #icon>
-            <shop />
-          </template>
-        </sidenav-collapse>
-      </li>
-      <li class="nav-item">
-        <sidenav-collapse navText="Profile" :to="{ name: 'Profile' }">
-          <template #icon>
-            <customer-support />
-          </template>
-        </sidenav-collapse>
-      </li>
-      <li class="nav-item">
-        <sidenav-collapse navText="Map" :to="{ name: 'Map' }">
-          <template #icon>
-            <office />
-          </template>
-        </sidenav-collapse>
-      </li>
-      <li class="nav-item">
-        <sidenav-collapse navText="Billing" :to="{ name: 'Billing' }">
-          <template #icon>
-            <credit-card />
-          </template>
-        </sidenav-collapse>
-      </li>
-
-      <li class="nav-item">
-        <sidenav-collapse
-          navText="Virtual Reality"
-          :to="{ name: 'Virtual Reality' }"
-        >
-          <template #icon>
-            <box3d />
-          </template>
-        </sidenav-collapse>
-      </li>
-      <li class="nav-item">
-        <sidenav-collapse navText="RTL" :to="{ name: 'Rtl' }">
-          <template #icon>
-            <settings />
-          </template>
-        </sidenav-collapse>
-      </li>
       <li class="mt-3 nav-item">
         <h6
           class="text-xs ps-4 text-uppercase font-weight-bolder opacity-6"
@@ -59,16 +13,30 @@
         </h6>
       </li>
       <li class="nav-item">
-        <sidenav-collapse navText="Sign In" :to="{ name: 'Sign In' }">
+        <sidenav-collapse navText="Dashboard" :to="{ name: 'Dashboard' }">
           <template #icon>
-            <document />
+            <shop />
           </template>
         </sidenav-collapse>
       </li>
       <li class="nav-item">
-        <sidenav-collapse navText="Sign Up" :to="{ name: 'Sign Up' }">
+        <sidenav-collapse navText="Map" :to="{ name: 'map' }">
           <template #icon>
-            <spaceship />
+            <office />
+          </template>
+        </sidenav-collapse>
+      </li>
+      <li class="nav-item">
+        <sidenav-collapse navText="Board" :to="{ name: 'boardList' }">
+          <template #icon>
+            <credit-card />
+          </template>
+        </sidenav-collapse>
+      </li>
+      <li class="nav-item">
+        <sidenav-collapse navText="Profile" :to="{ name: 'Profile' }">
+          <template #icon>
+            <customer-support />
           </template>
         </sidenav-collapse>
       </li>
@@ -80,12 +48,10 @@ import SidenavCollapse from "./SidenavCollapse.vue";
 import Shop from "../../components/Icon/Shop.vue";
 import Office from "../../components/Icon/Office.vue";
 import CreditCard from "../../components/Icon/CreditCard.vue";
-import Box3d from "../../components/Icon/Box3d.vue";
 import CustomerSupport from "../../components/Icon/CustomerSupport.vue";
-import Document from "../../components/Icon/Document.vue";
-import Spaceship from "../../components/Icon/Spaceship.vue";
-import Settings from "../../components/Icon/Settings.vue";
+import { mapState } from "vuex";
 
+const memberStore = "memberStore";
 export default {
   name: "SidenavList",
   props: {
@@ -103,11 +69,10 @@ export default {
     Shop,
     Office,
     CreditCard,
-    Box3d,
     CustomerSupport,
-    Document,
-    Spaceship,
-    Settings,
+  },
+  computed: {
+    ...mapState(memberStore, ["userInfo"]),
   },
   methods: {
     getRoute() {

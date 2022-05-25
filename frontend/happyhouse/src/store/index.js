@@ -1,13 +1,16 @@
 import { createStore } from "vuex";
 import bootstrap from "bootstrap/dist/js/bootstrap.min.js";
+import createPersistedState from "vuex-persistedstate";
 
-import memberStore from "/src/store/modules/memberStore.js";
-import houseStore from "/src/store/modules/houseStore.js";
+import memberStore from "@/store/modules/memberStore.js";
+import houseStore from "@/store/modules/houseStore.js";
+import boardStore from "@/store/modules/boardStore.js";
 
 export default createStore({
   modules: {
-    memberStore,
     houseStore,
+    boardStore,
+    memberStore,
   },
   state: {
     hideConfigButton: false,
@@ -75,4 +78,10 @@ export default createStore({
     },
   },
   getters: {},
+  plugins: [
+    createPersistedState({
+      // 브라우저 종료시 제거하기 위해 localStorage가 아닌 sessionStorage로 변경. (default: localStorage)
+      storage: sessionStorage,
+    }),
+  ],
 });

@@ -21,7 +21,7 @@
                 type="text"
                 placeholder="아이디를 입력해주세요"
                 name="userid"
-                @value="setUserinfo"
+                :value="user.userid"
               />
               <label>비밀번호</label>
               <vsud-input
@@ -29,7 +29,7 @@
                 type="password"
                 placeholder="비밀번호를 입력해주세요"
                 name="userpwd"
-                @value="setUserinfo"
+                :value="user.userpwd"
               />
               <vsud-switch id="rememberMe" name="rememberMe" checked>
                 Remember me
@@ -39,7 +39,7 @@
                   class="my-4 mb-2"
                   variant="gradient"
                   color="info"
-                  @click.prevent="confirm()"
+                  @click.prevent="confirm"
                   full-width
                   >로그인
                 </vsud-button>
@@ -83,10 +83,13 @@ export default {
   },
   computed: {
     ...mapState(["isTransparent", "isNavFixed", "navbarFixed", "mcolor"]),
-    ...mapState(memberStore, ["isLogin", "isLoginError"]),
   },
   mounted() {
     setTooltip(this.$store.state.bootstrap);
+    // if (this.$route.params.userid != null) {
+    //   this.user.userid = this.$route.params.userid;
+    //   this.user.userpwd = this.$route.params.userpwd;
+    // }
   },
   beforeMount() {
     this.$store.state.showNavbar = false;
@@ -113,16 +116,16 @@ export default {
     ...mapMutations(["navbarMinimize", "toggleConfigurator"]),
     ...mapActions(memberStore, ["userConfirm", "getUserInfo"]),
 
-    setUserinfo(value) {
-      this.user.userid = value[0].value;
-      this.user.userpwd = value[1].value;
-    },
     async confirm() {
-      await this.userConfirm(this.user);
-      let token = sessionStorage.getItem("access-token");
-      if (this.isLogin) {
-        await this.getUserInfo(token);
-        this.$router.push({ name: "home" });
+      const user = {
+        userid: document.getElementById("userid").value,
+        userpwd: document.getElementById("userpwd").value,
+      };
+
+      await this.userConfirm(user);
+
+      if (this.$store.state.memberStore.isLogin) {
+        this.$router.push({ name: "Dashboard" });
       }
     },
   },
