@@ -44,6 +44,11 @@ export default {
     Navbar,
     AppFooter,
   },
+  created() {
+    this.$store.state.showNavbar = true;
+    this.$store.state.showSidenav = true;
+    this.$store.state.showFooter = true;
+  },
   methods: {
     ...mapMutations(["toggleConfigurator", "navbarMinimize"]),
   },

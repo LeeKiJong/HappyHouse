@@ -6,9 +6,6 @@ import UserJoin from "@/components/user/UserJoin.vue";
 
 import MapView from "@/components/map/MapView.vue";
 
-import HouseList from "@/components/house/HouseList.vue";
-import HouseDetail from "@/components/house/HouseDetail.vue";
-
 import Dashboard from "@/views/Dashboard.vue";
 import Tables from "@/views/Tables.vue";
 import Billing from "@/views/Billing.vue";
@@ -18,9 +15,33 @@ import Rtl from "@/views/Rtl.vue";
 import SignIn from "@/views/SignIn.vue";
 import SignUp from "@/views/SignUp.vue";
 
+import BoardList from "@/components/board/BoardList.vue";
+import BoardDetail from "@/components/board/BoardDetail.vue";
+
+import store from "@/store";
+
+const onlyAuthUser = async (to, from, next) => {
+  const checkUserInfo = store.getters["memberStore/checkUserInfo"];
+
+  let token = sessionStorage.getItem("access-token");
+
+  if (checkUserInfo == null && token) {
+    await store.dispatch("memberStore/getUserInfo", { token }, { root: true });
+    next();
+    return;
+  }
+
+  if (checkUserInfo === null) {
+    next({ name: "login" });
+  } else {
+    next();
+  }
+};
+
 const routes = [
   {
     path: "/",
+    name: "welcome",
     redirect: "/dashboard",
   },
   {
@@ -42,24 +63,38 @@ const routes = [
   },
   {
     path: "/map",
-    name: "Map",
+    name: "map",
     component: MapView,
-    children: [
-      {
-        path: "list/:dongCode",
-        name: "houseList",
-        component: HouseList,
-      },
-      {
-        path: "list/:dongCode/:aptCode",
-        name: "houseDetail",
-        component: HouseDetail,
-      },
-    ],
+    beforeEnter: onlyAuthUser,
   },
+  {
+    path: "/list",
+    name: "boardList",
+    beforeEnter: onlyAuthUser,
+    component: BoardList,
+  },
+  {
+    path: "/write",
+    name: "boardRegister",
+    beforeEnter: onlyAuthUser,
+    component: () => import("@/components/board/BoardRegister.vue"),
+  },
+  {
+    path: "/detail/:articleno",
+    name: "boardDetail",
+    beforeEnter: onlyAuthUser,
+    component: BoardDetail,
+  },
+  // {
+  //   path: "modify/:articleno",
+  //   name: "boardModify",
+  //   beforeEnter: onlyAuthUser,
+  //   component: () => import("@/components/board/BoardModify.vue"),
+  // },
   {
     path: "/dashboard",
     name: "Dashboard",
+    beforeEnter: onlyAuthUser,
     component: Dashboard,
   },
   {
@@ -80,6 +115,7 @@ const routes = [
   {
     path: "/profile",
     name: "Profile",
+    beforeEnter: onlyAuthUser,
     component: Profile,
   },
   {
