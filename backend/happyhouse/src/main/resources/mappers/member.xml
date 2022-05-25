@@ -30,7 +30,7 @@
 	
 	
 	<select id="userInfo" parameterType="String" resultType="memberDto">
-		select username, userid, email, filename, joindate
+		select username, userpwd, userid, email, filename, joindate
 		from ssafy_member
 		where userid = #{userid}
 	</select>

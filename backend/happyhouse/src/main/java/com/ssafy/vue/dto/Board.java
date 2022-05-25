@@ -9,6 +9,7 @@ public class Board {
 	private int articleno;
 	@ApiModelProperty(value = "작성자아이디")
 	private String userid;
+	private String username;
 	@ApiModelProperty(value = "제목")
 	private String subject;
 	@ApiModelProperty(value = "내용")

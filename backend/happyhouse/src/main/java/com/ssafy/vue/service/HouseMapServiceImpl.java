@@ -74,6 +74,11 @@ public class HouseMapServiceImpl implements HouseMapService {
 		return houseMapMapper.getAptDetailInDate(dateDto);
 	}
 
+	@Override
+	public List<String> getAptDealsAvg(String aptCode) throws Exception {
+		return houseMapMapper.getAptDealsAvg(aptCode);
+	}
+
 	
 
 }

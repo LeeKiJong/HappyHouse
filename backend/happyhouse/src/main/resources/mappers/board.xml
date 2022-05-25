@@ -6,13 +6,13 @@
 
 	<!-- 게시글 전체 조회 -->
 	<select id="selectBoard" parameterType="String" resultType="board">
-		select *
-		from board 
-		where type = #{type}
-		order by articleno desc
+		select b. *, s.username
+		from board b join ssafy_member s
+		where type = #{type} and b.userid = s.userid
+		order by articleno desc;
 	</select>
 
-	<!-- 게시글 전체 조회 -->
+	<!-- 게시글 검색 조회 -->
 	<select id="searchBoard" parameterType="board" resultType="board">
 		select * from board where type = #{type} and subject LIKE #{subject} order by articleno desc;
 	</select>

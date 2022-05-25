@@ -20,4 +20,5 @@ public interface HouseMapMapper {
 	List<HouseInfoDto> getAptInMap(MapInfoDto mapInfoDto) throws SQLException;
 	List<HouseDealDto> getAptDetail(String aptCode) throws SQLException;
 	List<HouseDealDto> getAptDetailInDate(DateDto dateDto) throws SQLException;
+	List<String> getAptDealsAvg(String aptCode) throws SQLException;
 }

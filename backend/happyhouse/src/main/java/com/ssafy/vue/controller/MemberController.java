@@ -50,7 +50,7 @@ public class MemberController {
 	private MemberService memberService;
 
 	
-	@ApiOperation(value = "ȸ������", notes = "ȸ������ ��� �޼����� ��ȯ�Ѵ�.")
+	@ApiOperation(value = "ȸ������", notes = "ȸ������ ���?? �޼����� ��ȯ�Ѵ�.")
 	@PostMapping(value = "/join")
     public ResponseEntity<String> join(@RequestBody @ApiParam(value = "ȸ������ �� �ʿ��� ȸ������(memberDto).", required = true) MemberDto memberDto) throws JsonMappingException, JsonProcessingException {
 		logger.debug("ȸ������ ���� : {}", memberDto.toString());
@@ -65,10 +65,10 @@ public class MemberController {
         return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
     }
 
-	@ApiOperation(value = "�α���", notes = "Access-token�� �α��� ��� �޼����� ��ȯ�Ѵ�.", response = Map.class)
+	@ApiOperation(value = "�α���", notes = "Access-token�� �α��� ���?? �޼����� ��ȯ�Ѵ�.", response = Map.class)
 	@PostMapping("/login")
 	public ResponseEntity<Map<String, Object>> login(
-			@RequestBody @ApiParam(value = "�α��� �� �ʿ��� ȸ������(���̵�, ��й�ȣ).", required = true) MemberDto memberDto) {
+			@RequestBody @ApiParam(value = "�α��� �� �ʿ��� ȸ������(���̵�, ��й��?).", required = true) MemberDto memberDto) {
 		logger.debug(memberDto.toString());
 		Map<String, Object> resultMap = new HashMap<>();
 		HttpStatus status = null;
@@ -92,7 +92,7 @@ public class MemberController {
 		return new ResponseEntity<Map<String, Object>>(resultMap, status);
 	}
 
-	@ApiOperation(value = "ȸ������ ����", notes = "ȸ������ ���� ��� �޼����� ��ȯ�Ѵ�.")
+	@ApiOperation(value = "ȸ������ ����", notes = "ȸ������ ���� ���?? �޼����� ��ȯ�Ѵ�.")
 	@PostMapping("/update/{userid}")
 	public ResponseEntity<String> update(
 			@PathVariable("userid") @ApiParam(value = "������ ȸ���� ���̵�.", required = true) String userid,
@@ -103,7 +103,7 @@ public class MemberController {
 		logger.debug("token : {} ", userid);
 
 		if (jwtService.isUsable(userid)) {
-			logger.info("��� ������ ��ū!!!");
+			logger.info("���?? ������ ��ū!!!");
 			try {
 				if (memberService.update(memberDto)) {
 					if (!new File("./images/" + memberDto.getFilename()).exists()) {
@@ -117,12 +117,12 @@ public class MemberController {
 				logger.error("������ȸ ���� : {}", e);
 			}
 		} else {
-			logger.error("��� �Ұ��� ��ū!!!");
+			logger.error("���?? �Ұ��� ��ū!!!");
 		}
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
 	
-	@ApiOperation(value = "ȸ�� ����", notes = "ȸ������ ���� ��� �޼����� ��ȯ�Ѵ�.")
+	@ApiOperation(value = "ȸ�� ����", notes = "ȸ������ ���� ���?? �޼����� ��ȯ�Ѵ�.")
 	@GetMapping("/info/delete/{userid}")
 	public ResponseEntity<String> delete(
 			@PathVariable("userid") @ApiParam(value = "������ ȸ���� ���̵�.", required = true) String userid, HttpServletRequest request) {
@@ -130,7 +130,7 @@ public class MemberController {
 		logger.debug("token : {} ", request.getHeader("access-token"));
 		
 		if (jwtService.isUsable(request.getHeader("access-token"))) {
-			logger.info("��� ������ ��ū!!!");
+			logger.info("���?? ������ ��ū!!!");
 			try {
 				if (memberService.delete(userid)) {
 					return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
@@ -139,12 +139,11 @@ public class MemberController {
 				logger.error("���� ���� ���� : {}", e);
 			}
 		} else {
-			logger.error("��� �Ұ��� ��ū!!!");
+			logger.error("���?? �Ұ��� ��ū!!!");
 		}
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 		
 	}
-	
 	@ApiOperation(value = "ȸ������", notes = "ȸ�� ������ ���� Token�� ��ȯ�Ѵ�.", response = Map.class)
 	@GetMapping("/info/idcheck/{userid}")
 	public ResponseEntity<String> getInfo(
@@ -154,38 +153,33 @@ public class MemberController {
 		MemberDto memberDto = memberService.userInfo(userid);
 		System.out.println(userid);
 		if (memberDto == null) {
-			System.out.println("성공");
+			System.out.println("?���??");
 			return new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
 		} else {
-			System.out.println("실패");
+			System.out.println("?��?��");
 			return new ResponseEntity<String>("FAIL", HttpStatus.NO_CONTENT);
 		}
 	}
 
-	@GetMapping("/info/pwdcheck")
-	public ResponseEntity<Map<String, Object>> getPwd(@RequestBody MemberDto memberDto)
+	@PostMapping("/info/pwdcheck")
+	public ResponseEntity<String> getPwd(@RequestBody MemberDto memberDto)
 			throws Exception {
-		Map<String, Object> resultMap = new HashMap<>();
+		Map<String, String> resultMap = new HashMap<>();
 		HttpStatus status = HttpStatus.ACCEPTED;
 		System.out.println(memberDto.getUserid() + ", " + memberDto.getEmail());
 		MemberDto temp = memberService.userInfo(memberDto.getUserid());
-		if (memberDto == null) {
-			System.out.println("실패");
-			resultMap.put("message", FAIL);
-			status = HttpStatus.INTERNAL_SERVER_ERROR;
+		System.out.println(temp.getUserid());
+		System.out.println(temp.getUserpwd());
+		if (temp.getUserid().length() == 0) {
+			return new ResponseEntity<String>("FAIL", HttpStatus.NO_CONTENT);
 		} else {
 			System.out.println(temp.getUserid() + ", " + temp.getEmail());
 			if (temp.getEmail().equals(memberDto.getEmail())) {
-				System.out.println("성공");
-				resultMap.put("userpwd", temp.getUserpwd());
-				resultMap.put("message", SUCCESS);
+				return new ResponseEntity<String>(temp.getUserpwd(), HttpStatus.OK);
 			} else {
-				System.out.println("실패");
-				resultMap.put("message", FAIL);
-				status = HttpStatus.INTERNAL_SERVER_ERROR;
+				return new ResponseEntity<String>("FAIL", HttpStatus.NO_CONTENT);
 			}
 		}
-		return new ResponseEntity<Map<String, Object>>(resultMap, status);
 	}
 	
 	@ApiOperation(value = "ȸ������", notes = "ȸ�� ������ ���� Token�� ��ȯ�Ѵ�.", response = Map.class)
@@ -197,9 +191,9 @@ public class MemberController {
 		Map<String, Object> resultMap = new HashMap<>();
 		HttpStatus status = HttpStatus.ACCEPTED;
 		if (jwtService.isUsable(request.getHeader("access-token"))) {
-			logger.info("��� ������ ��ū!!!");
+			logger.info("���?? ������ ��ū!!!");
 			try {
-//				�α��� ����� ����.
+//				�α��� �����?? ����.
 				MemberDto memberDto = memberService.userInfo(userid);
 				logger.debug("ȸ����ȸ : {}", memberDto);
 				
@@ -228,7 +222,7 @@ public class MemberController {
 				status = HttpStatus.INTERNAL_SERVER_ERROR;
 			}
 		} else {
-			logger.error("��� �Ұ��� ��ū!!!");
+			logger.error("���?? �Ұ��� ��ū!!!");
 			resultMap.put("message", FAIL);
 			status = HttpStatus.ACCEPTED;
 		}

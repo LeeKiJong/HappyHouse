@@ -19,5 +19,6 @@ public interface HouseMapService {
 	List<HouseInfoDto> getAptInMap(MapInfoDto mapInfoDto) throws Exception;
 	List<HouseDealDto> getAptDetail(String aptCode) throws Exception;
 	List<HouseDealDto> getAptDetailInDate(String aptCode, String from, String to) throws Exception;
+	List<String> getAptDealsAvg(String aptCode) throws Exception;
 	
 }

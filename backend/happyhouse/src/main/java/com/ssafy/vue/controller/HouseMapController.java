@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -87,6 +88,16 @@ public class HouseMapController {
 
 		return new ResponseEntity<List<HouseDealDto>>(haHouseMapService.getAptDetail(aptCode), HttpStatus.OK);
 	}
+	@GetMapping("/apt/avg/{aptCode}")
+	public ResponseEntity<List<String>> apt_deals_avg(
+			@PathVariable("aptCode") @ApiParam(value = "������ ȸ���� ���̵�.", required = true) String aptCode) throws Exception{
+		
+			System.out.println(haHouseMapService.getAptDealsAvg(aptCode));
+		
+
+			return new ResponseEntity<List<String>>(haHouseMapService.getAptDealsAvg(aptCode), HttpStatus.OK);
+	}
+	
 	@GetMapping("/apt/dealInDate")
 	public ResponseEntity<List<HouseDealDto>> apt_detailInDate(@RequestParam("aptCode") String aptCode, @RequestParam("from") String from,
 	@RequestParam("to") String to) throws Exception {
