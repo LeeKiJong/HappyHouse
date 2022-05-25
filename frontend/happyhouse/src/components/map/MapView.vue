@@ -4,10 +4,7 @@
   </div>
   <house-sidebar
     :toggle="toggleConfigurator"
-    :class="[
-      this.$store.state.showConfig ? 'show' : '',
-      this.$store.state.hideConfigButton ? 'd-none' : '',
-    ]"
+    :class="[this.$store.state.showConfig ? 'show' : '']"
     @address="setCenterByAddress"
     @house="setCenterByHouseLatLng"
   ></house-sidebar>
