@@ -11,7 +11,7 @@
             {{ new Date().getFullYear() }}
             by
             <a
-              href="https://edu.ssafy.com/"
+              href="https://www.ssafy.com/"
               class="font-weight-bold"
               target="_blank"
               >SSAFY</a
@@ -25,23 +25,23 @@
           >
             <li class="nav-item">
               <a
-                href="https://www.creative-tim.com"
+                href="https://www.ssafy.com/"
                 class="nav-link text-muted"
                 target="_blank"
-                >Creative Tim</a
+                >SSAFY</a
               >
             </li>
             <li class="nav-item">
               <a
-                href="https://www.creative-tim.com/presentation"
+                href="https://github.com/LeeKiJong/HappyHouse"
                 class="nav-link text-muted"
                 target="_blank"
-                >About Us</a
+                >Github</a
               >
             </li>
             <li class="nav-item">
               <a
-                href="https://www.creative-tim.com/blog"
+                href="https://velog.io/@mungmnb777"
                 class="nav-link text-muted"
                 target="_blank"
                 >Blog</a

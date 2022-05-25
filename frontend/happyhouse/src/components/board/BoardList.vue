@@ -58,7 +58,7 @@
                 </td>
                 <td>
                   <p class="text-sm font-weight-bold mb-0">
-                    {{ article.userid }}
+                    {{ article.username }}
                   </p>
                 </td>
                 <td>

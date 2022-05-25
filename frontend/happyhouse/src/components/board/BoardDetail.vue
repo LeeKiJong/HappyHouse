@@ -19,7 +19,7 @@
               <span class="col-auto text-xs align-self-center">
                 작성자:
                 <span class="text-dark font-weight-bold ms-sm-2">
-                  {{ article.userid }}
+                  {{ article.username }}
                 </span>
               </span>
               <span class="col-auto text-xs align-self-center">
@@ -142,6 +142,7 @@ export default {
   },
   methods: {
     ...mapActions(boardStore, ["listComment"]),
+
     modifyConfirm() {
       modifyArticle(
         {
