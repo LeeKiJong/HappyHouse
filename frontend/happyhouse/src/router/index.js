@@ -8,7 +8,7 @@ import MapView from "@/components/map/MapView.vue";
 
 import Dashboard from "@/views/Dashboard.vue";
 import Profile from "@/views/Profile.vue";
-
+// Board Domainn
 import BoardView from "@/components/board/BoardView.vue";
 import BoardList from "@/components/board/BoardList.vue";
 import BoardDetail from "@/components/board/BoardDetail.vue";

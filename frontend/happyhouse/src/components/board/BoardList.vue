@@ -130,6 +130,7 @@ export default {
 
   data() {
     return {
+      array: [],
       articles: [],
       pageNum: 1,
       curNum: 1,
@@ -152,15 +153,31 @@ export default {
       default: 9,
     },
   },
+  watch: {
+    listArray() {
+      this.array = this.listArray;
+    },
+  },
+  mounted() {
+    console.log(this.listArray);
+    this.array = this.listArray;
+  },
   methods: {
+    reset() {
+      this.array = this.listArray;
+      document.getElementById("content").value = null;
+    },
     async searchContent() {
+      console.log(1);
       let param = {
-        title: document.getElementById("content").value + "",
+        subject: document.getElementById("content").value,
+        type: "board",
       };
       await searchTitle(
         param,
         (response) => {
-          this.$router.push({ name: "list", params: { list: response.data } });
+          console.log(response.data);
+          this.array = response.data;
         },
         (error) => {
           console.log(error);
@@ -210,7 +227,7 @@ export default {
   },
   computed: {
     pageCount() {
-      let listLeng = this.listArray.length,
+      let listLeng = this.array.length,
         listSize = this.pageSize,
         page = Math.floor(listLeng / listSize);
       if (listLeng % listSize > 0) page += 1;
@@ -225,7 +242,7 @@ export default {
       const start = (this.pageNum - 1) * this.pageSize,
         end = start + this.pageSize;
 
-      return this.listArray.slice(start, end);
+      return this.array.slice(start, end);
     },
   },
 };

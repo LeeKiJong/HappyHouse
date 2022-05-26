@@ -65,6 +65,15 @@
               >
                 정보 수정
               </vsud-button>
+              &nbsp;&nbsp;
+              <vsud-button
+                color="danger"
+                variant="gradient"
+                class="my-4 mb-2"
+                @click="deleteUser"
+              >
+                회원 탈퇴
+              </vsud-button>
             </div>
           </div>
         </div>
@@ -78,6 +87,7 @@ import { mapActions, mapState, mapMutations } from "vuex";
 
 import VsudInput from "@/components/vsud/VsudInput.vue";
 import VsudButton from "@/components/vsud/VsudButton.vue";
+import swal from "sweetalert";
 
 const memberStore = "memberStore";
 
@@ -121,16 +131,33 @@ export default {
       "getUserInfo",
     ]),
     async deleteUser() {
+      swal({
+        title: "정말로 탈퇴하시겠습니까?",
+        text: "앞으로 같은 계정을 사용하실 수 없게 됩니다!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      }).then((willDelete) => {
+        if (willDelete) {
+          this.delete();
+        }
+      });
+    },
+    async delete() {
       let token = sessionStorage.getItem("access-token");
       await this.deleteConfirm(token);
-      console.log(this.isDelete);
       if (this.isDelete) {
         this.SET_IS_LOGIN(false);
         this.SET_USER_INFO(null);
         sessionStorage.removeItem("access-token");
-        alert("회원정보 삭제 성공!");
         this.$router.push({ name: "login" });
-        location.reload();
+        swal("회원님의 계정이 정상적으로 삭제되었습니다!", {
+          icon: "success",
+        });
+      } else {
+        swal("삭제에 실패했습니다.", {
+          icon: "erorr",
+        });
       }
     },
     async confirm() {
@@ -166,8 +193,13 @@ export default {
       await this.updateConfirm(formData);
 
       if (this.isUpdate) {
-        alert("정보 수정 성공!");
-        location.reload();
+        swal({
+          title: "정보를 수정했습니다!",
+          icon: "success",
+        });
+        let token = sessionStorage.getItem("access-token");
+        this.getUserInfo(token);
+        this.$router.push({ name: "Profile" });
       }
     },
     toggleShow() {

@@ -53,6 +53,8 @@ import { writeArticle } from "@/api/board";
 import VsudButton from "@/components/vsud/VsudButton.vue";
 import { mapState } from "vuex";
 import VsudInput from "@/components/vsud/VsudInput.vue";
+import swal from "sweetalert";
+
 const memberStore = "memberStore";
 export default {
   name: "BoardRegister",
@@ -85,11 +87,14 @@ export default {
           type: "board",
         },
         ({ data }) => {
-          let msg = "등록 처리시 문제가 발생했습니다.";
           if (data === "success") {
-            msg = "등록이 완료되었습니다.";
+            swal({ title: "등록이 완료되었습니다.", icon: "success" });
+          } else {
+            swal({
+              title: "등록 처리시 문제가 발생했습니다.",
+              icon: "error",
+            });
           }
-          alert(msg);
           this.$router.push({ name: "Board" });
         },
         (error) => {

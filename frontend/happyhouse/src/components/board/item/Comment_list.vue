@@ -9,7 +9,7 @@
         <li class="list-group-item border-0 bg-gray-100 border-radius-lg">
           <div>
             <span class="mb-2 text-xs col-auto">
-              &nbsp;&nbsp;{{ comment.userid }}
+              &nbsp;&nbsp;{{ comment.username }}
             </span>
             <span
               class="ms-auto text-end col-auto"

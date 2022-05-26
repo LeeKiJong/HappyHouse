@@ -19,21 +19,19 @@
               <vsud-input
                 id="userid"
                 type="text"
-                placeholder="아이디를 입력해주세요"
+                placeholder="아이디를 입력해주세요..."
                 name="userid"
                 :value="user.userid"
               />
+
               <label>비밀번호</label>
               <vsud-input
                 id="userpwd"
                 type="password"
-                placeholder="비밀번호를 입력해주세요"
+                placeholder="비밀번호를 입력해주세요..."
                 name="userpwd"
                 :value="user.userpwd"
               />
-              <vsud-switch id="rememberMe" name="rememberMe" checked>
-                Remember me
-              </vsud-switch>
               <div class="text-center">
                 <vsud-button
                   class="my-4 mb-2"
@@ -56,9 +54,9 @@
 <script>
 import AppFooter from "@/examples/Footer.vue";
 import VsudInput from "@/components/vsud/VsudInput.vue";
-import VsudSwitch from "@/components/vsud/VsudSwitch.vue";
 import VsudButton from "@/components/vsud/VsudButton.vue";
 import setTooltip from "@/assets/js/tooltip.js";
+import swal from "sweetalert";
 
 const body = document.getElementsByTagName("body")[0];
 const memberStore = "memberStore";
@@ -70,7 +68,6 @@ export default {
   components: {
     AppFooter,
     VsudInput,
-    VsudSwitch,
     VsudButton,
   },
   data() {
@@ -83,13 +80,14 @@ export default {
   },
   computed: {
     ...mapState(["isTransparent", "isNavFixed", "navbarFixed", "mcolor"]),
+    ...mapState(memberStore, ["isLogin", "isLoginError"]),
   },
   mounted() {
     setTooltip(this.$store.state.bootstrap);
-    // if (this.$route.params.userid != null) {
-    //   this.user.userid = this.$route.params.userid;
-    //   this.user.userpwd = this.$route.params.userpwd;
-    // }
+    if (this.$route.params.userid != null) {
+      this.user.userid = this.$route.params.userid;
+      this.user.userpwd = this.$route.params.userpwd;
+    }
   },
   beforeMount() {
     this.$store.state.showNavbar = false;
@@ -117,17 +115,29 @@ export default {
     ...mapActions(memberStore, ["userConfirm", "getUserInfo"]),
 
     async confirm() {
-      const user = {
-        userid: document.getElementById("userid").value,
-        userpwd: document.getElementById("userpwd").value,
-      };
-
-      await this.userConfirm(user);
-
-      if (this.$store.state.memberStore.isLogin) {
+      this.user.userid = document.getElementById("userid").value;
+      this.user.userpwd = document.getElementById("userpwd").value;
+      await this.userConfirm(this.user);
+      let token = sessionStorage.getItem("access-token");
+      if (this.isLogin) {
+        await swal({ title: "로그인에 성공했습니다.", icon: "success" });
+        await this.getUserInfo(token);
         this.$router.push({ name: "Dashboard" });
+      } else {
+        swal({ title: "아이디 혹은 비밀번호가 틀렸습니다.", icon: "error" });
       }
     },
   },
 };
 </script>
+<style>
+.swal-overlay {
+  background-color: rgba(61, 142, 213, 0.585);
+}
+.swal-footer {
+  background-color: rgb(245, 248, 250);
+  margin-top: 32px;
+  border-top: 1px solid #e9eef1;
+  overflow: hidden;
+}
+</style>

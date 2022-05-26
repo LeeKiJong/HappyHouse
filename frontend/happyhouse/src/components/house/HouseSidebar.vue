@@ -41,6 +41,7 @@
               icon="square-pin"
               :title="house.apartmentName"
               :date-time="house.roadName + ' ' + house.bonbun"
+              :aptcode="house.aptCode"
               @click="onClickDetail(house)"
             />
           </house-list>
@@ -76,6 +77,7 @@
           </div>
         </div>
         <br />
+
         <house-detail
           class="house-detail-card"
           :horizontal-break="false"
@@ -83,6 +85,7 @@
         />
         <gradient-line-chart
           id="chart-line"
+          title="연도별 평균가격 차트"
           :chart="{
             labels: [
               '2015',
@@ -97,7 +100,7 @@
             datasets: [
               {
                 label: 'apt',
-                data: deals_year,
+                data: deals_Info,
               },
             ],
           }"
@@ -118,10 +121,8 @@ import HouseList from "@/components/house/HouseList.vue";
 import HouseListItem from "@/components/house/HouseListItem.vue";
 import HouseDetail from "@/components/house/HouseDetail.vue";
 import VsudInput from "@/components/vsud/VsudInput.vue";
+import { mapMutations, mapActions, mapState } from "vuex";
 import GradientLineChart from "@/examples/Charts/GradientLineChart.vue";
-
-import { mapMutations, mapActions } from "vuex";
-
 const houseStore = "houseStore";
 
 export default {
@@ -140,7 +141,6 @@ export default {
     return {
       houses: [],
       deals: [],
-      deals_year: [],
       display: {
         list: true,
         detail: false,
@@ -149,7 +149,11 @@ export default {
   },
   methods: {
     ...mapMutations(houseStore, ["SET_DETAIL_HOUSE"]),
-    ...mapActions(houseStore, ["getHouseDeal", "getHouseListByAptName"]),
+    ...mapActions(houseStore, [
+      "getHouseDeal",
+      "getHouseListByAptName",
+      "getDealsAvg",
+    ]),
     modalToggle(id) {
       new Modal(document.getElementById(id), {}).show();
     },
@@ -157,6 +161,7 @@ export default {
       this.$emit("house", house);
       this.setDetailHouse(house);
       await this.getHouseDeal(house.aptCode);
+      await this.getDealsAvg(house.aptCode);
       this.setDisplayDetail();
     },
     setDetailHouse(house) {
@@ -177,7 +182,9 @@ export default {
       this.getHouseListByAptName(document.querySelector("#aptName").value);
     },
   },
+  created() {},
   computed: {
+    ...mapState(houseStore, ["deals_Info"]),
     changeHouses() {
       return this.$store.state.houseStore.houses;
     },
@@ -190,22 +197,6 @@ export default {
       this.houses = value;
     },
     changeDeals(value) {
-      let year = 2015;
-      let temp = 0;
-      let count = 0;
-      this.$store.state.houseStore.deals.forEach((element) => {
-        console.log(element.dealYear + ", " + element.dealAmount);
-        if (element.dealYear == year) {
-          count += 1;
-          temp += parseFloat(element.dealAmount);
-        } else {
-          this.deals_year.push(temp / count);
-          temp = parseFloat(element.dealAmount);
-          count = 1;
-          year += 1;
-        }
-      });
-      this.deals_year.push(temp / count);
       this.deals = value;
     },
   },

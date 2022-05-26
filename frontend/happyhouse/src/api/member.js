@@ -29,5 +29,17 @@ async function findById(userid, success, fail) {
   await api.get(`/user/info/${userid}`).then(success).catch(fail);
 }
 
+async function IdCheck(userid, success, fail) {
+  await api.get(`/user/info/idcheck/${userid}`).then(success).catch(fail);
+}
+
+async function PwdCheck(user, success, fail) {
+  console.log(user);
+  await api
+    .post(`/user/info/pwdcheck`, JSON.stringify(user))
+    .then(success)
+    .catch(fail);
+}
+
 export { register, login };
-export { update, deleteUser, findById };
+export { update, deleteUser, findById, IdCheck, PwdCheck };

@@ -12,7 +12,7 @@
 
 <script>
 import HouseSidebar from "@/components/house/HouseSidebar.vue";
-import { mapMutations, mapActions } from "vuex";
+import { mapMutations, mapActions, mapState } from "vuex";
 
 const houseStore = "houseStore";
 
@@ -29,9 +29,38 @@ export default {
       houses: [],
       markers: [],
       clusterLevel: 6,
+      marker: null,
+      tempValue: null,
     };
   },
-
+  computed: {
+    ...mapState(houseStore, ["mouseover"]),
+  },
+  watch: {
+    mouseover(newValue) {
+      if (this.tempValue == null) {
+        //예외처리 피하기 위함
+      } else if (this.tempValue != newValue) {
+        this.marker.setMap(null);
+        this.marker = null;
+      }
+      this.tempValue = newValue;
+      this.houses.forEach((element) => {
+        if (element.aptCode == newValue) {
+          this.marker = new kakao.maps.CustomOverlay({
+            content:
+              '<div class="dotOverlay"><span class="number">' +
+              element.apartmentName +
+              "</span></div>",
+            position: new kakao.maps.LatLng(element.lat, element.lng),
+            xAnchor: 0.5,
+            yAnchor: 2,
+          });
+          this.marker.setMap(this.map);
+        }
+      });
+    },
+  },
   mounted() {
     if (window.kakao && window.kakao.maps) {
       this.initMap();
@@ -177,7 +206,7 @@ export default {
         var marker = new kakao.maps.Marker({
           // map: map.getLevel() < this.clusterLevel ? map : null,
           position: new kakao.maps.LatLng(element.lat, element.lng), // 마커를 표시할 위치
-          title: element.avg, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+          title: element.avg * 10, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
           image: this.getMarkerImage(), // 마커 이미지
         });
         this.markers.push(marker);
@@ -212,7 +241,7 @@ export default {
               <div class="pin-wrap">
                 <img class="cluster-pin-image" src="https://cdn-icons-png.flaticon.com/512/2598/2598818.png"/>
                 <span class="text-sm text-center text-light font-weight-bold cluster-pin-text">
-                ${parseFloat((sum / cluster.getSize()).toFixed(1))}억</span>
+                ${(sum / cluster.getSize() / 10).toFixed(1)}억</span>
               </div>
                 `);
             });
@@ -240,7 +269,9 @@ export default {
       return `
       <div class="pin-wrap">
         <img class="pin-image" src="https://cdn-icons-png.flaticon.com/512/2598/2598818.png"/>
-        <span class="text-sm text-center text-light font-weight-bold pin-text">${element.avg}억</span>
+        <span class="text-sm text-center text-light font-weight-bold pin-text">${
+          Math.round(element.avg * 10) / 10
+        }억</span>
       </div>
       `;
     },
@@ -348,5 +379,55 @@ export default {
 
 .map-container {
   height: 80vh;
+}
+.dot {
+  overflow: hidden;
+  float: left;
+  width: 12px;
+  height: 12px;
+  background: url("https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/mini_circle.png");
+}
+.dotOverlay {
+  position: relative;
+  bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  border-bottom: 2px solid #ddd;
+  float: left;
+  font-size: 12px;
+  padding: 5px;
+  background: #fff;
+}
+.dotOverlay:nth-of-type(n) {
+  border: 0;
+  box-shadow: 0px 1px 2px #888;
+}
+.number {
+  font-weight: bold;
+  color: #856fffb1;
+}
+.dotOverlay:after {
+  content: "";
+  position: absolute;
+  margin-left: -6px;
+  left: 50%;
+  bottom: -8px;
+  width: 11px;
+  height: 8px;
+  background: url("https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white_small.png");
+}
+.distanceInfo {
+  position: relative;
+  top: 5px;
+  left: 5px;
+  list-style: none;
+  margin: 0;
+}
+.distanceInfo .label {
+  display: inline-block;
+  width: 50px;
+}
+.distanceInfo:after {
+  content: none;
 }
 </style>

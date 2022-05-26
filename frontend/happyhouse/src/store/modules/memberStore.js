@@ -1,9 +1,18 @@
 import jwt_decode from "jwt-decode";
-import * as member from "@/api/member.js";
+import {
+  deleteUser,
+  login,
+  register,
+  update,
+  IdCheck,
+  PwdCheck,
+} from "@/api/member.js";
+import { findById } from "../../api/member";
 
 const memberStore = {
   namespaced: true,
   state: {
+    isIdCheck: false,
     isRegister: false,
     isRegisterError: false,
     isLogin: false,
@@ -14,6 +23,7 @@ const memberStore = {
     isDeleteError: false,
     userInfo: null,
     img_path: null,
+    isPwdCheck: null,
   },
   getters: {
     checkUserInfo: function (state) {
@@ -52,32 +62,16 @@ const memberStore = {
     SET_IMG_PATH: (state, img_path) => {
       state.img_path = img_path;
     },
+    SET_ID_CHECK: (state, check) => {
+      state.isIdCheck = check;
+    },
+    SET_IS_PWD: (state, pwd) => {
+      state.isPwdCheck = pwd;
+    },
   },
   actions: {
-    async getUserInfo({ commit }, token) {
-      let decode_token = jwt_decode(token.token);
-
-      return new Promise((resolve, reject) => {
-        member.findById(
-          decode_token.userid,
-          (response) => {
-            if (response.data.message === "success") {
-              commit("SET_IMG_PATH", response.data.img);
-              commit("SET_USER_INFO", response.data.userInfo);
-              resolve();
-            } else {
-              console.log("유저 정보 없음!!");
-              reject();
-            }
-          },
-          (error) => {
-            console.log(error);
-          }
-        );
-      });
-    },
     async registerConfirm({ commit }, user) {
-      await member.register(
+      await register(
         user,
         (response) => {
           if (response.data === "success") {
@@ -92,13 +86,14 @@ const memberStore = {
       );
     },
     async userConfirm({ commit }, user) {
-      await member.login(
+      await login(
         user,
         (response) => {
           if (response.data.message === "success") {
             let token = response.data["access-token"];
             commit("SET_IS_LOGIN", true);
             commit("SET_IS_LOGIN_ERROR", false);
+            console.log(1);
             sessionStorage.setItem("access-token", token);
           } else {
             commit("SET_IS_LOGIN", false);
@@ -111,7 +106,7 @@ const memberStore = {
     async updateConfirm({ commit }, formData) {
       let token = sessionStorage.getItem("access-token");
       let decode_token = jwt_decode(token);
-      await member.update(
+      await update(
         decode_token.userid,
         formData,
         (response) => {
@@ -128,7 +123,7 @@ const memberStore = {
     },
     async deleteConfirm({ commit }, token) {
       let decode_token = jwt_decode(token);
-      await member.deleteUser(
+      await deleteUser(
         decode_token.userid,
         (response) => {
           if (response.data === "success") {
@@ -140,6 +135,61 @@ const memberStore = {
           }
         },
         () => {}
+      );
+    },
+
+    async getUserPwd({ commit }, info) {
+      await PwdCheck(
+        info,
+        (response) => {
+          console.log(response.data);
+          if (response.data != "") {
+            console.log("성공!!");
+            commit("SET_IS_PWD", response.data);
+          } else {
+            console.log("유저 정보 없음!!");
+            commit("SET_IS_PWD", "");
+          }
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    },
+
+    async getUserId({ commit }, id) {
+      await IdCheck(
+        id,
+        (response) => {
+          if (response.data == "SUCCESS") {
+            console.log("성공!!");
+            commit("SET_ID_CHECK", true);
+          } else {
+            console.log("유저 정보 없음!!");
+            commit("SET_ID_CHECK", false);
+          }
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    },
+    async getUserInfo({ commit }, token) {
+      let decode_token = jwt_decode(token);
+      await findById(
+        decode_token.userid,
+        (response) => {
+          if (response.data.message === "success") {
+            console.log(response.data.userInfo);
+            commit("SET_IMG_PATH", response.data.img);
+            commit("SET_USER_INFO", response.data.userInfo);
+          } else {
+            console.log("유저 정보 없음!!");
+          }
+        },
+        (error) => {
+          console.log(error);
+        }
       );
     },
   },

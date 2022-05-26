@@ -10,6 +10,8 @@ const houseStore = {
     house: null,
     deals: [],
     dong: "",
+    deals_Info: [],
+    mouseover: "",
   },
 
   getters: {},
@@ -51,9 +53,18 @@ const houseStore = {
     SET_DEAL_LIST: (state, deals) => {
       state.deals = deals;
     },
+    SET_DEALS_AVG: (state, deals) => {
+      state.deals_Info = deals;
+    },
+    MOUSE_OVER: (state, aptCode) => {
+      state.mouseover = aptCode;
+    },
   },
 
   actions: {
+    async mouseoverEvent({ commit }, aptCode) {
+      commit("MOUSE_OVER", aptCode);
+    },
     async getHouseDeal({ commit }, aptCode) {
       const params = {
         aptCode: aptCode,
@@ -177,6 +188,18 @@ const houseStore = {
         mapInfo,
         (response) => {
           commit("SET_HOUSE_LIST", response.data);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    },
+    async getDealsAvg({ commit }, aptCode) {
+      await house.getAptAvg(
+        aptCode,
+        (response) => {
+          console.log(response);
+          commit("SET_DEALS_AVG", response.data);
         },
         (error) => {
           console.log(error);

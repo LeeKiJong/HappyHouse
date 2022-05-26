@@ -25,6 +25,7 @@
 import { mapState, mapActions } from "vuex";
 import VsudInput from "@/components/vsud/VsudInput.vue";
 import VsudButton from "@/components/vsud/VsudButton.vue";
+import swal from "sweetalert";
 
 const memberStore = "memberStore";
 const boardStore = "boardStore";
@@ -64,7 +65,7 @@ export default {
         };
         await this.writeComment(comment);
       } else {
-        alert("댓글을 입력해주세요");
+        swal({ title: "댓글을 입력해주세요.", icon: "warning" });
       }
     },
   },
