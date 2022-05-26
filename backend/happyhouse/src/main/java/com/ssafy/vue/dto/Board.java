@@ -76,7 +76,15 @@ public class Board {
 		this.type = type;
 	}
 
-	public Board(int articleno, String userid, String subject, String content, int hit, String regtime, String type) {
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public Board(int articleno, String userid, String subject, String content, int hit, String regtime, String type, String username) {
 		super();
 		this.articleno = articleno;
 		this.userid = userid;
@@ -85,6 +93,7 @@ public class Board {
 		this.hit = hit;
 		this.regtime = regtime;
 		this.type = type;
+		this.username = username;
 	}
 
 }

@@ -39,194 +39,194 @@ import io.swagger.annotations.ApiParam;
 @RequestMapping("/user")
 public class MemberController {
 
-	public static final Logger logger = LoggerFactory.getLogger(MemberController.class);
-	private static final String SUCCESS = "success";
-	private static final String FAIL = "fail";
+   public static final Logger logger = LoggerFactory.getLogger(MemberController.class);
+   private static final String SUCCESS = "success";
+   private static final String FAIL = "fail";
 
-	@Autowired
-	private JwtServiceImpl jwtService;
+   @Autowired
+   private JwtServiceImpl jwtService;
 
-	@Autowired
-	private MemberService memberService;
+   @Autowired
+   private MemberService memberService;
 
-	
-	@ApiOperation(value = "ȸ������", notes = "ȸ������ ���?? �޼����� ��ȯ�Ѵ�.")
-	@PostMapping(value = "/join")
-    public ResponseEntity<String> join(@RequestBody @ApiParam(value = "ȸ������ �� �ʿ��� ȸ������(memberDto).", required = true) MemberDto memberDto) throws JsonMappingException, JsonProcessingException {
-		logger.debug("ȸ������ ���� : {}", memberDto.toString());
+   
+   @ApiOperation(value = "?      ", notes = "?          ??  ?        ? ? .")
+   @PostMapping(value = "/join")
+    public ResponseEntity<String> join(@RequestBody @ApiParam(value = "?           ?    ?      (memberDto).", required = true) MemberDto memberDto) throws JsonMappingException, JsonProcessingException {
+      logger.debug("?            : {}", memberDto.toString());
 
         try {
-        	if (memberService.join(memberDto)) {
-				return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
-			}
+           if (memberService.join(memberDto)) {
+            return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
+         }
         } catch (Exception e) {
-        	e.printStackTrace();
+           e.printStackTrace();
         }
         return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
     }
 
-	@ApiOperation(value = "�α���", notes = "Access-token�� �α��� ���?? �޼����� ��ȯ�Ѵ�.", response = Map.class)
-	@PostMapping("/login")
-	public ResponseEntity<Map<String, Object>> login(
-			@RequestBody @ApiParam(value = "�α��� �� �ʿ��� ȸ������(���̵�, ��й��?).", required = true) MemberDto memberDto) {
-		logger.debug(memberDto.toString());
-		Map<String, Object> resultMap = new HashMap<>();
-		HttpStatus status = null;
-		try {
-			MemberDto loginUser = memberService.login(memberDto);
-			if (loginUser != null) {
-				String token = jwtService.create("userid", loginUser.getUserid(), "access-token");// key, data, subject
-				logger.debug("�α��� ��ū���� : {}", token);
-				resultMap.put("access-token", token);
-				resultMap.put("message", SUCCESS);
-				status = HttpStatus.ACCEPTED;
-			} else {
-				resultMap.put("message", FAIL);
-				status = HttpStatus.ACCEPTED;
-			}
-		} catch (Exception e) {
-			logger.error("�α��� ���� : {}", e);
-			resultMap.put("message", e.getMessage());
-			status = HttpStatus.INTERNAL_SERVER_ERROR;
-		}
-		return new ResponseEntity<Map<String, Object>>(resultMap, status);
-	}
+   @ApiOperation(value = " ��   ", notes = "Access-token    ��       ??  ?        ? ? .", response = Map.class)
+   @PostMapping("/login")
+   public ResponseEntity<Map<String, Object>> login(
+         @RequestBody @ApiParam(value = " ��        ?    ?      (   ? ,   ��  ?).", required = true) MemberDto memberDto) {
+      logger.debug(memberDto.toString());
+      Map<String, Object> resultMap = new HashMap<>();
+      HttpStatus status = null;
+      try {
+         MemberDto loginUser = memberService.login(memberDto);
+         if (loginUser != null) {
+            String token = jwtService.create("userid", loginUser.getUserid(), "access-token");// key, data, subject
+            logger.debug(" ��      ?     : {}", token);
+            resultMap.put("access-token", token);
+            resultMap.put("message", SUCCESS);
+            status = HttpStatus.ACCEPTED;
+         } else {
+            resultMap.put("message", FAIL);
+            status = HttpStatus.ACCEPTED;
+         }
+      } catch (Exception e) {
+         logger.error(" ��         : {}", e);
+         resultMap.put("message", e.getMessage());
+         status = HttpStatus.INTERNAL_SERVER_ERROR;
+      }
+      return new ResponseEntity<Map<String, Object>>(resultMap, status);
+   }
 
-	@ApiOperation(value = "ȸ������ ����", notes = "ȸ������ ���� ���?? �޼����� ��ȯ�Ѵ�.")
-	@PostMapping("/update/{userid}")
-	public ResponseEntity<String> update(
-			@PathVariable("userid") @ApiParam(value = "������ ȸ���� ���̵�.", required = true) String userid,
-			@ApiParam(value = "���� �� �ʿ��� ȸ������(memberDto).", required = true) @RequestPart(value = "user") MemberDto memberDto,
-		@RequestPart(value = "img", required = false) MultipartFile file) {
-		logger.debug("ȸ������ ���� : {}", memberDto.toString());
-		logger.debug("��ū id : {}", userid);
-		logger.debug("token : {} ", userid);
+   @ApiOperation(value = "?           ", notes = "?               ??  ?        ? ? .")
+   @PostMapping("/update/{userid}")
+   public ResponseEntity<String> update(
+         @PathVariable("userid") @ApiParam(value = "       ?        ? .", required = true) String userid,
+         @ApiParam(value = "         ?    ?      (memberDto).", required = true) @RequestPart(value = "user") MemberDto memberDto,
+      @RequestPart(value = "img", required = false) MultipartFile file) {
+      logger.debug("?            : {}", memberDto.toString());
+      logger.debug("  ? id : {}", userid);
+      logger.debug("token : {} ", userid);
 
-		if (jwtService.isUsable(userid)) {
-			logger.info("���?? ������ ��ū!!!");
-			try {
-				if (memberService.update(memberDto)) {
-					if (!new File("./images/" + memberDto.getFilename()).exists()) {
-						FileOutputStream writer = new FileOutputStream("./images/" + memberDto.getFilename());
-						writer.write(file.getBytes());
-						writer.close();
-					} 
-					return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
-				}
-			} catch (Exception e) {
-				logger.error("������ȸ ���� : {}", e);
-			}
-		} else {
-			logger.error("���?? �Ұ��� ��ū!!!");
-		}
-		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
-	}
-	
-	@ApiOperation(value = "ȸ�� ����", notes = "ȸ������ ���� ���?? �޼����� ��ȯ�Ѵ�.")
-	@GetMapping("/info/delete/{userid}")
-	public ResponseEntity<String> delete(
-			@PathVariable("userid") @ApiParam(value = "������ ȸ���� ���̵�.", required = true) String userid, HttpServletRequest request) {
-		logger.debug("ȸ������ ���� : {}", userid);
-		logger.debug("token : {} ", request.getHeader("access-token"));
-		
-		if (jwtService.isUsable(request.getHeader("access-token"))) {
-			logger.info("���?? ������ ��ū!!!");
-			try {
-				if (memberService.delete(userid)) {
-					return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
-				}
-			} catch (Exception e) {
-				logger.error("���� ���� ���� : {}", e);
-			}
-		} else {
-			logger.error("���?? �Ұ��� ��ū!!!");
-		}
-		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
-		
-	}
-	@ApiOperation(value = "ȸ������", notes = "ȸ�� ������ ���� Token�� ��ȯ�Ѵ�.", response = Map.class)
-	@GetMapping("/info/idcheck/{userid}")
-	public ResponseEntity<String> getInfo(
-			@PathVariable("userid") @ApiParam(value = "������ ȸ���� ���̵�.", required = true) String userid)
-			throws Exception {
+      if (jwtService.isUsable(userid)) {
+         logger.info("   ??          ?!!!");
+         try {
+            if (memberService.update(memberDto)) {
+               if (!new File("./images/" + memberDto.getFilename()).exists()) {
+                  FileOutputStream writer = new FileOutputStream("./images/" + memberDto.getFilename());
+                  writer.write(file.getBytes());
+                  writer.close();
+               } 
+               return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
+            }
+         } catch (Exception e) {
+            logger.error("      ?      : {}", e);
+         }
+      } else {
+         logger.error("   ??  ?      ?!!!");
+      }
+      return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
+   }
+   
+   @ApiOperation(value = "?       ", notes = "?               ??  ?        ? ? .")
+   @GetMapping("/info/delete/{userid}")
+   public ResponseEntity<String> delete(
+         @PathVariable("userid") @ApiParam(value = "       ?        ? .", required = true) String userid, HttpServletRequest request) {
+      logger.debug("?            : {}", userid);
+      logger.debug("token : {} ", request.getHeader("access-token"));
+      
+      if (jwtService.isUsable(request.getHeader("access-token"))) {
+         logger.info("   ??          ?!!!");
+         try {
+            if (memberService.delete(userid)) {
+               return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
+            }
+         } catch (Exception e) {
+            logger.error("               : {}", e);
+         }
+      } else {
+         logger.error("   ??  ?      ?!!!");
+      }
+      return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
+      
+   }
+   @ApiOperation(value = "?      ", notes = "?               Token     ? ? .", response = Map.class)
+   @GetMapping("/info/idcheck/{userid}")
+   public ResponseEntity<String> getInfo(
+         @PathVariable("userid") @ApiParam(value = "       ?        ? .", required = true) String userid)
+         throws Exception {
 
-		MemberDto memberDto = memberService.userInfo(userid);
-		System.out.println(userid);
-		if (memberDto == null) {
-			System.out.println("?���??");
-			return new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
-		} else {
-			System.out.println("?��?��");
-			return new ResponseEntity<String>("FAIL", HttpStatus.NO_CONTENT);
-		}
-	}
+      MemberDto memberDto = memberService.userInfo(userid);
+      System.out.println(userid);
+      if (memberDto == null) {
+         System.out.println("?   ??");
+         return new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
+      } else {
+         System.out.println("?  ?  ");
+         return new ResponseEntity<String>("FAIL", HttpStatus.NO_CONTENT);
+      }
+   }
 
-	@PostMapping("/info/pwdcheck")
-	public ResponseEntity<String> getPwd(@RequestBody MemberDto memberDto)
-			throws Exception {
-		Map<String, String> resultMap = new HashMap<>();
-		HttpStatus status = HttpStatus.ACCEPTED;
-		System.out.println(memberDto.getUserid() + ", " + memberDto.getEmail());
-		MemberDto temp = memberService.userInfo(memberDto.getUserid());
-		System.out.println(temp.getUserid());
-		System.out.println(temp.getUserpwd());
-		if (temp.getUserid().length() == 0) {
-			return new ResponseEntity<String>("FAIL", HttpStatus.NO_CONTENT);
-		} else {
-			System.out.println(temp.getUserid() + ", " + temp.getEmail());
-			if (temp.getEmail().equals(memberDto.getEmail())) {
-				return new ResponseEntity<String>(temp.getUserpwd(), HttpStatus.OK);
-			} else {
-				return new ResponseEntity<String>("FAIL", HttpStatus.NO_CONTENT);
-			}
-		}
-	}
-	
-	@ApiOperation(value = "ȸ������", notes = "ȸ�� ������ ���� Token�� ��ȯ�Ѵ�.", response = Map.class)
-	@GetMapping("/info/{userid}")
-	public ResponseEntity<Map<String, Object>> getInfo(
-			@PathVariable("userid") @ApiParam(value = "������ ȸ���� ���̵�.", required = true) String userid,
-			HttpServletRequest request) {
-		logger.debug("ȸ����ȸ");
-		Map<String, Object> resultMap = new HashMap<>();
-		HttpStatus status = HttpStatus.ACCEPTED;
-		if (jwtService.isUsable(request.getHeader("access-token"))) {
-			logger.info("���?? ������ ��ū!!!");
-			try {
-//				�α��� �����?? ����.
-				MemberDto memberDto = memberService.userInfo(userid);
-				logger.debug("ȸ����ȸ : {}", memberDto);
-				
-				//File file = new File("./images/" + memberDto.getFilename());
-				
-				String path = "";
-				if (!new File("./images/" + memberDto.getFilename()).exists()) {
-					path = "./images/default.png";
-					memberDto.setFilename("default.png");
-				} 
-				else {
-					path = "./images/" + memberDto.getFilename();	
-				}
-				FileInputStream reader = new FileInputStream(path);
-				byte[] bytes = new byte[reader.available()];
-				reader.read(bytes, 0, reader.available());
-				reader.close();
-				//resultMap.put("img", FileUtils.readFileToByteArray(file));
-				resultMap.put("img", bytes);
-				resultMap.put("userInfo", memberDto);
-				resultMap.put("message", SUCCESS);
-				status = HttpStatus.ACCEPTED;
-			} catch (Exception e) {
-				logger.error("������ȸ ���� : {}", e);
-				resultMap.put("message", e.getMessage());
-				status = HttpStatus.INTERNAL_SERVER_ERROR;
-			}
-		} else {
-			logger.error("���?? �Ұ��� ��ū!!!");
-			resultMap.put("message", FAIL);
-			status = HttpStatus.ACCEPTED;
-		}
-		return new ResponseEntity<Map<String, Object>>(resultMap, status);
-	}
+   @PostMapping("/info/pwdcheck")
+   public ResponseEntity<String> getPwd(@RequestBody MemberDto memberDto)
+         throws Exception {
+      Map<String, String> resultMap = new HashMap<>();
+      HttpStatus status = HttpStatus.ACCEPTED;
+      System.out.println(memberDto.getUserid() + ", " + memberDto.getEmail());
+      MemberDto temp = memberService.userInfo(memberDto.getUserid());
+      System.out.println(temp.getUserid());
+      System.out.println(temp.getUserpwd());
+      if (temp.getUserid().length() == 0) {
+         return new ResponseEntity<String>("FAIL", HttpStatus.NO_CONTENT);
+      } else {
+         System.out.println(temp.getUserid() + ", " + temp.getEmail());
+         if (temp.getEmail().equals(memberDto.getEmail())) {
+            return new ResponseEntity<String>(temp.getUserpwd(), HttpStatus.OK);
+         } else {
+            return new ResponseEntity<String>("FAIL", HttpStatus.NO_CONTENT);
+         }
+      }
+   }
+   
+   @ApiOperation(value = "?      ", notes = "?               Token     ? ? .", response = Map.class)
+   @GetMapping("/info/{userid}")
+   public ResponseEntity<Map<String, Object>> getInfo(
+         @PathVariable("userid") @ApiParam(value = "       ?        ? .", required = true) String userid,
+         HttpServletRequest request) {
+      logger.debug("?    ?");
+      Map<String, Object> resultMap = new HashMap<>();
+      HttpStatus status = HttpStatus.ACCEPTED;
+      if (jwtService.isUsable(request.getHeader("access-token"))) {
+         logger.info("   ??          ?!!!");
+         try {
+//             ��         ??     .
+            MemberDto memberDto = memberService.userInfo(userid);
+            logger.debug("?    ? : {}", memberDto);
+            
+            //File file = new File("./images/" + memberDto.getFilename());
+            
+            String path = "";
+            if (!new File("./images/" + memberDto.getFilename()).exists()) {
+               path = "./images/default.png";
+               memberDto.setFilename("default.png");
+            } 
+            else {
+               path = "./images/" + memberDto.getFilename();   
+            }
+            FileInputStream reader = new FileInputStream(path);
+            byte[] bytes = new byte[reader.available()];
+            reader.read(bytes, 0, reader.available());
+            reader.close();
+            //resultMap.put("img", FileUtils.readFileToByteArray(file));
+            resultMap.put("img", bytes);
+            resultMap.put("userInfo", memberDto);
+            resultMap.put("message", SUCCESS);
+            status = HttpStatus.ACCEPTED;
+         } catch (Exception e) {
+            logger.error("      ?      : {}", e);
+            resultMap.put("message", e.getMessage());
+            status = HttpStatus.INTERNAL_SERVER_ERROR;
+         }
+      } else {
+         logger.error("   ??  ?      ?!!!");
+         resultMap.put("message", FAIL);
+         status = HttpStatus.ACCEPTED;
+      }
+      return new ResponseEntity<Map<String, Object>>(resultMap, status);
+   }
 
 }
