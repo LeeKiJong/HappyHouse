@@ -13,28 +13,28 @@
         </h6>
       </li>
       <li class="nav-item">
-        <sidenav-collapse navText="Dashboard" :to="{ name: 'Dashboard' }">
+        <sidenav-collapse navText="대시보드" :to="{ name: 'Dashboard' }">
           <template #icon>
             <shop />
           </template>
         </sidenav-collapse>
       </li>
       <li class="nav-item">
-        <sidenav-collapse navText="Map" :to="{ name: 'Map' }">
+        <sidenav-collapse navText="지도" :to="{ name: 'Map' }">
           <template #icon>
             <office />
           </template>
         </sidenav-collapse>
       </li>
       <li class="nav-item">
-        <sidenav-collapse navText="Board" :to="{ name: 'Board' }">
+        <sidenav-collapse navText="게시판" :to="{ name: 'Board' }">
           <template #icon>
             <credit-card />
           </template>
         </sidenav-collapse>
       </li>
       <li class="nav-item">
-        <sidenav-collapse navText="Profile" :to="{ name: 'Profile' }">
+        <sidenav-collapse navText="프로필" :to="{ name: 'Profile' }">
           <template #icon>
             <customer-support />
           </template>

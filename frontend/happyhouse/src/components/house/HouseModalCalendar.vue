@@ -74,6 +74,7 @@
 import { DatePicker } from "v-calendar";
 import "v-calendar/dist/style.css";
 import { mapActions } from "vuex";
+import swal from "sweetalert";
 
 const houseStore = "houseStore";
 
@@ -91,9 +92,9 @@ export default {
       };
 
       if (date.from == null) {
-        alert("시작일을 입력해주세요");
+        swal({ title: "시작일을 입력해주세요.", icon: "warning" });
       } else if (date.to == null) {
-        alert("종료일을 입력해주세요");
+        swal({ title: "종료일을 입력해주세요.", icon: "warning" });
       } else {
         await this.getAptDealInDate(date);
       }

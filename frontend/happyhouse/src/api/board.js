@@ -6,7 +6,7 @@ function listArticle(param, success, fail) {
   api.get(`/board`, { params: param }).then(success).catch(fail);
 }
 function searchTitle(param, success, fail) {
-  api.post(`/board/search`, { params: param }).then(success).catch(fail);
+  api.get(`/board/search`, { params: param }).then(success).catch(fail);
 }
 
 function writeArticle(article, success, fail) {

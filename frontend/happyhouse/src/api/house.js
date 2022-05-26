@@ -29,7 +29,6 @@ async function houseListByDong(params, success, fail) {
 async function houseDeal(params, success, fail) {
   await api.get(`/map/apt/deal`, { params: params }).then(success).catch(fail);
 }
-
 async function houseDealInDate(params, success, fail) {
   await api
     .get(`/map/apt/dealInDate`, { params: params })
@@ -51,5 +50,16 @@ async function houseListIfMovedMap(params, success, fail) {
     .catch(fail);
 }
 
-export { sidoList, gugunList, dongList, houseListIfMovedMap, houseDealInDate };
-export { houseListByAptName, houseListByDong, houseListByGugun, houseDeal };
+async function getAptAvg(aptCode, success, fail) {
+  await api.get(`/map/apt/avg/${aptCode}`).then(success).catch(fail);
+}
+
+export { sidoList, gugunList, dongList, houseListIfMovedMap };
+export {
+  houseListByAptName,
+  houseListByDong,
+  houseListByGugun,
+  houseDeal,
+  houseDealInDate,
+  getAptAvg,
+};

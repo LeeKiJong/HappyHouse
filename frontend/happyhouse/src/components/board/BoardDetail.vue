@@ -78,8 +78,10 @@
               </li>
             </ul>
           </div>
-          <comment-input-item />
-          <comment-list />
+          <div v-if="!show">
+            <comment-input-item />
+            <comment-list />
+          </div>
         </div>
       </div>
     </div>
@@ -91,6 +93,7 @@ import CommentInputItem from "@/components/board/item/CommentInputItem.vue";
 import VsudButton from "@/components/vsud/VsudButton.vue";
 import CommentList from "@/components/board/item/Comment_list.vue";
 import { mapState, mapActions } from "vuex";
+import swal from "sweetalert";
 
 const memberStore = "memberStore";
 const boardStore = "boardStore";
@@ -143,7 +146,7 @@ export default {
   methods: {
     ...mapActions(boardStore, ["listComment"]),
 
-    modifyConfirm() {
+    async modifyConfirm() {
       modifyArticle(
         {
           articleno: this.article.articleno,
@@ -152,11 +155,14 @@ export default {
           content: document.getElementById("content").value,
         },
         ({ data }) => {
-          let msg = "수정 처리시 문제가 발생했습니다.";
           if (data === "success") {
-            msg = "수정이 완료되었습니다.";
+            swal({ title: "수정이 완료되었습니다.", icon: "success" });
+          } else {
+            swal({
+              title: "수정 처리시 문제가 발생했습니다.",
+              icon: "error",
+            });
           }
-          alert(msg);
           // 현재 route를 /list로 변경.
           this.$router.push({ name: "Board" });
         },
@@ -216,12 +222,23 @@ export default {
     getComments() {
       this.listComment(this.$route.params.articleno);
     },
-    deleteArticle() {
-      if (confirm("정말로 삭제?")) {
-        deleteArticle(this.article.articleno, () => {
-          this.$router.push({ name: "Board" });
-        });
-      }
+    async deleteArticle() {
+      await swal({
+        title: "정말로 삭제하시겠습니까?",
+        text: "OK 버튼을 누르시면 다시 복구할 수 없습니다!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      }).then((willDelete) => {
+        if (willDelete) {
+          deleteArticle(this.article.articleno, () => {
+            this.$router.push({ name: "Board" });
+          });
+          swal("정상적으로 삭제되었습니다.", {
+            icon: "success",
+          });
+        }
+      });
     },
     historyBack() {
       this.$router.go(-1);

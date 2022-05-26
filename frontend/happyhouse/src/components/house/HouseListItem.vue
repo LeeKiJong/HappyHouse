@@ -1,9 +1,19 @@
 <template>
-  <div class="mb-3 timeline-block cursor-pointer" :class="darkMode">
+  <div
+    style="border-radius: 15px"
+    onmouseout="this.style.backgroundColor=''"
+    onmouseover="this.style.background='rgba(211, 211, 211, 0.3)';"
+    class="mb-3 timeline-block cursor-pointer"
+    :class="darkMode"
+  >
     <span class="timeline-step" :class="darkMode ? 'bg-dark' : ''">
       <i class="ni text-gradient" :class="`ni-${icon} text-${color}`"></i>
     </span>
-    <div class="timeline-content">
+    <div
+      class="timeline-content"
+      @mouseover="mouseOver(aptcode)"
+      @mouseout="mouseOut"
+    >
       <h6
         class="mb-0 text-sm font-weight-bold"
         :class="darkMode ? 'text-white' : 'text-dark'"
@@ -28,6 +38,8 @@
   </div>
 </template>
 <script>
+import { mapState, mapActions } from "vuex";
+const houseStore = "houseStore";
 export default {
   name: "HouseListItem",
   props: {
@@ -40,6 +52,10 @@ export default {
       default: "",
     },
     title: {
+      type: String,
+      default: "",
+    },
+    aptcode: {
       type: String,
       default: "",
     },
@@ -59,6 +75,19 @@ export default {
       type: Boolean,
       default: false,
     },
+  },
+  methods: {
+    ...mapActions(houseStore, ["mouseoverEvent"]),
+    mouseOver: function (aptCode) {
+      console.log(aptCode);
+      this.mouseoverEvent(aptCode);
+    },
+    mouseOut: function () {
+      this.mouseoverEvent(null);
+    },
+  },
+  computed: {
+    ...mapState(houseStore, ["mouseover"]),
   },
 };
 </script>
