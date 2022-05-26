@@ -69,8 +69,7 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public List<Board> searchBoard(Board board) {
-		board.setSubject("%" + board.getSubject()+"%"); 
-		return boardMapper.searchBoard(board);
+	public List<Board> searchBoard(String subjectd) {
+		return boardMapper.searchBoard("%" + subjectd+"%");
 	}
 }

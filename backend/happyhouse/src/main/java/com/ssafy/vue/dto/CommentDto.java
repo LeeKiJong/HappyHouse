@@ -9,7 +9,7 @@ public class CommentDto {
     private String userid;
     private String content;
     private String regtime;
-
+    private String username;
     public int getCommentno() {
 		return commentno;
 	}
@@ -46,8 +46,30 @@ public class CommentDto {
     public void setRegtime(String regtime) {
         this.regtime = regtime;
     }
+    public String getUsername() {
+		return username;
+	}
 
-    public CommentDto(int commentno, int articleno, String userid, String content, String regtime) {
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public CommentDto(int articleno, String userid, String content) {
+        super();
+        this.articleno = articleno;
+        this.userid = userid;
+        this.content = content;
+    }
+    public CommentDto(int commentno, int articleno, String userid, String content, String regtime, String username) {
+		super();
+		this.commentno = commentno;
+		this.articleno = articleno;
+		this.userid = userid;
+		this.content = content;
+		this.regtime = regtime;
+		this.username = username;
+	}
+
+	public CommentDto(int commentno, int articleno, String userid, String content, String regtime) {
         super();
         this.commentno = commentno;
         this.articleno = articleno;

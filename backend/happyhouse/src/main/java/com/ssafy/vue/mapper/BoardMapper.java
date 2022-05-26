@@ -9,7 +9,7 @@ import com.ssafy.vue.dto.CommentDto;
 @Mapper
 public interface BoardMapper {
 	public List<Board> selectBoard(String type);
-	public List<Board> searchBoard(Board board);
+	public List<Board> searchBoard(String subject);
 	public Board selectBoardByNo(int articleno);
 	public void updateHit(int articleno);
 	public int insertBoard(Board board);

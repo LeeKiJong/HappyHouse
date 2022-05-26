@@ -83,7 +83,21 @@ public class Board {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-
+	//기본 생성자 추가
+    public Board(String subject, String type) {
+    	this.subject = subject;
+    	this.type = type;
+    }	
+	public Board(int articleno, String userid, String subject, String content, int hit, String regtime, String type) {
+		super();
+		this.articleno = articleno;
+		this.userid = userid;
+		this.subject = subject;
+		this.content = content;
+		this.hit = hit;
+		this.regtime = regtime;
+		this.type = type;
+	}
 	public Board(int articleno, String userid, String subject, String content, int hit, String regtime, String type, String username) {
 		super();
 		this.articleno = articleno;

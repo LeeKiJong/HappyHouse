@@ -47,10 +47,11 @@ public class BoardController {
 	}
 
 	@ApiOperation(value = "검색", notes = "검색한 게시글의 정보를 반환한다.", response = List.class)
-	@PostMapping("/search")
-	public ResponseEntity<List<Board>> searchBoard(@RequestBody Board board) throws Exception {
+	@GetMapping("/search")
+	public ResponseEntity<List<Board>> searchBoard(@RequestParam("subject") String subject, @RequestParam("type") String type) throws Exception {
 		logger.debug("searchBoard - 호출");
-		return new ResponseEntity<List<Board>>(boardService.searchBoard(board), HttpStatus.OK);
+		System.out.println(subject + ", "+type);
+		return new ResponseEntity<List<Board>>(boardService.searchBoard(subject), HttpStatus.OK);
 	}
 
     @ApiOperation(value = "게시판 글보기", notes = "글번호에 해당하는 게시글의 정보를 반환한다.", response = Board.class)    

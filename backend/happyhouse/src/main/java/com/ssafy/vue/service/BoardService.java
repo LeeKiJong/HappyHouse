@@ -7,7 +7,7 @@ import com.ssafy.vue.dto.CommentDto;
 
 public interface BoardService {
 	public List<Board> retrieveBoard(String type);
-	public List<Board> searchBoard(Board board);
+	public List<Board> searchBoard(String subject);
 	public Board detailBoard(int articleno);
 	public void updateHit(int articleno);
 	public boolean writeBoard(Board board);

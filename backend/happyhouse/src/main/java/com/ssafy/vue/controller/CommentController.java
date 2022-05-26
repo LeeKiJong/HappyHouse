@@ -43,16 +43,14 @@ public class CommentController {
         logger.debug("retrieveComment - 호출");
         return new ResponseEntity<List<CommentDto>>(boardService.retrieveComment(articleno), HttpStatus.OK);
     }
-    
-    @PostMapping
-    public ResponseEntity<String> writeComment(@RequestBody CommentDto commentDto) {
-        logger.debug("writeComment - 호출");
-        logger.debug("writeComment : {}", commentDto.toString());
-         if (boardService.writeComment(commentDto)) {
+    @GetMapping("/write")
+    public ResponseEntity<String> writeComment(@RequestParam("articleno") int articleno, @RequestParam("userid") String userid, @RequestParam("content") String content) throws Exception {
+		logger.debug("searchBoard - 호출");
+		CommentDto temp = new CommentDto(articleno, userid, content);
+		if (boardService.writeComment(temp)) {
          	return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
          }
          return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
-
     }
     
     @PutMapping("{commentno}")
