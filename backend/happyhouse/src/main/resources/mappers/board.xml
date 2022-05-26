@@ -8,7 +8,8 @@
 	<select id="selectBoard" parameterType="String" resultType="board">
 		select b. *, s.username
 		from board b join ssafy_member s
-		where type = #{type} and b.userid = s.userid
+		using (userid)
+		where type = #{type}
 		order by articleno desc;
 	</select>
 
@@ -28,8 +29,9 @@
 	
 	<!-- 게시글 상세 조회 -->
 	<select id="selectBoardByNo" resultType="board">
-		select *
-		from board 
+		select b. *, s.username
+		from board b join ssafy_member s
+		using (userid)
 		where articleno = #{articleno}
 	</select>
 	
