@@ -1,7 +1,7 @@
 # 🏡HAPPYHOUSE 최종 프로젝트
 
 <p align="center">
-    <img src="./happyhouse.gif">
+    <img src="https://user-images.githubusercontent.com/72181693/171685584-4be99783-9950-4807-a855-6eb0ba89b9e2.gif">
 </p>
 
 <br>
